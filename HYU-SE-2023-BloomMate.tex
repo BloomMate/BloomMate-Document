@@ -1,0 +1,307 @@
+
+
+
+\documentclass[conference, a4paper]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+
+
+\ifCLASSINFOpdf
+\hyphenation{op-tical net-works semi-conduc-tor}
+\begin{document}
+
+\title{BloomMate\\{\small House Gardening with AI Chat using LG Tiiun  }}
+
+
+\author{\IEEEauthorblockN{An Soonho}
+\IEEEauthorblockA{ \textit{dept. Information System}\\
+\textit{Hanyang Univ.}\\
+Seoul, Republic of Korea\\
+ash1823@hanyang.ac.kr}\\
+\and
+\IEEEauthorblockN{Kim Donghyun}
+\IEEEauthorblockA{ \textit{dept. Information System}\\
+\textit{Hanyang Univ.}\\
+Seoul, Republic of Korea\\
+akainoo@hanyang.ac.kr\\
+\footnotesize }
+\and
+\IEEEauthorblockN{Shin Hyunah}
+\IEEEauthorblockA{\textit{dept. Information System}\\
+\textit{Hanyang Univ.}\\
+Seoul, Republic of Korea\\
+hyunah0923@hanyang.ac.kr}
+\and
+\IEEEauthorblockN{Yoon Yongsung}
+\IEEEauthorblockA{\textit{dept. Information System}\\
+\textit{Hanyang Univ.}\\
+Seoul, Republic of Korea\\
+mirr001003@hanyang.ac.kr}}
+
+
+
+
+
+\maketitle
+
+\begin{abstract}
+BloomMate is a user-friendly gardening application tailored for beginners or individuals with limited gardening experience, particularly those who have acquired the LG Smart Cottage and intend to optimize their gardening with the LG Tiiun. This app simplifies the gardening process by allowing users to register their plants and access a range of personalized guidance to enhance their gardening skills.
+
+The standout feature of BloomMate is the unique capability to communicate with your plants. Through generative AI technology, this app facilitates direct interaction with plants, creating a personalized and engaging experience for users. Moreover, it exploits AI to identify and diagnose plant diseases, offering valuable insights to maintain the health of your pet plants.\\
+\end{abstract}
+\begin{IEEEkeywords}
+gardening, generative AI, Matter, AI\\
+\end{IEEEkeywords}
+\newpage
+
+\section{Role Assignment}
+Below is the table of role descriptions. Due to the small
+members in the team, some roles are distributed to the same
+person in order to harmoniously progress the project.
+\begin{table}[h]
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.5}
+\\
+\begin{tabular}{p{1.3cm} l p{3.2cm}} \hline
+\toprule
+Roles & Name & Task description \& etc.\\ \hline
+\midrule
+User & Shin Hyunah & 
+She plays the role of a plant grower.
+She has little experience growing plants and doesn't know how to water and nourish them.
+Additionally, she often kills her plants because she doesn't have time to take care of them,
+so she needs a service that takes care of her plants automatically.\\
+
+Customer & Yoon Yongsung & He is a person who owns a house, and in particular, he has purchased an LG Smart Cottage or has an LG Tiiun. He goes to his house on the weekends, enjoys country life, and takes care of plants. He wants software that automatically manages his plants even on weekdays when he is away or on weekends when he cannot be there.\\
+Software developer & An Soonho & As a software developer for our project, he designs and creates APIs and databases, and builds the AI that can implement the requirements of the service we plan.\\
+Development manager & Kim Donghyun & He is responsible for the overall management of our project, distributing each task, setting and managing task deadlines. Additionally, he helps resolve any issues between the backend and frontend. \\ 
+\bottomrule
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\section{Introduction}
+\subsection{motivation}
+a. Customer Trend Analysis
+\begin{enumerate}
+    \item positive effect of pet plant
+    \item[] Pet plant is known for positive effect to give psychological/emotional stability and inspiration about life satisfaction. Especially, it is showing clear tangible results in several areas like overcome stress and depression, therapy various physical illnesses, air purification. \cite{ju2020} \\
+    
+    \item The appearance of Green Hobby
+    \item[] As interest in planterior increases, sales of flower gardens/flowers increased compared to the previous year (2019). The search volume of 'planterior' on Naver, a search portal site, also increased significantly during the pandemic compared to pre-COVID-19, especially during the April 2020 pandemic. Also, attention in urban farmer, self-gardening, weekend farm is growth. An indicator that can confirm this is the number of Instagram hashtag posts, with the home gardening tag exceeding 520,000 and the planterior tag exceeding 163,000. \cite{hanaif_report} \\
+    
+    \item Impact of COVID-19
+    \item[] Pet plant has long received attention to relieve loneliness in single-person households or the elderly, and the home gardening market, including pet plant, has grown rapidly as restrictions have arisen on outdoor activities since the COVID-19.
+Compared to before COVID-19, sales of flowerpots increased by 20\%, gardening supplies increased by 48\%, and seedlings increased by 92\%. March to April 2020, SSG.com saw a 97\% increase in home gardening category sales, and Enuri.com saw a 491\% increase in garden set sales.
+Accordingly, the Rural Development Administration predicted that domestic home gardening sales will increase rapidly after COVID-19, reaching 500 billion won in 2023, an eight-fold increase from 60 billion won in 2020. \cite{ajunews_article} \\
+
+\item Expanding the market size of plant cultivation machines
+\item[] The market for plant growers that allow you to grow flowers and vegetables at home becomes larger. The market size, which was 10 billion won in 2019, increased to 60 billion won in 2020 and is expected to reach 500 billion won in 2023. \cite{spcmagazine_article}
+\\
+
+\item Urban agriculture
+\item[] The number of 'urban farmers' in Seoul, who farm on rooftops, verandas, and weekend farms, increased 14-fold from 45,000 in 2011 to 640,000 in 2019. During the same period, Seoul's urban agricultural space also increased 6.9 times from 29ha to 202ha. \cite{hani_article} \\
+
+\item Desired residential space after retirement
+\item[] In 2021, the real estate platform 'Zigbang' conducted a survey on the residential space desired after retirement, and 'country house, townhouse' ranked first with 38\%, beating apartments (35.4\%). When comparing housing transactions in the first half of the year by housing type, apartment transactions decreased in June compared to January, while house transactions increased.  \cite{donga_article}\\
+
+\item[]Considering these data, interest in horticulture such as home gardening and planterior is steadily increasing, and along with this, interest in weekend farms, vacation homes, country houses, etc. is also steadily growth. Therefore, it can be expected that the demand for gardening or growing plants in country houses will gradually get larger. At the same time, sales of plant-related home appliances will also become greater. \\
+\end{enumerate}
+
+
+%Company Analysis
+
+\indent b. Company Analysis
+\begin{enumerate}
+    \item Regulations related to the companion plant industry
+    \item[] As interest in pet plants grew, the Seoul Metropolitan Council passed the ‘Ordinance on Fostering and Supporting the Pet Plant Industry’ at the plenary session in May, laying the foundation for the growth of the pet plant industry and focusing on expanding supporting projects.\cite{mediapen_article} \\
+    
+    \item LG Electronics: Innovation for a Better Life 
+    \item[] LG Electronics is currently trying to change from being a company that only sells simple home appliances to a company that provides a lifestyle that can change customers' lives to be smarter through applications such as ThinQ.
+    \begin{figure}[h]
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/brand goal.png}
+\label{fig:brand}
+\caption{LG electronics Brand Goal} 
+\end{figure}
+\\
+Customers are always at the center of the LG brand story. LG makes an incredible contribution to the lives of its customers and always strives to make their lives more valuable.\\
+\\
+\indent i. PEOPLE\\
+Just as important as a good product is the customer experience using that product. Customers' lives are improved with new products through creativity and innovation, and a richer life is completed by experiencing products with excellent aesthetic satisfaction. Every product we create must be able to play that role in our customers’ lives. Creating a better life is how we do our best for our customers.\\
+
+ii. SINCERITY \\
+How to make life new and more convenient, our technology always starts with sincerity toward customers and their lives. It is an attitude of constantly making passionate efforts and pursuing sophistication through thorough perfection rather than flashiness, and the most important factor when creating products is sincerity.\\
+
+iii. BASICS \\
+Rather than being different for the sake of being different or flashy for show, we focus on the core values that customers who use the product expect. The core value refers to offering important value to customers' lives beyond the product's functions. \cite{lge_document}
+\\
+\end{enumerate}
+
+\indent c. Product Analysis
+\begin{enumerate}
+\item LG Smart Cottage
+\item[] It is a small modular house in the form of a second house that combines LG Electronics' advanced energy, heating, and cooling technology, and differentiated premium home appliances, with a two-story one-room structure measuring 31.4m$^2$.
+The 4kW solar panel installed on the roof can cover a significant amount of the electricity used per day by two adults, and the heat pump cooling and heating system 'Therma V Monobloc' is installed to significantly reduce energy consumption. A home energy solution was implemented that stores used power in a home ESS system. There is a charger for electric vehicles (EV) outside the Smart Cottage, and the inside is equipped with premium home appliances equipped with various technologies to increase energy efficiency, such as the Objet Collection Wash Tower Compact, a dishwasher, an induction electric range, and a water purifier. Through the ‘LG ThinQ’ application, you can check home appliances, heating, cooling, and air conditioning (HVAC) systems, and energy storage and consumption. It has a premium interior with a warm atmosphere, with a sophisticated design based on the concept of walnut wood tone and an exterior finished in light beige. \\
+\newpage
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/LG Smart Cottage.png}
+\label{fig:LGsmartcottage}
+\caption{LG Smart Cottage} 
+\end{figure}
+
+\item LG Tiiun
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/tiiun.png}
+\label{fig:tiiun}
+\caption{LG Tiiun} 
+\end{figure}
+\item[] LG Tiiun is a home plant grower designed to target the home gardening market, which is expanding due to the impact of COVID-19. It can be said to be the culmination of LG's technologies, combining the temperature control technology of the Dios refrigerator, the air conditioning technology of the Whisen air conditioner, the inverter compressor technology of the Tromm dryer, the water supply control technology of the PuriCare water purifier, and the LED lights of LG Display. You can easily and comfortably grow plants by filling them with water 6 times and adding nutrients 6 times in a month. The power consumption for one year is 42.5kWh, which is similar to that of a small refrigerator. LG Tiiun consists of two shelves (upper and lower compartments), and a total of six seed kits can be installed, three each. Seed kits limited to 2 types of herbs, 4 types of leafy vegetables, and 1 type of flower are being sold. Through the LG ThinQ app, you can check the operation/growing status on your smartphone and receive a notification when nutrients or water are insufficient. \\
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/tiiun thinQ.png}
+\label{fig:tiiunThinQ}
+\caption{Example of using ThinQ for LG Tiiun} 
+\end{figure}
+\end{enumerate}
+
+\subsection{Problem Statement}
+\begin{enumerate}
+    \item[a.]LG Smart Cottage: absence of home turf
+    \item[] People live in house almost enjoy gardening. However, LG Smart Cottage that LG Electronics launched doesn’t have home turf. So, we think LG Tiiun for outside to help with LG’s brand goal is necessary. Especially in the case of smart cottages, many people buy them as a second home and are unlikely to be there every day. In this case, they may struggle to get information about the condition of the plants, unless they have restrictions except for gardening with Tiiun.\\
+    \item[b.]Brown Thumb
+    \item[] In abroad, the term, brown thumb, means the people who always kill the plant because of lack of skills. Like this, there are more things to worry about in growing plants than you think, so if you don't pay attention, you often kill the plants, and even if you care a lot, there are many cases where you kill the plants because you don't know how to grow them properly. Therefore, Software, to help all of the plant growers can grow them easily, is essential. \\
+    \item[c.]Rasing Plants: absence of communication
+    \item[] Although raising pet plants is already known to help with various emotional stability, it was judged that there was less of a feeling of communication with each other compared to animals with which one could actually communicate. In order to grow plants well, constant attention is needed, and for this to happen, it is important to have affection for the plants. Therefore, in order to increase the fun of growing plants, it is necessary to be able to communicate with plants. \\
+\end{enumerate}
+
+
+\subsection{Solution}
+\begin{enumerate}
+    \item[a.]Meeting the needs of more customers
+    \item[]Considering the aforementioned, the number of people interested in gardening, cottages, etc. will increase. To contribute to increasing the value of life for the growing number of caterers' customers who grow their own gardens in cottages, we have adopted LG Tiiun which can be used in the outside garden of LG Smart Cottage as a target appliance. \\
+    \item[b.]Brown thumb turns into green thumb with LG
+    \item[]We have designed a software that allows people who are not talented in plant care to easily grow plants. To briefly introduce the features, customers can register their plants with the app and it will adjust the appropriate temperature, humidity, light, ventilation, etc. according to the plant species and automatically spray water and nutrients. Through the camera, the current health status of the plant (pest infestation, wilting, etc.) can be identified using AI, so that the customer can come and check the plant before it dies. \\
+    \item[c.]Build a bond with plants
+    \item[]One of the disadvantages of growing plants is that customer can only get an idea of their condition by looking at the wilting of their leaves or the appearance of fruits or flowers, and can't communicate with them directly like animals. These disadvantages reduce the fun of growing plants. To overcome this, we devised a feature that allows customer to communicate with plants using generative AI. If customers can communicate with their plants, they will be able to build a bond with them and give them more affection. \\
+\end{enumerate}
+
+\subsection{Research on Any Relative Software}
+\begin{enumerate}
+    \item[a.]Groo
+    
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/groo.jpg}
+\label{fig:Groo}
+\caption{Groo} 
+\end{figure}
+
+    \item[]Groo is an application for plant care scheduling, community, plant books, and plant-related purchases. You can enter your experience with plants and where you grow them, and it will recommend the best plants for your space. You can also take photos of your plants to learn about their types and care, and use the plant guide to find out what to look out for. You can also communicate with other people who are interested in growing plants through the community and buy gardening supplies. What makes it different from other plant growing applications is that it uses vision AI to check the health and disease of plants.
+    
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/groo-ai.png}
+\label{fig:GrooAI}
+\caption{Diagnosis of plant health using vision AI} 
+\end{figure}
+\newpage
+
+\item[b.]Planta
+
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/planta.png}
+\label{fig:Planta}
+\caption{Planta} 
+\end{figure}
+
+\item[]Planta is an application that helps you grow plants, similar to Groo. You can add information about your plants to the app and it will automatically remind you when to water, fertilize, spray, clean, etc. based on an algorithm. You can even take a photo of your plant and get the information you need by identifying the plant's variety. You can also get plant advice, keep a diary to track your plants' growth, and more. One of the unique features is that the app also recognizes where you live and recommends plants that are suitable for your hardiness zone and adjusts the watering schedule according to the local weather.\\
+
+\item[c.]PlantLink
+
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/plantlink.png}
+\label{fig:PlantLinkIoT}
+\caption{PlantLink} 
+\end{figure}
+
+\item[]PlantLink is an application that allows you to manage plants by connecting the Soil Module, an IoT device. Through the IoT device, you can record changes in soil humidity, illumination temperature, etc. to create a growth report. It is possible to talk to plants through chatbots and conduct psychological analysis through these conversations to provide mental health reports and receive plant management advice, but it is currently not working smoothly. \\
+
+\newpage
+
+\item[d.]Greg
+
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/greg.png}
+\label{fig:Greg}
+\caption{Greg} 
+\end{figure}
+
+\item[]Greg is the zero-guesswork plant care app & community. It makes growing indoor plants super easy and fun. If you scan any plant, Greg’s plant vision will identify the species, tell you all about it, measure the pot, and even the distance to the nearest window. And it provides highly-personalized plant care, a custom watering plan based on each plant’s species, size, plus the actual details of your home environment. Moreover, you can communicate with other veteran growers for answers to any plant questions you have. \\
+\end{enumerate}
+
+\section{REQUIREMENT ANALYSIS}
+\subsection{Create an account}
+When you first install and run the application, you'll see a page where you can sign up or log in. If you click Sign Up, we'll ask you a few questions to get your information and create your account. The following information is required from users when signing up.
+\begin{itemize}
+    \item Name
+    \item Picture
+    \item Experience and ability to grow plants
+    \item Location of home
+    \item The size of the garden
+    \item ID and Password
+    \item The serial number of users' LG Tiiun
+\end{itemize}
+After signing up, you’ll be taken to the login page. You can edit all the information you received during the signup process on your My Page.\\
+\subsection{Log in}
+Logging in is an essential step for every member to access and manage their own garden on BloomMate, and it's the gateway to utilizing BloomMate's full range of features. The login process involves entering the ID and password you provided during registration. Once successfully logged in, you'll be directed to a screen that allows you to either add new plants or view the plants you have previously registered, depending on whether you have any plants registered. The login requirement is a fundamental aspect of the BloomMate platform. It empowers users to have a personalized gardening experience, enabling them to manage their garden with ease. The authentication through the use of an ID and password is crucial for maintaining account security and ensuring the protection of sensitive information. \\
+\subsection{Add own plant}
+Logged-in users who don't have any registered plants will be taken to the plant registration screen. The plant registration process is essential for managing plants and chatting with them. To register a plant, users need to enter some information. The following is a list of information required to register a plant.
+\begin{itemize}
+    \item Name of plant
+    \item Plant variety
+    \item Photo of plant
+    \item Planted date
+\end{itemize}
+At this stage, you have the following constraints. \\
+\begin{itemize}
+    \item Limited plant types 
+    \\ - Provide application services within a limited plant to provide optimal personalized information.\\
+    \item Limited number of plants based on the size of your garden - Warns that planting more plants than the size of your garden can accommodate may result in poor gardening.\\
+\end{itemize}
+After entering the above information, the user can view their plants on the registered plants screen. \\
+\subsection{See the registered plants}
+Your registered plants will appear in a list, showing the name of the plant you entered when you registered it and how many days it has been with you based on the date you planted it. Clicking on each plant will take you to a page where you can view the plant's details. If there are no plants, the user will see a screen with a button to add a plant.\\
+\subsection{View details of a plant}
+You can click on each plant to view its details, and the first thing you'll see is a photo and name of the plant you've registered. Also, you can start chatting with the plant by clicking the chat button. The plant details page contains the following information.
+\begin{itemize}
+    \item Name of plant
+    \item Plant variety
+    \item Planted date
+    \item Basic information based on plant variety:
+    \begin{itemize}
+        \item Appropriate temperature
+        \item Appropriate illuminance
+        \item Soil moisture
+        \item Cultivation difficulty
+        \item Flowering season
+        \\etc.
+    \end{itemize}
+\end{itemize}
+You can also take a photo to detect the current status of a plant by clicking checkup button.\\
+\subsection{Chat with your plant}
+Users can converse with their plants using ChatGPT, a popular generative chat AI. This AI assumes the role of the plant, providing regular updates on its condition and growth. In addition to standard plant status and growth records, users can engage in daily conversations with their green companions. ChatGPT shares insights into the plant's current state, addresses questions and concerns, and offers care advice. Critical information, such as plant status and growth records, is automatically delivered daily and accessible on the chat screen. Users can easily search for past information by date in the chat history. This feature fosters a stronger connection between users and their plants, enhancing the gardening experience.\\
+
+\subsection{Examine plants through photos}
+Users have a convenient way to assess the health of their plants by simply taking a photo. When users capture an image of their plant, leaves and all, an AI model steps in to evaluate the plant's current health status and check for any potential diseases. This feature not only informs users about the plant's overall condition but also provides guidance on how to manage any issues that may arise. If there are any health concerns, the AI not only identifies the issue but also offers detailed information about the specific disease, if present. Furthermore, it goes the extra mile by suggesting effective methods for addressing the problem, whether it's a common issue that can be easily resolved or a more complex condition requiring special care. \\ 
+
+\subsection{My page}
+My page is where you can view your membership information. You can take the following actions from here.
+\begin{itemize}
+    \item View user's name and picture
+    \item Modify account information
+    \item View about BloomMate
+\end{itemize}
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv, references}
+\end{document}
+
+
