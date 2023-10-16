@@ -4,10 +4,9 @@
 \documentclass[conference, a4paper]{IEEEtran}
 \usepackage{graphicx}
 \usepackage{indentfirst}
-
-
 \ifCLASSINFOpdf
 \hyphenation{op-tical net-works semi-conduc-tor}
+
 \begin{document}
 
 \title{BloomMate\\{\small House Gardening with AI Chat using LG Tiiun  }}
@@ -45,7 +44,6 @@ mirr001003@hanyang.ac.kr}}
 \maketitle
 \thispagestyle{plain}
 \pagestyle{plain}
-
 \begin{abstract}
 BloomMate is a user-friendly gardening application tailored for beginners or individuals with limited gardening experience, particularly those who have acquired the LG Smart Cottage and intend to optimize their gardening with the LG Tiiun. This app simplifies the gardening process by allowing users to register their plants and access a range of personalized guidance to enhance their gardening skills.
 
@@ -63,11 +61,8 @@ person in order to harmoniously progress the project.
 \begin{table}[h]
 \setlength{\tabcolsep}{12pt}
 \renewcommand{\arraystretch}{1.5}
-\\
 \begin{tabular}{p{1.3cm} l p{3.2cm}} \hline
-\toprule
 Roles & Name & Task description \& etc.\\ \hline
-\midrule
 User & Shin Hyunah & 
 She plays the role of a plant grower.
 She has little experience growing plants and doesn't know how to water and nourish them.
@@ -77,7 +72,6 @@ so she needs a service that takes care of her plants automatically.\\
 Customer & Yoon Yongsung & He is a person who owns a house, and in particular, he has purchased an LG Smart Cottage or has an LG Tiiun. He goes to his house on the weekends, enjoys country life, and takes care of plants. He wants software that automatically manages his plants even on weekdays when he is away or on weekends when he cannot be there.\\
 Software developer & An Soonho & As a software developer for our project, he designs and creates APIs and databases, and builds the AI that can implement the requirements of the service we plan.\\
 Development manager & Kim Donghyun & He is responsible for the overall management of our project, distributing each task, setting and managing task deadlines. Additionally, he helps resolve any issues between the backend and frontend. \\ 
-\bottomrule
 \hline
 \end{tabular}
 \end{table}
@@ -88,7 +82,7 @@ Development manager & Kim Donghyun & He is responsible for the overall managemen
 a. Customer Trend Analysis
 \begin{enumerate}
     \item positive effect of pet plant
-    \item[] Pet plant is known for positive effect to give psychological/emotional stability and inspiration about life satisfaction. Especially, it is showing clear tangible results in several areas like overcome stress and depression, therapy various physical illnesses, air purification. \cite{ju2020} \\
+    \item[] Pet plant is known for positive effect to give psychological/emotional stability and inspiration about life satisfaction. Especially, it is showing clear tangible results in several areas like overcome stress and depression, therapy various physical illnesses, air purification.\cite{ju2020}\\
     
     \item The appearance of Green Hobby
     \item[] As interest in planterior increases, sales of flower gardens/flowers increased compared to the previous year (2019). The search volume of 'planterior' on Naver, a search portal site, also increased significantly during the pandemic compared to pre-COVID-19, especially during the April 2020 pandemic. Also, attention in urban farmer, self-gardening, weekend farm is growth. An indicator that can confirm this is the number of Instagram hashtag posts, with the home gardening tag exceeding 520,000 and the planterior tag exceeding 163,000. \cite{hanaif_report} \\
@@ -122,7 +116,7 @@ Accordingly, the Rural Development Administration predicted that domestic home g
     \item LG Electronics: Innovation for a Better Life 
     \item[] LG Electronics is currently trying to change from being a company that only sells simple home appliances to a company that provides a lifestyle that can change customers' lives to be smarter through applications such as ThinQ.
     \begin{figure}[h]
-\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/brand goal.png}
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/brand goal.png}
 \label{fig:brand}
 \caption{LG electronics Brand Goal} 
 \end{figure}
@@ -147,20 +141,20 @@ Rather than being different for the sake of being different or flashy for show, 
 The 4kW solar panel installed on the roof can cover a significant amount of the electricity used per day by two adults, and the heat pump cooling and heating system 'Therma V Monobloc' is installed to significantly reduce energy consumption. A home energy solution was implemented that stores used power in a home ESS system. There is a charger for electric vehicles (EV) outside the Smart Cottage, and the inside is equipped with premium home appliances equipped with various technologies to increase energy efficiency, such as the Objet Collection Wash Tower Compact, a dishwasher, an induction electric range, and a water purifier. Through the ‘LG ThinQ’ application, you can check home appliances, heating, cooling, and air conditioning (HVAC) systems, and energy storage and consumption. It has a premium interior with a warm atmosphere, with a sophisticated design based on the concept of walnut wood tone and an exterior finished in light beige. \\
 \newpage
 \begin{figure}[h]
-\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/LG Smart Cottage.png}
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/LG Smart Cottage.png}
 \label{fig:LGsmartcottage}
 \caption{LG Smart Cottage} 
 \end{figure}
 
 \item LG Tiiun
 \begin{figure}[h]
-\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/tiiun.png}
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/tiiun.png}
 \label{fig:tiiun}
 \caption{LG Tiiun} 
 \end{figure}
 \item[] LG Tiiun is a home plant grower designed to target the home gardening market, which is expanding due to the impact of COVID-19. It can be said to be the culmination of LG's technologies, combining the temperature control technology of the Dios refrigerator, the air conditioning technology of the Whisen air conditioner, the inverter compressor technology of the Tromm dryer, the water supply control technology of the PuriCare water purifier, and the LED lights of LG Display. You can easily and comfortably grow plants by filling them with water 6 times and adding nutrients 6 times in a month. The power consumption for one year is 42.5kWh, which is similar to that of a small refrigerator. LG Tiiun consists of two shelves (upper and lower compartments), and a total of six seed kits can be installed, three each. Seed kits limited to 2 types of herbs, 4 types of leafy vegetables, and 1 type of flower are being sold. Through the LG ThinQ app, you can check the operation/growing status on your smartphone and receive a notification when nutrients or water are insufficient. \\
 \begin{figure}[h]
-\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/tiiun thinQ.png}
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/tiiun thinQ.png}
 \label{fig:tiiunThinQ}
 \caption{Example of using ThinQ for LG Tiiun} 
 \end{figure}
@@ -192,7 +186,7 @@ The 4kW solar panel installed on the roof can cover a significant amount of the 
     \item[a.]Groo
     
 \begin{figure}[h]
-\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/groo.jpg}
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/groo.jpg}
 \label{fig:Groo}
 \caption{Groo} 
 \end{figure}
@@ -200,7 +194,7 @@ The 4kW solar panel installed on the roof can cover a significant amount of the 
     \item[]Groo is an application for plant care scheduling, community, plant books, and plant-related purchases. You can enter your experience with plants and where you grow them, and it will recommend the best plants for your space. You can also take photos of your plants to learn about their types and care, and use the plant guide to find out what to look out for. You can also communicate with other people who are interested in growing plants through the community and buy gardening supplies. What makes it different from other plant growing applications is that it uses vision AI to check the health and disease of plants.
     
 \begin{figure}[h]
-\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/groo-ai.png}
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/groo-ai.png}
 \label{fig:GrooAI}
 \caption{Diagnosis of plant health using vision AI} 
 \end{figure}
@@ -209,7 +203,7 @@ The 4kW solar panel installed on the roof can cover a significant amount of the 
 \item[b.]Planta
 
 \begin{figure}[h]
-\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/planta.png}
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/planta.png}
 \label{fig:Planta}
 \caption{Planta} 
 \end{figure}
@@ -219,7 +213,7 @@ The 4kW solar panel installed on the roof can cover a significant amount of the 
 \item[c.]PlantLink
 
 \begin{figure}[h]
-\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/plantlink.png}
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/plantlink.png}
 \label{fig:PlantLinkIoT}
 \caption{PlantLink} 
 \end{figure}
@@ -231,12 +225,12 @@ The 4kW solar panel installed on the roof can cover a significant amount of the 
 \item[d.]Greg
 
 \begin{figure}[h]
-\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/greg.png}
+\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/greg.png}
 \label{fig:Greg}
 \caption{Greg} 
 \end{figure}
 
-\item[]Greg is the zero-guesswork plant care app & community. It makes growing indoor plants super easy and fun. If you scan any plant, Greg’s plant vision will identify the species, tell you all about it, measure the pot, and even the distance to the nearest window. And it provides highly-personalized plant care, a custom watering plan based on each plant’s species, size, plus the actual details of your home environment. Moreover, you can communicate with other veteran growers for answers to any plant questions you have. \\
+\item[]Greg is the zero-guesswork plant care app \& community. It makes growing indoor plants super easy and fun. If you scan any plant, Greg’s plant vision will identify the species, tell you all about it, measure the pot, and even the distance to the nearest window. And it provides highly-personalized plant care, a custom watering plan based on each plant’s species, size, plus the actual details of your home environment. Moreover, you can communicate with other veteran growers for answers to any plant questions you have. \\
 \end{enumerate}
 
 \section{REQUIREMENT ANALYSIS}
@@ -302,8 +296,218 @@ My page is where you can view your membership information. You can take the foll
     \item View about BloomMate
 \end{itemize}
 
+
+\section{development environment}
+\subsection{Choices of Software Development Platform}
+\begin{enumerate}
+    \item[a.] Development Platform
+    
+    \begin{enumerate}
+    \item[1.] Windows
+    \item[] Windows is an extremely popular and widely used operating system for software development, known for its versatility and user-friendly interface. Currently, Windows is the pre-installed OS on most computers in South Korea, far outpacing other OSes in terms of share. It offers a multitude of features and supports a vast array of programming languages and tools, making it the go-to choice for developers worldwide. With Windows, developers have the flexibility to utilize various development environments and frameworks, empowering them to create applications efficiently and effectively. Whether it's desktop applications, web development, or mobile app development, Windows provides the necessary tools and resources to meet the demands of any project. Additionally, Windows continually evolves and updates its platform, ensuring that developers have access to the latest technologies and advancements in the software development field. In conclusion, Windows is an indispensable platform for software development, offering a comprehensive ecosystem and empowering developers to bring their ideas to life. \\
+
+    \item[2.] MacOS 
+    \item[] MacOS is a popular operating system favored by many developers, especially those in the creative and design fields. Known for its sleek and intuitive user interface, MacOS offers a seamless development experience. It provides a wide range of powerful tools and frameworks, making it an excellent choice for building applications for various platforms. With MacOS, developers can take advantage of tools like Xcode, which is the primary integrated development environment (IDE) for Apple's platforms. This is especially important when the application we want to develop must also support IOS. To develop for iOS, Xcode is essential, and Xcode can only run on MacOS. Xcode offers a comprehensive set of tools and resources for developing iOS, macOS, watchOS, and tvOS applications. Additionally, MacOS has a strong integration with other Apple products and services, allowing developers to create a cohesive ecosystem across different devices. Overall, MacOS provides a robust and efficient development environment for developers looking to create software for Apple. \\
+    \end{enumerate}
+
+    \item[b.]Tools and Language
+
+    \begin{enumerate}
+        \item[1.]JavaScript(JS)
+        \item[]JavaScript is a widely-used programming language known for its versatility and its ability to create dynamic and interactive web applications. It serves as the backbone of modern web development and is supported by all major web browsers. With JavaScript, developers can add functionality to websites, handle user interactions, and manipulate web page content. It is a high-level, interpreted language that allows for rapid development and prototyping. After the introduction of Google's V8 engine-based Node.js, JavaScript can now be executed in a non-browser environment as well. JavaScript also benefits from a vast ecosystem of libraries and frameworks, which enhance its capabilities and simplify the development process. These libraries and frameworks are published by npm, the Node Package Manager, and developers can easily download and utilize them in their projects. Some notable features of JavaScript include its single-threaded nature, prototype-based language structure, and its status as a script language. JavaScript is regularly updated by ECMA (European Computer Manufacturers Association), with the updated version being referred to as ECMAScript. Recent ECMAScript versions support object-oriented programming and functional programming. In summary, JavaScript is an essential language for web development, empowering developers to create engaging and interactive user experiences on the web. \\
+
+        \item[2.]TypeScript(TS) \cite{typescript}
+        \item[]TypeScript is a superset of JavaScript that provides static typing, making it a powerful tool for building robust and scalable applications. It was developed by Microsoft and first published to the public in 2012. With TypeScript, developers can catch errors during compile-time, resulting in fewer bugs and improved code quality. It offers advanced features such as interfaces, generics, and decorators, which enhance code organization and maintainability. TypeScript is fully compatible with JavaScript, allowing developers to gradually migrate their existing JavaScript codebases to TypeScript. It also seamlessly integrates with popular JavaScript libraries and frameworks, making it a versatile choice for web development. Nowadays, companies are compelled to adopt TypeScript instead of JavaScript, regardless of project size, due to its numerous benefits. Overall, TypeScript is a valuable addition to the development environment, offering enhanced type safety and productivity for developers.\\
+
+        \item[3.]yarn \cite{yarn2016}
+        \item[]Yarn is a JavaScript package manager that helps manage project package dependencies and facilitates package sharing among developers. Due to security and performance issues experienced with npm as their projects grew larger, Facebook developed Yarn as a replacement. Yarn offers improvements in performance and security compared to npm. One key advantage of Yarn is that it installs packages in parallel, unlike npm which installs them sequentially, resulting in faster installation times. Yarn also utilizes caching, further speeding up package installation. Additionally, Yarn utilizes semantic versioning to specify package versions. For this project, we have chosen to use Yarn due to its fast performance. This is especially important as we will be installing various frameworks and libraries for frontend development. \\
+
+        \item[4.]Eslint/Prettie \cite{eslintprettier}
+        \item[]ESLint performs automated scans of your JavaScript and TypeScript files to detect common syntax and style errors. Prettier scans your files for style issues and automatically reformats your code to ensure consistent rules for indentation, spacing, semicolons, and quotes (single vs double). We use these tools on our teams for the following reasons: \\
+        \begin{itemize}
+            \item They promote consistency by enforcing the same rules for everyone.\\
+            \item They save time in code reviews by allowing us to focus on code structure and semantics instead of style issues.\\
+            \item They catch errors, with ESLint being particularly effective at detecting syntax errors and basic type errors like undefined variables. Although Prettier doesn't catch errors, it still contributes to code quality.\\
+            \item Changes made by these tools are automatically applied to code when the file is saved in Visual Studio Code.\\
+        \end{itemize}
+        While setting up these tools requires an initial time investment, the time-saving benefits accumulate over time.\\
+
+        \item[5.]React-Native \cite{reactnative}
+        \item[]React Native is an open-source UI software framework developed by Meta Platform, Inc. It enables developers to use the React framework along with native platform capabilities to build applications for Android, Android TV, iOS, macOS, tvOS, Web, and Windows. Unlike web apps, React Native communicates with the Native Thread through native bridges, resulting in optimized performance. In terms of hybrid frameworks, Flutter has an advantage in making it easier for web developers to write React Native code. Previously, there was a perception that Flutter was much faster and lighter. However, with the introduction of Fabric in React Native 0.68, which supports faster communication between Android and iOS, that perception has become a thing of the past. That being said, React Native does heavily rely on other libraries, even for core features like the camera function in mobile applications, which requires the use of third-party libraries. Nevertheless, due to the aforementioned advantages, it is difficult to find a better option than React Native for creating fast and cross-platform applications that support both Android and iOS.\\
+
+        \item[6.]React Query \cite{tanstackquery}
+        \item[]React Query is a library that simplifies the process of fetching, caching, and keeping your React application's server state synchronized and updated. Unlike other data fetching methods that require complex and verbose code, React Query provides a simple and intuitive API that can be used within React Components. Previously, managing state in React applications lacked clear distinction, leading to confusion when writing code. Specifically, determining which state should be continuously fetched from the network and which state is solely dependent on the client required a thorough understanding. However, with the introduction of React Query, you can easily differentiate between server state management and client state management in your React application. This distinction enables efficient collaboration and simplifies cache operations, loading operations, and the implementation of difficult asynchronous operations in network state management. \\
+
+        \item[7.]Recoil \cite{recoiljs}
+        \item[]In React, it can be challenging to directly pass data between two different components unless they have a parent-child relationship. In such cases, you need to send the data to the parent component and then pass it back to the component that requires it. This process, known as props drilling, can make it difficult to keep track of the props being passed around. That's why having a global state management library is crucial for modern React applications. React's own Context API requires implementing it from scratch and requires significant effort to prevent unnecessary re-rendering. On the other hand, Redux, which was the most popular choice until 2020, has a steep learning curve and a complex architecture that can make it challenging to understand the code flow quickly. In contrast, Recoil is relatively easy to use if you understand the basic syntax of React. It is also free from re-rendering issues and provides various optional features for global state management. Additionally, Recoil is lightweight and does not significantly impact application performance.\\
+
+        \item[8.]Python \cite{gabialibrary}
+        \item[]Developed in 1991 by programmer Guido van Rossum, Python is known for its readability and easy syntax, making it quicker to learn compared to other programming languages. As a result, it has gained popularity among non-programmers and is utilized in various fields such as statistics, data analysis, modeling, deep learning, and artificial intelligence. Python's intuitive and user-friendly syntax makes it highly recommended for beginners in programming. Additionally, it is the most widely adopted language, meaning that many libraries necessary for application development are readily available. Therefore, we have chosen Python for building the backend and training machine learning models.\\
+
+        \item[9.]Django \cite{djangogirlstutorial}
+        \item[]Django is a popular and widely used web application framework written in Python. It offers robust features and components for efficient website and web application development. One of its key advantages is simplifying and accelerating the development process. Django provides pre-built components for user authentication, an admin panel, forms, and file uploads. User authentication is made simple with a few lines of code, ensuring secure sign up, log in, and log out. The admin panel allows easy content and data management. Django's form handling system simplifies the implementation of complex forms with validation and error handling. Handling file uploads is effortless with Django's built-in capabilities. Additionally, Django has a vast ecosystem of libraries and extensions, such as djangorestframework for creating RESTful APIs. Overall, Django is a versatile and powerful framework for building robust and scalable web applications, suitable for both beginners and experienced developers.\\
+
+
+        \item[10.]SQlite \cite{velog-django-tutorial}
+        \item[]Since SQLite doesn't run as a server process, it's a ready-to-use database. It's lightweight but has all the necessary features. It supports transactions and is platform-agnostic. Since it's a locally run DB, it's also highly portable. However, it is not an isolated environment, so the server must also handle the burden of the DB. Additionally, you can't authorize users, only assign basic access rights based on the operating system. We decided to use SQLite because it is supported by Django and our application doesn't have a complex database structure or require various features of a database management system.\\
+
+        \item[11.]AWS EC2 \cite{aws-ec2-docs}
+        \item[]Amazon Elastic Compute Cloud (Amazon EC2) offers scalable computing capacity on-demand in the Amazon Web Services (AWS) cloud. By using Amazon EC2, you can accelerate application development and deployment while reducing hardware costs. Instead of purchasing physical servers, our team has decided to utilize a cloud system for its economic benefits and flexibility for future expansion. With Amazon EC2, you can deploy multiple virtual servers, configure security and networking, and manage storage. It allows you to increase capacity (scale up) to handle compute-intensive tasks such as monthly or annual processes or spikes in website traffic. Conversely, when usage decreases, you can decrease capacity (scale down). One of the great advantages of Amazon EC2 is that it is free for the first year. Since our application needs to be built urgently and will not run for more than a year, Amazon EC2 is an excellent choice.\\
+
+        \item[12.]Jupyter NoteBook \cite{wikidocs-tutorial}
+        \item[]Jupyter Notebook is a popular open-source web application that provides an interactive environment for writing code, visualizing data, and documenting. It supports various programming languages, including Python, R, and Julia. Jupyter Notebook is organized into code cells and markdown cells. In code cells, you can write and run Python code, while in markdown cells, you can write documents, formulas, or insert images. This combination of code and documentation is especially useful for projects like data analytics and machine learning. One of the advantages of Jupyter Notebook is the ability to run Python code line by line and view the results, which is helpful for debugging and testing. The output is immediately displayed below the code, allowing you to see visualized graphs, tables, and more. Additionally, Jupyter Notebook can be easily used online. Google Colab, provided by Google, is a cloud-based Jupyter Notebook environment. For our project, we will utilize Jupyter Notebook to run machine learning tasks using Python. Machine learning often involves writing lengthy code, and it is crucial to check and debug the results along the way. Jupyter Notebook is the ideal tool for this purpose.\\
+
+        \item[13.]Tensorflow / Tensorflow light \cite{oracle-tensorflow}
+        \item[]TensorFlow is a library created by Google that provides features for implementing deep learning programs. It is primarily implemented in C++, but supports multiple languages including Python, Java, and Go. However, Python is prioritized as it is most suitable for our application. Machine learning is a complex field, but with machine learning frameworks like TensorFlow, implementing a machine learning model has become more accessible and less complicated. These frameworks simplify tasks such as data acquisition, model training, making predictions, and refining results. Additionally, TensorFlow Lite is a mobile library designed for deploying models on mobile devices, microcontrollers, and other edge devices. When running a machine learning or deep learning model through TensorFlow Lite, it produces a small file of less than 3MB. This allows us to use trained models on mobile without any capacity constraints. In our application, we will use TensorFlow Lite to ensure immediate model availability on mobile devices.\\
+
+        \item[14.]Yolo V8 \cite{datahunt-yolo-object-detection}
+        \item[]Object detection is a technique used in the field of image processing and computer vision. It encompasses various techniques such as multi-labeled and key point, which have emerged due to recent advancements in computer vision. The YOLO model is the most representative model among object detection techniques. YOLO (You Only Look Once) is a state-of-the-art real-time object detection system. It is renowned for its faster and more accurate data processing compared to traditional models. YOLO adopts a deep learning-based approach for object detection and recognition. Its efficiency lies in its avoidance of complex pipelines, which makes it particularly suitable for real-time decision-making tasks. In simple terms, YOLO divides the input image into regular segments called grids. It then passes these segments through a neural network to generate bounding boxes and class predictions, ultimately determining the final detection output. Multiple instances are trained on the entire dataset before testing on real images and videos. As of March 23, 2023, this is the most recent version of YOLO, developed by Ultralytics in January 2023. A new repository for YOLO models has been released, serving as a unified framework for training object detection, instance segmentation, and image classification models. \\
+
+        \item[15.]Material Design \cite{google-material-design}
+        \item[]UI/UX is crucial in modern mobile and web applications, and a unified UI can greatly enhance the user experience. This unified UI is achieved through the use of a design system. However, implementing a design system on your own can be challenging. Therefore, it is common practice to utilize publicly available design systems, with Google's Material Design being the most prominent one. Material Design is a design approach that combines the benefits of flat design with the use of shadows to create a sense of depth. It also provides a comprehensive design system that includes typography and primary-secondary color schemes. This design can be easily implemented in the Figma library and seamlessly integrated into code using react-native-paper. \\
+
+        \item[16.]Git \cite{velog-git}
+        \item[]Git is an effective version control system that allows you to manage versions and incorporate changes and updates seamlessly. But before delving into Git, let`s first discuss what a ``version control system'' is. It is a system that records changes to a file over time and enables you to retrieve that file later when needed. When working on a document, there are usually multiple revisions and updates from the initial draft to the final version. Along the way, we often rename the file to ``final,'' ``\_final,'' ``finalized,'' and so on, thus overwriting the previous versions. This can make it difficult to go back to a specific point in time and understand the changes that were made. However, with a version control system, this becomes possible. By using a version control system, you can manage multiple versions of the same information. This allows you to track changes over time and identify the individuals who made them. You can easily revert back to previous versions or the original version, and quickly identify the person responsible for any issues that may arise.\\
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Software in use}
+\begin{enumerate}
+    \item[1.]Visual Studio Code
+    \item[]Visual Studio Code is a lightweight text editor developed by Microsoft, which is excellent for web development. Nowadays, it offers a wide variety of powerful plugins that make it as lightweight and powerful as other IDEs. Our team exclusively uses Visual Studio Code for all of our code development. For front-end development, there are plugins available for React-Native and for seamlessly transferring work from Figma to code. Furthermore, there are plugins for Eslint and Prettier that automatically apply code formatting when you save a file, greatly enhancing the overall developer experience. In addition to front-end development, Visual Studio Code is also used for backend and machine learning tasks. The Python and Jupyter Notebook plugins are highly regarded, and the debugging capabilities are excellent.\\
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/vscode.png}
+    \label{fig:VScode}
+    \caption{Visual Studio Code} 
+    \end{figure}
+
+    \item[2.]Xcode
+    \item[]XCode is an integrated development environment (IDE) developed by Apple. It is essential for developing an iOS application using React Native. While we write the code in Visual Studio Code, we need to compile it as an iOS application using XCode.\\
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Xcode.png}
+    \label{fig:Xcode}
+    \caption{Xcode} 
+    \end{figure}
+
+    \item[3.]Android Studio
+    \item[]Android Studio is an integrated development environment (IDE) for Android, developed by Google. Similar to Xcode, Android Studio is essential software as it handles the final compilation of an Android application.\\
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/AndroidStudio.png}
+    \label{fig:AndroidStudio}
+    \caption{Android Studio} 
+    \end{figure}
+
+    \newpage
+    
+    \item[4.]Github
+    \item[]Github is a program that supports projects using Git, acting as a remote control center for Git. It serves as a platform for version control and collaboration among developers, offering a cloud-managed version control system. Git and Github are often used interchangeably for collaboration in modern software development. However, the capabilities of Github go beyond that. Firstly, Github is the preferred platform for open-source software, providing access to the source code of various tools used by our team. Additionally, any issues or bugs with open libraries can typically be found on Github. Github also offers other collaborative features. Pull requests allow us to review work in different Git branches before merging them. Furthermore, Github actions simplify the process of implementing continuous integration and continuous deployment (CI/CD). In our team, we utilize Github actions to check for errors in TypeScript on the frontend and to instantly reflect code changes to AWS EC2 on the backend.\\
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Github.png}
+    \label{fig:Github}
+    \caption{Github} 
+    \end{figure}
+
+    \item[5.]Figma
+    \item[]Figma is an application for UI/UX design, available as a cloud-based SaaS program. One of its main advantages is its real-time nature, allowing users to see immediate modifications to the UI within Figma. This eliminates the traditional process of a planner or developer reviewing a designer's file, requesting changes, waiting for updates, and then reviewing and modifying it again. Now, anyone can receive instant confirmation and immediate feedback, regardless of their job title. Another great aspect of Figma is the extensive collection of plugins and communities available. Many people have created useful design components and shared them with the Figma community. This allows users to leverage high-quality UIs without having to create them from scratch. Lastly, Figma offers the functionality to create prototypes. These prototypes can be used to demonstrate button interactions within Figma, providing developers and planners with a clearer understanding of the application flow.\\
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Figma.png}
+    \label{fig:Figma}
+    \caption{Figma} 
+    \end{figure}
+
+    \item[6.]Notion
+    \item[]Notion is a web-based SaaS application that functions as a wiki. One of its advantages is the ability to create articles in the form of MD files and see real-time changes. Recently, with various updates, it has become a valuable tool for managing meeting minutes and projects.\\
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Notion.png}
+    \label{fig:Notion}
+    \caption{Notion} 
+    \end{figure}
+
+    \item[7.]Slack
+    \item[]Slack is a communication tool that offers several advantages. One of the biggest advantages is the ability to create separate channels for different teams and topics. This helps to avoid crowded conversations and keep discussions organized. Additionally, within a channel, you can use the thread feature to have focused discussions on specific topics. Threads allow users to send messages within a message they've sent, creating a threaded conversation. Another powerful feature of Slack is huddles. Huddles enable instant online meetings with just a push of a button. During a huddle, users can collaborate by writing on a shared computer screen using their mouse, making it easier to work together. Lastly, Slack offers a variety of plugins. One notable plugin is the Github plugin, which allows users to automatically post messages to Slack using tags, such as code review requests.\\
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Slack.png}
+    \label{fig:Slack}
+    \caption{Slack} 
+    \end{figure}
+
+
+    \item[8.]Overleaf
+    \item[]Overleaf is an online platform that facilitates collaborative writing and editing of LaTeX documents. It offers a user-friendly interface for creating scientific and technical documents such as research papers, reports, and thesis papers. With Overleaf, multiple team members can work on the same document simultaneously, enabling seamless collaboration and change tracking. Additionally, it provides built-in features for managing references, equations, tables, and figures, making it a preferred choice for researchers and academics. This document was written using Overleaf's IEEE specification.\\
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Overleaf.png}
+    \label{fig:Overleaf}
+    \caption{Overleaf} 
+    \end{figure}
+
+    \item[9.]Postman
+    \item[]Postman is a SaaS (Software as a Service) tool that facilitates faster and easier API development. It is a platform that enables you to test, document, and share your developed APIs. It is particularly useful for testing RESTful APIs. When it comes to testing backend functionalities like authorization, headers, and caching, it can be challenging. However, Postman automates these tasks and allows for easy customization, making testing a breeze. Additionally, Postman allows you to share tested URLs, simplifying collaboration between front-end and back-end developers.\\
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Postman.png}
+    \label{fig:Postman}
+    \caption{Postman} 
+    \end{figure}
+
+
+    \item[10.]ChatGPT
+    \item[]ChatGPT is an AI-powered tool that enables real-time conversations with an AI. For GPT-3.5, it is trained on data up to 2021, while GPT-4 is trained on more recent data. ChatGPT has revolutionized generative AI, offering enhanced capabilities for tasks such as report generation, article summarization, problem-solving, and even coding. In our team, we will utilize ChatGPT to simulate plant conditions, allowing the AI to engage with users as if it were a plant.\\
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chatgptpng.png}
+    \label{fig:ChatGPT}
+    \caption{ChatGPT} 
+    \end{figure}  
+\end{enumerate}
+
+
+\subsection{Cost Estimation}
+To create BloomMate, we take advantage of a diverse range of cost-effective programs that are available for free. This helps us minimize the expenses related to the development process. However, it's important to mention that using the ChatGPT API does come with a cost. Nevertheless, there is a provision that allows you to enjoy a free quota of approximately \$18, which means you can ask around 300,000 questions without any charges. Therefore, you can be confident that the expenses associated with running the application will be relatively low.\\
+
+\subsection{Task Distribution}
+
+
+
+\begin{table}[h]
+\centering
+\caption{Team Members and Their Tasks}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{| p{3cm}|p{3cm}|}
+
+\hline
+Tasks & Name \\
+
+\hline
+Frontend Developer & Shin Hyunah, Yoon Yongsung, Kim Donghyun \\
+
+\hline
+Backend Developer & An Soonho\\
+
+\hline
+UI-UX Designer & Yoon Yongsung\\
+
+\hline
+AI Developer & Kim Donghyun \\
+
+\hline
+Product Designer & Shin Hyunah \\
+
+\hline
+\end{tabular}
+\end{table}
+
+
 \bibliographystyle{IEEEtran}
-\bibliography{IEEEabrv, references}
+\bibliography{references}
+
+
+
 \end{document}
-
-
