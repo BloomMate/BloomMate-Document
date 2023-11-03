@@ -4,6 +4,8 @@
 \documentclass[conference, a4paper]{IEEEtran}
 \usepackage{graphicx}
 \usepackage{indentfirst}
+
+
 \ifCLASSINFOpdf
 \hyphenation{op-tical net-works semi-conduc-tor}
 
@@ -148,7 +150,8 @@ The 4kW solar panel installed on the roof can cover a significant amount of the 
 
 \item LG Tiiun
 \begin{figure}[h]
-\includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/tiiun.png}
+\centering
+\includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/tiiun.png}
 \label{fig:tiiun}
 \caption{LG Tiiun} 
 \end{figure}
@@ -198,7 +201,6 @@ The 4kW solar panel installed on the roof can cover a significant amount of the 
 \label{fig:GrooAI}
 \caption{Diagnosis of plant health using vision AI} 
 \end{figure}
-\newpage
 
 \item[b.]Planta
 
@@ -209,18 +211,14 @@ The 4kW solar panel installed on the roof can cover a significant amount of the 
 \end{figure}
 
 \item[]Planta is an application that helps you grow plants, similar to Groo. You can add information about your plants to the app and it will automatically remind you when to water, fertilize, spray, clean, etc. based on an algorithm. You can even take a photo of your plant and get the information you need by identifying the plant's variety. You can also get plant advice, keep a diary to track your plants' growth, and more. One of the unique features is that the app also recognizes where you live and recommends plants that are suitable for your hardiness zone and adjusts the watering schedule according to the local weather.\\
-
+\newpage
 \item[c.]PlantLink
-
+\item[]PlantLink is an application that allows you to manage plants by connecting the Soil Module, an IoT device. Through the IoT device, you can record changes in soil humidity, illumination temperature, etc. to create a growth report. It is possible to talk to plants through chatbots and conduct psychological analysis through these conversations to provide mental health reports and receive plant management advice, but it is currently not working smoothly. \\
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/plantlink.png}
 \label{fig:PlantLinkIoT}
 \caption{PlantLink} 
 \end{figure}
-
-\item[]PlantLink is an application that allows you to manage plants by connecting the Soil Module, an IoT device. Through the IoT device, you can record changes in soil humidity, illumination temperature, etc. to create a growth report. It is possible to talk to plants through chatbots and conduct psychological analysis through these conversations to provide mental health reports and receive plant management advice, but it is currently not working smoothly. \\
-
-\newpage
 
 \item[d.]Greg
 
@@ -255,10 +253,10 @@ Logged-in users who don't have any registered plants will be taken to the plant 
     \item Photo of plant
     \item Planted date
 \end{itemize}
-At this stage, you have the following constraints. \\
+At this stage, you have the following constraints. 
 \begin{itemize}
     \item Limited plant types 
-    \\ - Provide application services within a limited plant to provide optimal personalized information.\\
+    \\ - Provide application services within a limited plant to provide optimal personalized information.
     \item Limited number of plants based on the size of your garden - Warns that planting more plants than the size of your garden can accommodate may result in poor gardening.\\
 \end{itemize}
 After entering the above information, the user can view their plants on the registered plants screen. \\
@@ -277,6 +275,8 @@ You can click on each plant to view its details, and the first thing you'll see 
         \item Soil moisture
         \item Cultivation difficulty
         \item Flowering season
+        \item Watering cycle
+        \item Caution
         \\etc.
     \end{itemize}
 \end{itemize}
@@ -324,10 +324,10 @@ My page is where you can view your membership information. You can take the foll
         \item[4.]Eslint/Prettier \cite{eslintprettier}
         \item[]ESLint performs automated scans of your JavaScript and TypeScript files to detect common syntax and style errors. Prettier scans your files for style issues and automatically reformats your code to ensure consistent rules for indentation, spacing, semicolons, and quotes (single vs double). We use these tools on our teams for the following reasons: \\
         \begin{itemize}
-            \item They promote consistency by enforcing the same rules for everyone.\\
-            \item They save time in code reviews by allowing us to focus on code structure and semantics instead of style issues.\\
-            \item They catch errors, with ESLint being particularly effective at detecting syntax errors and basic type errors like undefined variables. Although Prettier doesn't catch errors, it still contributes to code quality.\\
-            \item Changes made by these tools are automatically applied to code when the file is saved in Visual Studio Code.\\
+            \item They promote consistency by enforcing the same rules for everyone.
+            \item They save time in code reviews by allowing us to focus on code structure and semantics instead of style issues.
+            \item They catch errors, with ESLint being particularly effective at detecting syntax errors and basic type errors like undefined variables. Although Prettier doesn't catch errors, it still contributes to code quality.
+            \item Changes made by these tools are automatically applied to code when the file is saved in Visual Studio Code.
         \end{itemize}
         While setting up these tools requires an initial time investment, the time-saving benefits accumulate over time.\\
 
@@ -388,18 +388,8 @@ My page is where you can view your membership information. You can take the foll
     \caption{Xcode} 
     \end{figure}
     \item[]XCode is an integrated development environment (IDE) developed by Apple. It is essential for developing an iOS application using React Native. While we write the code in Visual Studio Code, we need to compile it as an iOS application using XCode.\\
-
-
-    \item[3.]Android Studio
-    \begin{figure}[h]
-    \centering
-    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/AndroidStudio.png}
-    \label{fig:AndroidStudio}
-    \caption{Android Studio} 
-    \end{figure}
-    \item[]Android Studio is an integrated development environment (IDE) for Android, developed by Google. Similar to Xcode, Android Studio is essential software as it handles the final compilation of an Android application.\\
     
-    \item[4.]Github
+    \item[3.]Github
     \begin{figure}[h]
     \centering
     \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Github.png}
@@ -409,7 +399,7 @@ My page is where you can view your membership information. You can take the foll
     \item[]Github is a program that supports projects using Git, acting as a remote control center for Git. It serves as a platform for version control and collaboration among developers, offering a cloud-managed version control system. Git and Github are often used interchangeably for collaboration in modern software development. However, the capabilities of Github go beyond that. Firstly, Github is the preferred platform for open-source software, providing access to the source code of various tools used by our team. Additionally, any issues or bugs with open libraries can typically be found on Github. Github also offers other collaborative features. Pull requests allow us to review work in different Git branches before merging them. Furthermore, Github actions simplify the process of implementing continuous integration and continuous deployment (CI/CD). In our team, we utilize Github actions to check for errors in TypeScript on the frontend and to instantly reflect code changes to AWS EC2 on the backend.\\
 
 
-    \item[5.]Figma
+    \item[4.]Figma
     \begin{figure}[h]
     \centering
     \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Figma.png}
@@ -419,17 +409,8 @@ My page is where you can view your membership information. You can take the foll
     \item[]Figma is an application for UI/UX design, available as a cloud-based SaaS program. One of its main advantages is its real-time nature, allowing users to see immediate modifications to the UI within Figma. This eliminates the traditional process of a planner or developer reviewing a designer's file, requesting changes, waiting for updates, and then reviewing and modifying it again. Now, anyone can receive instant confirmation and immediate feedback, regardless of their job title. Another great aspect of Figma is the extensive collection of plugins and communities available. Many people have created useful design components and shared them with the Figma community. This allows users to leverage high-quality UIs without having to create them from scratch. Lastly, Figma offers the functionality to create prototypes. These prototypes can be used to demonstrate button interactions within Figma, providing developers and planners with a clearer understanding of the application flow.\\
 
 
-    \item[6.]Notion
-    \begin{figure}[h]
-    \centering
-    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Notion.png}
-    \label{fig:Notion}
-    \caption{Notion} 
-    \end{figure}
-    \item[]Notion is a web-based SaaS application that functions as a wiki. One of its advantages is the ability to create articles in the form of MD files and see real-time changes. Recently, with various updates, it has become a valuable tool for managing meeting minutes and projects.\\
 
-
-    \item[7.]Slack
+    \item[5.]Slack
     \begin{figure}[h]
     \centering
     \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Slack.png}
@@ -438,8 +419,17 @@ My page is where you can view your membership information. You can take the foll
     \end{figure}
     \item[]Slack is a communication tool that offers several advantages. One of the biggest advantages is the ability to create separate channels for different teams and topics. This helps to avoid crowded conversations and keep discussions organized. Additionally, within a channel, you can use the thread feature to have focused discussions on specific topics. Threads allow users to send messages within a message they've sent, creating a threaded conversation. Another powerful feature of Slack is huddles. Huddles enable instant online meetings with just a push of a button. During a huddle, users can collaborate by writing on a shared computer screen using their mouse, making it easier to work together. Lastly, Slack offers a variety of plugins. One notable plugin is the Github plugin, which allows users to automatically post messages to Slack using tags, such as code review requests.\\
 
+    \item[6.]Notion
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Notion.png}
+    \label{fig:Notion}
+    \caption{Notion} 
+    \end{figure}
+    \item[]Notion is a web-based SaaS application that functions as a wiki. One of its advantages is the ability to create articles in the form of MD files and see real-time changes. Recently, with various updates, it has become a valuable tool for managing meeting minutes and projects.\\
+    
 
-    \item[8.]Overleaf
+    \item[7.]Overleaf
     \begin{figure}[h]
     \centering
     \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Overleaf.png}
@@ -449,7 +439,7 @@ My page is where you can view your membership information. You can take the foll
     \item[]Overleaf is an online platform that facilitates collaborative writing and editing of LaTeX documents. It offers a user-friendly interface for creating scientific and technical documents such as research papers, reports, and thesis papers. With Overleaf, multiple team members can work on the same document simultaneously, enabling seamless collaboration and change tracking. Additionally, it provides built-in features for managing references, equations, tables, and figures, making it a preferred choice for researchers and academics. This document was written using Overleaf's IEEE specification.\\
 
 
-    \item[9.]Postman
+    \item[8.]Postman
     \begin{figure}[h]
     \centering
     \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Postman.png}
@@ -460,7 +450,7 @@ My page is where you can view your membership information. You can take the foll
 
 
 
-    \item[10.]ChatGPT
+    \item[9.]ChatGPT
     \begin{figure}[h]
     \centering
     \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chatgptpng.png}
@@ -468,48 +458,294 @@ My page is where you can view your membership information. You can take the foll
     \caption{ChatGPT} 
     \end{figure} 
     \item[]ChatGPT is an AI-powered tool that enables real-time conversations with an AI. For GPT-3.5, it is trained on data up to 2021, while GPT-4 is trained on more recent data. ChatGPT has revolutionized generative AI, offering enhanced capabilities for tasks such as report generation, article summarization, problem-solving, and even coding. In our team, we will utilize ChatGPT to simulate plant conditions, allowing the AI to engage with users as if it were a plant.\\ 
+
+    \item[10.]DBML \& DBDocs
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/dbml.png}
+    \label{fig:DBML}
+    \caption{DBML\& DBDocs} 
+    \end{figure} 
+    \item[] DBML is a Domain Specific Language (DSL) for defining database structures. This text-based language allows you to explicitly describe tables, columns, indexes, foreign key relationships, and more. DBML is designed to create visual and intuitive database structures. It allows developers to define database schemas without having to write complex SQL syntax. dbdocs is a web-based tool that generates documentation based on database schemas written in DBML. dbdocs allows you to create beautifully documented websites directly from DBML files. This tool can help you visualize your database design, share it with team members, and help non-technical stakeholders understand the structure. When a DBML file is uploaded through the dbdocs.io service, then dbdocs processes it to provide detailed documentation of your database schema, including tables, relationships, indexes, and more. This document includes search capabilities, relationship diagrams, table details, and more, making it easy to navigate and understand your database structure.\\
+    
+    
+    \item[11.]Android Studio
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/AndroidStudio.png}
+    \label{fig:AndroidStudio}
+    \caption{Android Studio} 
+    \end{figure}
+    \item[]Android Studio is an integrated development environment (IDE) for Android, developed by Google. Similar to Xcode, Android Studio is essential software as it handles the final compilation of an Android application.\\
 \end{enumerate}
 
 
 \subsection{Cost Estimation}
 To create BloomMate, we take advantage of a diverse range of cost-effective programs that are available for free. This helps us minimize the expenses related to the development process. However, it's important to mention that using the ChatGPT API does come with a cost. Nevertheless, there is a provision that allows you to enjoy a free quota of approximately \$18, which means you can ask around 300,000 questions without any charges. Therefore, you can be confident that the expenses associated with running the application will be relatively low.\\
+\newpage
 
 \subsection{Task Distribution}
 
 
-
 \begin{table}[h]
-\centering
 \caption{Team Members and Their Tasks}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{| p{3cm}|p{3cm}|}
+\centering
+\begin{tabular}{|p{1cm}|p{1.5cm}|p{5.2cm}|}
+\hline Tasks & Name & Descriptions \\
+\hline
+Frontend Developer & Shin Hyunah, Yoon Yongsung, Kim Donghyun & Front-end developers utilize languages like React Native and TypeScript to create applications. They are responsible for designing the interfaces that users interact with, such as tapping buttons and swiping through screens. Their primary objective is to create a user experience that is both accessible and engaging, while adhering to the specified design. Additionally, front-end developers are responsible for transferring user-entered information to the backend developers. The reason for having three front-end developers is that two of them write code for each screen, while the third developer reviews and optimizes the code for the screens that users see. This organizational structure requires effective teamwork, clear role allocation, excellent communication skills, and collaborative synergy.\\
 
 \hline
-Tasks & Name \\
-
+Backend Developer & An Soonho & Backend developers are responsible for designing the database and application architecture, as well as writing the APIs used by frontend developers. When working with APIs, backend developers need to be able to receive information from application users through the frontend and provide the correct return value to the API. They also need to design APIs that interact with the backend to leverage generative AI and machine learning features, and make them accessible to application users. This role requires a strong understanding of the central database and software structure, and ensuring that software development aligns with that structure.\\
 \hline
-Frontend Developer & Shin Hyunah, Yoon Yongsung, Kim Donghyun \\
-
+UI-UX Designer & Yoon Yongsung & The UI-UX designer, using Figma, is responsible for determining how the application screens are presented to users. This role involves deciding which screens will be more engaging and comfortable for users to use. As a UI-UX designer, the goal is to create a design that keeps users engaged and encourages them to return to the application. Once the UI-UX decisions are finalized, they can be communicated to the front-end developers. It is important for the UI-UX decisions to not only look good, but also consider the needs of both the application user and the front-end developer who will be building the screens. The design should also allow the back-end developer to design the database. This role relies on effective collaboration with developers.\\
 \hline
-Backend Developer & An Soonho\\
-
+\end{tabular}
+\end{table}
+\textit{continued on next page}
+\begin{table}[h]
+\begin{tabular}{|p{1cm}|p{1.5cm}|p{5.2cm}|}
 \hline
-UI-UX Designer & Yoon Yongsung\\
-
+Product Designer & Shin Hyunah & A product designer is someone who designs products with a user-centered perspective. They must have the ability to put themselves in the shoes of the user, find the pain points within the service as it currently exists, explore what they would like to see added, and come up with ideas. They are responsible for creating the overall framework of the product or service. Product designers are also responsible for communicating with the rest of the team to find out how they can take their ideas further and finalize their direction. Product designers should focus on the user usability of the product or service, exploring features that users really need and modifying the design of the product.\\
 \hline
-AI Developer & Kim Donghyun \\
-
-\hline
-Product Designer & Shin Hyunah \\
-
+AI Developer & Kim Donghyun & A machine learning software developer works with algorithms, data, and artificial intelligence. Their role involves researching, building, and designing artificial intelligence software specifically for machine learning purposes. They primarily focus on applying artificial intelligence systems to various applications. The responsibilities of this role include collecting, cleaning, and preprocessing data to extract meaningful value. They then use this data to train models and deploy them in software. Additionally, the machine learning software developer must appropriately implement machine learning algorithms into software functions, conduct experiments and tests of AI systems, and determine the most suitable models for the application's functions. They are also responsible for designing and developing machine learning systems, as well as performing statistical analysis. \\
 \hline
 \end{tabular}
 \end{table}
 
 
+
+\newpage
+
+%specifications
+
+\section{specifications}
+
+%Landing Page
+
+\subsection{Landing Page}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Landing.png}
+\label{fig:Landing}
+\caption{Landing Page} 
+\end{figure}
+
+The Landing Page is the first screen that users see when they open the application. It prominently displays the BloomMate logo and a condensed representation of the application's identity. Additionally, it includes two buttons that allow users to navigate to the SignUp Page and the Login Page. It is important that the design of each button aligns with our established design system and clearly indicates their respective functions.
+%Sign Up Page
+
+\subsection{SignUp Page}
+
+Users can begin using BloomMate via the SignUp Page. This is a crucial step as BloomMate offers personalized plant management and chat services. During the signup process, users are required to fill in six fields: name, ID, password, Tiiun product key, garden size, and address. Each field is presented on a separate page, and none can be skipped.
+
+   \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Signup-Name (Disable).png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Signup-Name.png}
+    }
+    \label{fig}
+    \caption{Sign Up Page: Example of Next button enabled}
+    \end{figure}
+    
+An arrow icon in the top left corner of each page indicates "back." Clicking this icon will either return you to the Landing Page (if you're on the first step, entering your name), or to the previous step. A Call-To-Action (CTA) Button is located at the bottom of each page. This button only activates once all fields are correctly filled in. The button will read "Sign up" on the last step and "Continue" on all others. Upon pressing the activated Register button on the final step, a Register Post API request is sent to the server. If received successfully, the user is directed to the Login Page.
+
+
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Signup-Address (Modal).png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Signup-Tiiun.png}
+    }
+    \label{fig}
+    \caption{Sign Up Page: Input Field Requirements}
+    \end{figure}
+    
+The constraints and peculiarities for each input item are as follows: (1) The name should be between 2 to 5 characters. Input is accepted directly from the user via the keyboard. (2) The username should contain 5 to 20 characters, allowing only English letters and numbers. Input is accepted directly from the user via the keyboard. (3) The password should contain 8 to 20 characters, allowing only English letters and numbers. A password re-entry is required for confirmation. Input is accepted directly from the user via the keyboard. (4) The Tiiun product key should begin with 'tiuun' and be exactly 8 characters long. Input is accepted directly from the user via the keyboard. (5) For the garden size, use the toggle button to select either Large, Medium, or Small. Selecting another size will deselect the current one. Each garden size has a plant limit indicated by the number of pots in the image - Large has 7, Medium has 5, and Small has 3 pots. (6) For the address, we use the address input API provided by Kakao. It only provides the street address and displays the smart cottage photo when the address is entered.
+
+%Login Page
+
+\subsection{Login Page}
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Login - Disable.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Login - Able.png}
+    }
+    \label{fig}
+    \caption{Login Page}
+    \end{figure}
+The Login Page of BloomMate allows users to personalize their experiences and utilize core features. Login is essential because it enables the server to identify the user making the request. The login process requires a username and password, each on a separate page, and both must be filled in. The Login button at the bottom is initially disabled, but it becomes enabled when the username and password are correctly entered without errors. If you press the enabled login button, a login POST API request is sent to the server. If successful, the server provides a token, stored via the Set-Cookie command in the header, which identifies the user. You are then directed to the Plant List Page. On the top left of this page, there's an arrow icon pointing left. Pressing this icon returns you to the Landing Page.
+
+The constraints and peculiarities for each input item are as follows: (1) For the ID, you are allowed to enter a minimum of 5 and a maximum of 20 characters, using only English letters and numbers. User input is accepted directly through the TextInput via the keyboard. (2) For the password, you must enter between 8 and 20 characters, again using only English letters and numbers. User input is similarly accepted directly through the TextInput via the keyboard.
+
+\subsection{Plant List Page}
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary List - Empty.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary List - Lists.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary List - Toast.png}
+    }
+    \label{fig}
+    \caption{Plant List Page: Growing Tab}
+    \end{figure}
+
+The Plant List Page, which appears immediately after a user logs in, displays a list of plants currently growing in Tiiun on SmartCottage or those previously grown and successfully harvested. The plant list is retrieved from the server via a GET request. This page, found on the first tab, is one of three screens where the bottom tab bar is visible. The icon on the first tab should be in the primary color, with the other two icons in the disabled color. The page should be titled "Plant List" at the top. Below that, there are two top tabs: 'Growing' and 'Harvested'.\\
+
+\textbf{For the "Growing" Tab}: (1) If no plants are currently growing, an 'Add Plant' button should be displayed in the center of the screen, accompanied by a text prompt to add a plant. Clicking the 'Add Plant' button will navigate to the 'Plant Add Page'. (2) If plants are growing, the screen should display a scrollable list of plants, each presented as a card. These cards contain six elements: a plant picture, a nickname, the number of days spent with the plant, a growth stage guide, a 'Chat with Plant' button, and a 'Plant Details' button. Clicking on a plant card navigates to the 'Plant Detail Page'. The 'Chat with Plant' button opens the chat feature, while the 'Plant Details' button leads to the 'Plant Detail Page'. A floating button at the bottom of the scroll directs to the 'Plant Add Page' when clicked. (3) If the maximum number of plants has been reached, a message should appear stating that no more plants can be added. This message may be overlooked if the list of plants is full, requiring the user to scroll to see the bottom. If the 'Add Plant' floating button is clicked in this case, the button should change to a disabled color and a toast message should display, indicating that adding more plants is not permitted.\\
+    
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary Lists - Haverst Complete.png}
+    \label{fig}
+    \caption{Plant List Page: Completed Tab}
+    \end{figure}
+    
+\textbf{For the "Completed" Tab:}
+    (1) If you don't currently have any harvested plants, write a text in the center of the screen stating that you don't have any harvested plants and encouraging you to grow your plants to harvest them. (2) If you do have any harvested plants, the body of the screen should be a scrolling page. Within the scrolling screen, show a list of harvested plants in card format, one by one. Nothing happens when the plant card button is pressed. Inside the plant card, there are three pieces of information: a picture of the plant, the plant's nickname, and the date it was grown.
+
+
+\subsection{Community Page}
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary Community - 질의응답.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary Community - 전문가 아티클.png}
+    }
+    \label{fig}
+    \caption{Community Page}
+    \end{figure}
+The Community Page is a resource for BloomMate users. It provides answers to questions, solutions to problems, and necessary information. The aim is to reduce user bounce rates and enhance farming experiences with accurate information from smartCottage. Plant list items are fetched from the server using GET requests. The bottom tab bar, one of three screens displayed, is located on the first tab. Icons on the second tab should be in the primary color, while the remaining two icons should be in the disabled color. The Community Page should feature the title 'Plant Buttler Community' at the top. Directly underneath, there should be two main tabs: 'Questions and Answers' and 'Expert Articles'.\\
+
+\textbf{For the "Questions and Answers" Tab: } The main part of the Q\&A screen is a scrolling page, with questions displayed in a card format, sorted by the most recently asked. Tapping on a question card directs you to the Question Detail Page. Each question card includes four details: answer completeness, question date, question title, and question body. The question body has an 80-character limit; if it exceeds this, it's truncated with ellipses. At the bottom of the scroll screen, there's a floating button. Pressing this button navigates to the Add Question page.\\
+
+\textbf{For the "Expert Articles" Tab:} The article screen should be a scrollable page where articles are displayed in a card format. Each card contains two pieces of information: a thumbnail image and a title. Tapping on an article will allow you to view it in WebView.
+
+\subsection{Question Add Page}
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/질의응답 - 질문 등록.png}
+    \label{fig}
+    \caption{Question Add Page}
+    \end{figure}
+    
+The Question Add Page is where users can post their inquiries. Users can ask about their BloomMate experience, report issues, or pose questions about their plants. Each question includes a title and content, both provided by the user as TextInput. However, the content is entered in a multiline TextInput. Each TextInput features an appropriate placeholder. The Ask Question button is located at the bottom. Initially disabled, it becomes enabled when both title and content contain at least one character. An arrow icon on the top left of the page serves as a back button, leading back to the Community Page.
+
+\subsection{Question Detail Page}
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/질의응답 - 상세.png}
+    \label{fig}
+    \caption{Question Detail Page}
+    \end{figure}
+The Question Detail Page is where you can see the details of your question. You'll find professional answers from the team behind BloomMate. First, the question is formatted like a question card in the question list. If the answer is complete, it will be shown along with the date of the answer. If the answer is long, it might be a scrolling screen. In the top left corner of the page, you'll see an arrow icon that indicates left. Pressing the arrow icon will take you back to the Community Page.
+
+\subsection{MyPage}
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Mypage.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Mypage - 회원정보.png}
+    }
+    \label{fig}
+    \caption{MyPage}
+    \end{figure}
+ MyPage, a feature of BloomMate, provides information tailored to the user. It is found on the third tab of the bottom bar, which is visible on three screens. The icon on the second tab should be in the primary color, while the other two icons should be in the disabled color. At the top, MyPage should be titled 'MyPage', followed by a welcome message in the form '\textit{Welcome userName}'. MyPage offers three functions: Logout, View Membership, and About BloomMate.\\
+
+The Logout function, when clicked, deletes the user's cookie information and redirects the user to the landing page.\\
+
+The View Membership function, upon selection, navigates the user to a new screen where they can review their membership details. This screen displays five types of information: name, ID, activated product key, garden size, and address.\\
+
+Lastly, the About BloomMate function directs the user to a Notion webview that provides an introduction to BloomMate.\\
+
+\subsection{Plant Add Page}
+BloomMate is an app designed to assist you in growing plants in Tiiun. To use it, you need to register your plants on the Plant Add Page. The plant addition process requires input in four fields: photo, variety, nickname, and planting date. Each field is located on a separate page, with the photo field split across two additional pages. All fields are mandatory and cannot be skipped. All pages feature an arrow icon in the top left corner, indicating a return function. Clicking this icon will either take you back to the Plant List Page if you're at the first step, or to the previous step. Each page also includes a Call-To-Action (CTA) button at the bottom. This button will only be activated once all fields on the page are filled out correctly. The button text reads "Add Plant" on the final step and "Continue" on all other pages. On the final step, pressing the activated Register button will trigger a server request to the Add Plant Post API. Upon successful receipt, you will be redirected to the Login Page.
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/PlantAdd-Picture.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/PlantAdd-PictureComplete.png}
+    }
+    \label{fig}
+    \caption{Plant Add Page: add Picture}
+    \end{figure}
+
+Now let's explain each input: (1) For photos, once the user takes a photo, it is instantly registered with the photo server using a POST request. The URL received from the photo server is then used in the final POST request. (2) Regarding plant varieties, users can choose one of the four options provided in the bottom-sheet via a toggle button. The options are strawberry, tomato, potato, and corn. These varieties are used in the AI model. They were chosen for their suitability in home gardens due to their reasonable growth heights. The toggle button allows you to switch between varieties. If another variety is selected while one is already active, the first one will be deselected. (3) For nicknames, the user should enter a minimum of 1 character and a maximum of 5 characters. TextInput allows direct input from the user through the keyboard. (4) To choose the planting date, users can select a date from the calendar provided in the bottom-sheet. Dates later than the present are not selectable. The selected and pressed states should be clearly marked.
+
+        \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/PlantAdd-Date (BottomSheet).png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/PlantAdd-Variety(BottomSheet).png}
+    }
+    \label{fig}
+    \caption{Plant Add Page: Fields}
+    \end{figure}
+    
+    \subsection{Plant Detail Page}
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - diagnose.png}
+    \label{fig}
+    \caption{Plant Detail Page}
+    \end{figure}
+Users want to access information about the plants they are growing. To fulfill this need, they should be able to view plant details on the Plant Detail Page. All plant details are obtained from the server through a GET request. Plant information can be categorized into two types: details and growth information. Details remain the same for each plant variety. The Plant Detail Page displays eight types of details: variety, temperature, humidity, light level, flowering time, watering frequency, difficulty, and precautions. The growth information indicates the current stage of the plant based on the planting date: germination, growing, or harvesting. We have included a graph to provide a quick overview of the growth information. At the bottom of the page, there are buttons for different scenarios: a 'Harvest' button during the harvest season and a 'Diagnose' button for other situations. Clicking the Harvest button triggers a PATCH request to the server and redirects you to the Plant List Page. On the Plant List Page, the plant is no longer considered a growing plant as it has been harvested. Alternatively, you can click the Diagnose button, which will take you to a page where you can diagnose the plant. In the top-right corner, there is a button that navigates to the Plant Edit Page. The top-left corner of the page contains a left arrow icon. Clicking the arrow icon will return you to the Plant List Page.
+
+    \subsection{Plant Edit Page}
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - Edit.png}
+    \label{fig}
+    \caption{Plant Edit Page}
+    \end{figure}
+
+    Users may want to update information about their plants, especially if they're growing them and need to take pictures of them frequently as they grow. The Plant Edit Page is designed for this purpose. There are two things that can be updated: a nickname and a photo. The nickname is accepted as a TextInput, and if it is empty, an error will be thrown. The photo can be updated by taking a picture. At the bottom is the Update button, which is activated if at least one item exists that is different from the existing one and there are no errors. If you press an active update button, it will send a PATCH request to the server, and if it is successful, you will be taken to the Plant Detail Page. In the top left corner of the page, you will see an arrow icon indicating left. Pressing the arrow icon will take you back to the Plant Detail Page.
+    
+
+    \subsection{Plant Diagnosis}
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - notice.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - negative result.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - history.png}
+    }
+    \label{fig}
+    \caption{Plant Diagnosis}
+    \end{figure}
+One of BloomMate's main features is AI plant diagnostics, which serves two purposes. Firstly, it helps users, especially those with limited plant-growing experience, determine if their plants have any diseases by diagnosing their health. The AI diagnosis simplifies the decision-making process. Secondly, by encouraging users to regularly diagnose their plants when visiting SmartCottage, it promotes a sense of care and nurtures a loving relationship between users and their plants.
+
+The plant diagnosis process begins on the information page, where users can learn about the benefits of using AI to diagnose their plants. It also reminds them to periodically visit SmartCottage to monitor their plants. From the information page, users can navigate to the Make a Diagnosis page and the Diagnosis History page.\\
+
+The Make a Diagnosis page functions as a camera app. Users take a picture of their plant using the app, and the diagnosis is performed within their phone using the TensorFlow Lite model. After the diagnosis is complete, users are directed to the diagnosis results page. The diagnosis result will indicate whether the plant is (1) sick or (2) healthy. For each diagnosis, the following information is provided: the photo taken, the date of diagnosis, and the plant's growth stage (germination/growing). If the plant is diagnosed as sick, users will receive guidance on the disease, symptoms, and conditions. Unfortunately, if the plant is diseased, it will need to be replanted. Additionally, the generative AI will automatically provide a link to purchase customized Tiiun seeds that are most suitable for the user's current plant. By tapping on the link, users can make the purchase, and a confirmation message will be displayed. At the bottom of the page, there are options to reshoot the picture or return to the diagnosis guide page.\\
+
+The Diagnostic History page displays a scrolling screen where users can view their previous diagnosis records. Each diagnosis history is presented in a card format, showing the photo taken, the date of diagnosis, and the plant's growth stage. By tapping on a diagnosis history card, users can view the diagnosis log page in the same format as the diagnosis results page.
+
+\subsection{Chat With Plant}
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - today.png}
+
+    }
+    \label{fig}
+    \caption{Chat With Plant}
+    \end{figure}
+
+    The chat feature is the second core component of BloomMate. Each day, when a user requests to start a chat, the server synthesizes all available information and generates a script to send to the generative AI. This script essentially prompts the generative AI to assume the role of a plant. The server utilizes six types of information to create the script: plant details, plant nickname, plant planting date, today's weather, Tiiun soil information, and diagnostic information. Today's weather is obtained from the weather API based on the address provided during the signup process. As for Tiiun soil information, it is currently not accessible, so we will randomly generate a good or bad status. Regarding diagnostic information, we only retrieve the date of the last diagnosis, not the actual content. We assume that this date represents the last time the user visited SmartCottage. If it has been more than a week, we will include a situation in the script where the plant expresses a desire to see the user.\\
+\\Let's recap the chat flow with the plant:
+
+\begin{enumerate}
+    \item[1.]The user clicks the "Start today's chat" button.
+    \item[2.]The server generates a script to obtain today's report from the generative AI and sends it to the client.
+    \item[3.]The client checks the report and, if the soil condition is bad, generates a link for fertilizer recommendations from the generative AI.
+    \item[4.]The user is then free to chat with the generative AI, which has been trained with scripts.
+\end{enumerate}
+
+\noindent Additional specifications:
+
+\begin{enumerate}
+    \item[1.]The above flow applies when there are no ongoing chats for the day. If there is already an active chat, users can continue without the need for the "Start" button.
+    \item[2.]Today's chat ends at midnight every day.
+    \item[3.]There is a floating button located at the bottom left of the screen. Tapping on the previous report will open a bottom-sheet with a calendar. By selecting a past date from the calendar, users can view the chat history for that specific day.
+\end{enumerate}
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
 
 
 \end{document}
+
