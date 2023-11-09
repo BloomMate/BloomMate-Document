@@ -4,7 +4,7 @@
 \documentclass[conference, a4paper]{IEEEtran}
 \usepackage{graphicx}
 \usepackage{indentfirst}
-
+\usepackage{supertabular}
 
 \ifCLASSINFOpdf
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -486,25 +486,31 @@ To create BloomMate, we take advantage of a diverse range of cost-effective prog
 
 \subsection{Task Distribution}
 
-
 \begin{table}[h]
-\caption{Team Members and Their Tasks}
 \centering
-\begin{tabular}{|p{1cm}|p{1.5cm}|p{5.2cm}|}
-\hline Tasks & Name & Descriptions \\
-\hline
+\caption{Task Distribution}
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{1cm}|p{1.5cm}|p{4cm}|}
+\hline Tasks & Name & Descriptions\\ \hline
 Frontend Developer & Shin Hyunah, Yoon Yongsung, Kim Donghyun & Front-end developers utilize languages like React Native and TypeScript to create applications. They are responsible for designing the interfaces that users interact with, such as tapping buttons and swiping through screens. Their primary objective is to create a user experience that is both accessible and engaging, while adhering to the specified design. Additionally, front-end developers are responsible for transferring user-entered information to the backend developers. The reason for having three front-end developers is that two of them write code for each screen, while the third developer reviews and optimizes the code for the screens that users see. This organizational structure requires effective teamwork, clear role allocation, excellent communication skills, and collaborative synergy.\\
-
 \hline
 Backend Developer & An Soonho & Backend developers are responsible for designing the database and application architecture, as well as writing the APIs used by frontend developers. When working with APIs, backend developers need to be able to receive information from application users through the frontend and provide the correct return value to the API. They also need to design APIs that interact with the backend to leverage generative AI and machine learning features, and make them accessible to application users. This role requires a strong understanding of the central database and software structure, and ensuring that software development aligns with that structure.\\
 \hline
-UI-UX Designer & Yoon Yongsung & The UI-UX designer, using Figma, is responsible for determining how the application screens are presented to users. This role involves deciding which screens will be more engaging and comfortable for users to use. As a UI-UX designer, the goal is to create a design that keeps users engaged and encourages them to return to the application. Once the UI-UX decisions are finalized, they can be communicated to the front-end developers. It is important for the UI-UX decisions to not only look good, but also consider the needs of both the application user and the front-end developer who will be building the screens. The design should also allow the back-end developer to design the database. This role relies on effective collaboration with developers.\\
+UI-UX Designer & Yoon Yongsung & The UI-UX designer, using Figma, is responsible for determining how the application screens are presented to users. This role involves deciding which screens will be more engaging and comfortable for users to use. As a UI-UX designer, the goal is to create a design that keeps users engaged and encourages them to return to the application. Once the UI-UX decisions are finalized, they can be communicated to the front-end developers.\\
 \hline
 \end{tabular}
 \end{table}
-\textit{continued on next page}
+
+\newpage 
+
 \begin{table}[h]
-\begin{tabular}{|p{1cm}|p{1.5cm}|p{5.2cm}|}
+\centering
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{1cm}|p{1.5cm}|p{4cm}|}
+\hline
+& & It is important for the UI-UX decisions to not only look good, but also consider the needs of both the application user and the front-end developer who will be building the screens. The design should also allow the back-end developer to design the database. This role relies on effective collaboration with developers.\\
 \hline
 Product Designer & Shin Hyunah & A product designer is someone who designs products with a user-centered perspective. They must have the ability to put themselves in the shoes of the user, find the pain points within the service as it currently exists, explore what they would like to see added, and come up with ideas. They are responsible for creating the overall framework of the product or service. Product designers are also responsible for communicating with the rest of the team to find out how they can take their ideas further and finalize their direction. Product designers should focus on the user usability of the product or service, exploring features that users really need and modifying the design of the product.\\
 \hline
@@ -512,10 +518,6 @@ AI Developer & Kim Donghyun & A machine learning software developer works with a
 \hline
 \end{tabular}
 \end{table}
-
-
-
-\newpage
 
 %specifications
 
@@ -748,4 +750,3 @@ The Diagnostic History page displays a scrolling screen where users can view the
 
 
 \end{document}
-
