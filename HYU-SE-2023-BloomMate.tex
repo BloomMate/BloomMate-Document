@@ -365,6 +365,9 @@ My page is where you can view your membership information. You can take the foll
 
         \item[15.]Git \cite{velog-git}
         \item[]Git is an effective version control system that allows you to manage versions and incorporate changes and updates seamlessly. But before delving into Git, let`s first discuss what a ``version control system'' is. It is a system that records changes to a file over time and enables you to retrieve that file later when needed. When working on a document, there are usually multiple revisions and updates from the initial draft to the final version. Along the way, we often rename the file to ``final,'' ``\_final,'' ``finalized,'' and so on, thus overwriting the previous versions. This can make it difficult to go back to a specific point in time and understand the changes that were made. However, with a version control system, this becomes possible. By using a version control system, you can manage multiple versions of the same information. This allows you to track changes over time and identify the individuals who made them. You can easily revert back to previous versions or the original version, and quickly identify the person responsible for any issues that may arise.\\
+
+        \item[16.]Cloudinary 
+        \item[]Cloudinary is a cloud-based media management platform that enables you to efficiently manage, optimize, and distribute images and videos. This service is particularly useful for effectively managing and optimizing the media assets used in your web and mobile applications. While AWS's image server could have been an option, we considered the fact that our machine learning models run within Django. Using AWS's static server would have compromised server capacity and performance. Therefore, we made the decision to utilize Cloudinary as a completely new static server for images. Now, the AWS server only needs to store the image download addresses from Cloudinary in its database.\\
     \end{enumerate}
 \end{enumerate}
 
@@ -477,12 +480,42 @@ My page is where you can view your membership information. You can take the foll
     \caption{Android Studio} 
     \end{figure}
     \item[]Android Studio is an integrated development environment (IDE) for Android, developed by Google. Similar to Xcode, Android Studio is essential software as it handles the final compilation of an Android application.\\
+    
+    \item[12.]Flipper
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Flipper.png}
+    \label{fig:Flipper}
+    \caption{Flipper} 
+    \end{figure}
+    \item[]In React Native, Flipper is a platform used for debugging and development purposes. It is an open-source tool developed by Facebook and offers various features for debugging and performance profiling of mobile applications. Flipper itself provides three types of debugging: checking the DOM tree structure, monitoring network communication, and inspecting image information. One of the powerful aspects of Flipper is its plugins. It offers a wide range of plugins that allow you to debug libraries essential for developing BloomMate, such as react-navigation, recoil, and react-query. You might wonder if React Native already provides its own Chrome debugging. However, some libraries, especially those related to react-native-reanimated, may not work with Chrome debugging enabled due to compatibility issues with UI Threads. In such cases, Flipper can still be used as it debugs at the JavaScript level.\\
 \end{enumerate}
+\subsection{Team's Development Environment}
+ \begin{table}[htp]
+ \caption{Team's Development Environment}
+ \centering
+ \setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.3}
+ \begin{tabular}{| p{3cm}|p{4cm} |}
+ \hline
+ Name & Environment \\ 
+ \hline
+Kim Dong Hyun & {MacOS Monterey 12.5 \newline react-native 0.72.4 \newline python 3.9.6} \\
+ \hline
+ Shin Hyun Ah & {Windows 11.22.2 \newline react-native 0.72.4} \\ 
+ \hline
+ Yoon Yong Sung &{Windows 11.22.2 \newline react-native 0.72.4} \\ 
+ \hline
+ An Soonho & {Windows 11.22.2 \newline python 3.10.7}\\ 
+ \hline
+ \end{tabular}
+ \end{table}
+ 
 
 
 \subsection{Cost Estimation}
 To create BloomMate, we take advantage of a diverse range of cost-effective programs that are available for free. This helps us minimize the expenses related to the development process. However, it's important to mention that using the ChatGPT API does come with a cost. Nevertheless, there is a provision that allows you to enjoy a free quota of approximately \$18, which means you can ask around 300,000 questions without any charges. Therefore, you can be confident that the expenses associated with running the application will be relatively low.\\
-\newpage
+
 
 \subsection{Task Distribution}
 
@@ -750,3 +783,4 @@ The Diagnostic History page displays a scrolling screen where users can view the
 
 
 \end{document}
+
