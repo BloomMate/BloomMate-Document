@@ -1,6 +1,3 @@
-
-
-
 \documentclass[conference, a4paper]{IEEEtran}
 \usepackage{graphicx}
 \usepackage{indentfirst}
@@ -576,34 +573,33 @@ Users can begin using BloomMate via the SignUp Page. This is a crucial step as B
 
    \begin{figure}[h]
     \centerline{
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Signup-Name (Disable).png}
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Signup-Name.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Signup-Name (Disabled).png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Signup-Name (Abled).png}
     }
     \label{fig}
     \caption{Sign Up Page: Example of Next button enabled}
     \end{figure}
     
 An arrow icon in the top left corner of each page indicates "back." Clicking this icon will either return you to the Landing Page (if you're on the first step, entering your name), or to the previous step. A Call-To-Action (CTA) Button is located at the bottom of each page. This button only activates once all fields are correctly filled in. The button will read "Sign up" on the last step and "Continue" on all others. Upon pressing the activated Register button on the final step, a Register Post API request is sent to the server. If received successfully, the user is directed to the Login Page.
-
+    
+The constraints and peculiarities for each input item are as follows: (1) The name should be between 2 to 5 characters. Input is accepted directly from the user via the keyboard. (2) The username should contain 5 to 20 characters, allowing only English letters and numbers. Input is accepted directly from the user via the keyboard. (3) The password should contain 8 to 20 characters, allowing only English letters and numbers. A password re-entry is required for confirmation. Input is accepted directly from the user via the keyboard. (4) The Tiiun product key should begin with 'tiuun' and be exactly 8 characters long. Input is accepted directly from the user via the keyboard. (5) For the garden size, use the toggle button to select either Large, Medium, or Small. Selecting another size will deselect the current one. Each garden size has a plant limit indicated by the number of pots in the image - Large has 7, Medium has 5, and Small has 3 pots. (6) For the address, we use the address input API provided by Kakao. It only provides the street address and displays the smart cottage photo when the address is entered.
 
     \begin{figure}[h]
     \centerline{
         \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Signup-Address (Modal).png}
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Signup-Tiiun.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Signup-Tiiun (Abled).png}
     }
     \label{fig}
     \caption{Sign Up Page: Input Field Requirements}
     \end{figure}
     
-The constraints and peculiarities for each input item are as follows: (1) The name should be between 2 to 5 characters. Input is accepted directly from the user via the keyboard. (2) The username should contain 5 to 20 characters, allowing only English letters and numbers. Input is accepted directly from the user via the keyboard. (3) The password should contain 8 to 20 characters, allowing only English letters and numbers. A password re-entry is required for confirmation. Input is accepted directly from the user via the keyboard. (4) The Tiiun product key should begin with 'tiuun' and be exactly 8 characters long. Input is accepted directly from the user via the keyboard. (5) For the garden size, use the toggle button to select either Large, Medium, or Small. Selecting another size will deselect the current one. Each garden size has a plant limit indicated by the number of pots in the image - Large has 7, Medium has 5, and Small has 3 pots. (6) For the address, we use the address input API provided by Kakao. It only provides the street address and displays the smart cottage photo when the address is entered.
-
 %Login Page
 
 \subsection{Login Page}
     \begin{figure}[h]
     \centerline{
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Login - Disable.png}
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Login - Able.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Login - Disabled.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Login - Abled.png}
     }
     \label{fig}
     \caption{Login Page}
@@ -615,9 +611,9 @@ The constraints and peculiarities for each input item are as follows: (1) For th
 \subsection{Plant List Page}
     \begin{figure}[h]
     \centerline{
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary List - Empty.png}
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary List - Lists.png}
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary List - Toast.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant List - Growing Empty.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant List - Growing.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant List - Growing Fulled Toast Message.png}
     }
     \label{fig}
     \caption{Plant List Page: Growing Tab}
@@ -629,7 +625,7 @@ The Plant List Page, which appears immediately after a user logs in, displays a 
     
     \begin{figure}[h]
     \centering
-    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary Lists - Haverst Complete.png}
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant List - Harvested.png}
     \label{fig}
     \caption{Plant List Page: Completed Tab}
     \end{figure}
@@ -641,8 +637,8 @@ The Plant List Page, which appears immediately after a user logs in, displays a 
 \subsection{Community Page}
     \begin{figure}[h]
     \centerline{
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary Community - 질의응답.png}
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary Community - 전문가 아티클.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Q & A.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Screenshot_20231201_015925_BloomMate.jpg}
     }
     \label{fig}
     \caption{Community Page}
@@ -656,7 +652,7 @@ The Community Page is a resource for BloomMate users. It provides answers to que
 \subsection{Question Add Page}
     \begin{figure}[h]
     \centering
-    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/질의응답 - 질문 등록.png}
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Q & A - Create Question.png}
     \label{fig}
     \caption{Question Add Page}
     \end{figure}
@@ -666,7 +662,7 @@ The Question Add Page is where users can post their inquiries. Users can ask abo
 \subsection{Question Detail Page}
     \begin{figure}[h]
     \centering
-    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/질의응답 - 상세.png}
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Q & A - Answered Question.png}
     \label{fig}
     \caption{Question Detail Page}
     \end{figure}
@@ -675,8 +671,8 @@ The Question Detail Page is where you can see the details of your question. You'
 \subsection{MyPage}
     \begin{figure}[h]
     \centerline{
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Mypage.png}
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Mypage - 회원정보.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Screenshot_20231201_020152_BloomMate.jpg}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Screenshot_20231201_015810_BloomMate.jpg}
     }
     \label{fig}
     \caption{MyPage}
@@ -694,7 +690,7 @@ BloomMate is an app designed to assist you in growing plants in Tiiun. To use it
     \begin{figure}[h]
     \centerline{
         \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/PlantAdd-Picture.png}
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/PlantAdd-PictureComplete.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Add Plant - Picture check.png}
     }
     \label{fig}
     \caption{Plant Add Page: add Picture}
@@ -704,8 +700,8 @@ Now let's explain each input: (1) For photos, once the user takes a photo, it is
 
         \begin{figure}[h]
     \centerline{
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/PlantAdd-Date (BottomSheet).png}
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/PlantAdd-Variety(BottomSheet).png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Add Plant - Date (BottomSheet).png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Add Plant - Variety(BottomSheet).png}
     }
     \label{fig}
     \caption{Plant Add Page: Fields}
@@ -714,7 +710,7 @@ Now let's explain each input: (1) For photos, once the user takes a photo, it is
     \subsection{Plant Detail Page}
     \begin{figure}[h]
     \centering
-    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - diagnose.png}
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - Diagnosis.png}
     \label{fig}
     \caption{Plant Detail Page}
     \end{figure}
@@ -723,7 +719,7 @@ Users want to access information about the plants they are growing. To fulfill t
     \subsection{Plant Edit Page}
     \begin{figure}[h]
     \centering
-    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - Edit.png}
+    \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - Update complete.png}
     \label{fig}
     \caption{Plant Edit Page}
     \end{figure}
@@ -734,9 +730,9 @@ Users want to access information about the plants they are growing. To fulfill t
     \subsection{Plant Diagnosis}
     \begin{figure}[h]
     \centerline{
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - notice.png}
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - negative result.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - Intro notice.png}
         \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - history.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - Negative result Oneclick.png}
     }
     \label{fig}
     \caption{Plant Diagnosis}
@@ -746,14 +742,21 @@ One of BloomMate's main features is AI plant diagnostics, which serves two purpo
 The plant diagnosis process begins on the information page, where users can learn about the benefits of using AI to diagnose their plants. It also reminds them to periodically visit SmartCottage to monitor their plants. From the information page, users can navigate to the Make a Diagnosis page and the Diagnosis History page.\\
 
 The Make a Diagnosis page functions as a camera app. Users take a picture of their plant using the app, and the diagnosis is performed within their phone using the TensorFlow Lite model. After the diagnosis is complete, users are directed to the diagnosis results page. The diagnosis result will indicate whether the plant is (1) sick or (2) healthy. For each diagnosis, the following information is provided: the photo taken, the date of diagnosis, and the plant's growth stage (germination/growing). If the plant is diagnosed as sick, users will receive guidance on the disease, symptoms, and conditions. Unfortunately, if the plant is diseased, it will need to be replanted. Additionally, the generative AI will automatically provide a link to purchase customized Tiiun seeds that are most suitable for the user's current plant. By tapping on the link, users can make the purchase, and a confirmation message will be displayed. At the bottom of the page, there are options to reshoot the picture or return to the diagnosis guide page.\\
-
+    \begin{figure}[h]
+    \centerline{
+       \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - Oneclick Dialog.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - Negative result Oneclick Complete.png}
+    }
+    \label{fig}
+    \caption{Plant Diagnosis - One Click Purchase}
+    \end{figure}
 The Diagnostic History page displays a scrolling screen where users can view their previous diagnosis records. Each diagnosis history is presented in a card format, showing the photo taken, the date of diagnosis, and the plant's growth stage. By tapping on a diagnosis history card, users can view the diagnosis log page in the same format as the diagnosis results page.
 
 \subsection{Chat With Plant}
     \begin{figure}[h]
     \centerline{
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat.png}
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - today.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Today's report Oneclick Manager.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Previous chat Select Calendar.png}
 
     }
     \label{fig}
@@ -775,7 +778,417 @@ The Diagnostic History page displays a scrolling screen where users can view the
 \begin{enumerate}
     \item[1.]The above flow applies when there are no ongoing chats for the day. If there is already an active chat, users can continue without the need for the "Start" button.
     \item[2.]Today's chat ends at midnight every day.
-    \item[3.]There is a floating button located at the bottom left of the screen. Tapping on the previous report will open a bottom-sheet with a calendar. By selecting a past date from the calendar, users can view the chat history for that specific day.
+    \item[3.]There is a floating button located at the bottom left of the screen. Tapping on the previous report will open a bottom-sheet with a calendar. By selecting a past date from the calendar, users can view the chat history for that specific day. \\
+\end{enumerate}
+
+\section{ARCHITECTURE DESIGN \& IMPLEMENTATION}
+\subsection{Overall Architecture}
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Overall Architecutre.png}
+    \label{fig}
+    \caption{Application Architecture}
+    \end{figure}
+BloomMate consists of four main modules: Frontend, Backend, Static Data Storage, and Machine Learning. Let's take a closer look at each module. \\
+
+The Frontend module refers to the part of the mobile application that is used by the end user. We prioritize meticulous code writing, good UI/UX design, and bug-free functionality in the frontend. BloomMate's frontend is built using react-native with Typescript. We utilize react-query for server status management and recoil for internal global status management. Additionally, we use react-native-calendar for the calendar feature and react-hook-form for input form management. With the BloomMate mobile application, users can perform various functions such as adding plants, checking plant information, diagnosing plants, chatting with plants, accessing expert articles, and asking questions.\\
+\newline
+\indent The Static Data Storage module is accessible from both the frontend and backend. This module serves as an externalization of certain database functions, specifically for storing and loading static data, images, videos, etc. BloomMate utilizes cloudinary for this purpose. Despite being a free service, cloudinary offers a generous 25GB of storage and simplifies the process of uploading and downloading images. Here's how it works: the frontend uploads a photo to cloudinary and receives a downloadable URL as a response. The frontend then passes this URL to the backend, which stores it in its own SQLite database. When the frontend receives a request using the URL, it fetches the URL from the database and retrieves the corresponding image from cloudinary. In BloomMate, the frontend uploads images in two cases: when adding a plant and when diagnosing a plant.\\
+\newline
+\indent Please note that the third module, which will be discussed in more detail, covers the process of storing and loading static data in the backend's SQLite database.
+
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/BloomMateDB.png}
+    \label{fig}
+    \caption{Database Entity Relationship Diagram}
+    \end{figure}
+
+The third module is the Backend module, which serves as the server handling user requests. What sets BloomMate apart is that the database is built within the Backend module itself. This is made possible by using Django, a technology that includes its own DB called SQLite. Looking at the SQLite part, depicted in the ERD above, it consists of 9 databases. Among these, the article table is an independent table not connected to any other table. Within Django, there is code that also interacts with chatGPT. We provide chatGPT with information about the plant and the user, assigning the plant's role. It then sends the phrases you write to chatGPT, retrieves the answers, and sends them back to you. The TensorFlow Lite model created in the fourth module is also stored in the backend, along with the necessary code to execute it. After the user takes a photo, the photo URL is stored in the second module, cloudinary, and this URL is used for diagnosis.
+\newline
+
+The fourth module is the Machine Learning module. Its purpose is to create a model capable of image classification using TensorFlow's ResNet50. When designing BloomMate, our team focused on whether or not the plant's owner is present in the SmartCottage. For each scenario, the core functionality is as follows: if the owner is not in the SmartCottage, generative AI is used to interact with the plant; if the owner is in the SmartCottage, a picture of the plant is taken and AI is used to diagnose it. This Machine Learning Repository is intended for the AI used in the second scenario. It involves training the AI using a Custom Dataset and converting it to TensorFlow Lite so that it can be utilized in real projects.
+
+\subsection{Directory Organization}
+\begin{table} [htp]
+    \caption{Directory Organization - Frontend 1}
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{p{1.7cm}|p{2.8cm}|p{2.5cm}}
+    \hline
+    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Library}} \\
+     \hline
+   BloomMate/\newline BloomMate-FE & .bundle \newline .github \newline.vscode\newline android\newline ios\newline node\_modules\newline patches\newline src\newline .env\newline .eslintrc.js\newline .gitignore\newline .prettierrc.js\newline .watchmanconfig\newline app.json\newline babel.config.js\newline bsconfig.json\newline Gemfile\newline Gemfile.lock\newline index.js\newline jest.config.js\newline metro.config.js\newline package.json\newline README.md\newline react-native.config.js\newline tsconfig.json\newline yarn.lock & react
+    react-native \newline patch-package \newline postinstall-postinstall \\ 
+    \hline
+    BloomMate-FE\newline/ios & BloomMate.xcodeproj \newline BloomMate.xcworkspace \newline BloomMateTests \newline .xcode.env \newline link-assets-manifest.json \newline Podfile \newline Podfile.lock & $<$React/RCTBridge.h$>$ \newline $<$ReactRCTBundle-URLProvider.h$>$ \newline $<$React/RCTRootView.h$>$
+    \newline $<$React/RCTLinking-Manager.h$>$\newline $<$React/RCTConvert.h$>$ \\
+    \hline
+        BloomMate-FE\newline/patches & react-native-action-button+2.8.5.patch \newline
+    react-native-paper+5.10.4.patch & patch-packages \\
+    \hline
+    \end{tabular}
+\end{table}
+
+\begin{table} [htp]
+    \caption{Directory Organization - Frontend 2}
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{p{1.7cm}|p{2.8cm}|p{2.5cm}}
+    \hline
+    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Library}} \\
+    \hline 
+    BloomMate-FE\newline/android & app\newline build \newline gradle \newline build.gradle \newline gradle.properties \newline gradlew \newline gradlew.bet \newline link-assets-manifest.json \newline local.properties \newline settings.gradle & gradle \newline kotlin \\
+    \hline
+ BloomMate-FE\newline/src/screen & root.navigator.tsx \newline  \newline about-bloom-mate.screen.tsx
+ \newline article-webview.screen.tsx \newline community-qna-detail.screen.tsx \newline community-qna-post.screen.tsx \newline landing.screen.tsx \newline login.screen.tsx \newline plant-add.screen.tsx \newline plant-cht.screen.tsx \newline plant-detail.screen.tsx \newline plant-detail-edit.screen.tsx \newline plant-diagonsis-intro.screen.tsx \newline plant-diangosis-list.screen.tsx \newline plant-diagnosis-log.screen.tsx \newline plant-diagnosis-result.screen.tsx
+ \newline primary/ \newline primary-community.screen.tsx \newline primary-my-page.screen.tsx
+ \newline primary-plant-list.screen.tsx \newline primary-plant-harvesed-list.screen.tsx \newline primary-plant-current-list.screen.tsx \newline primary-community-article.screen.tsx \newline primary-community-qna.screen.tsx \newline signup.screen.tsx \newline user-info.screen.tsx & @actbase/react-daum-postcode
+ \newline @gorhom/bottom-sheet \newline @hookform/resolvers \newline @mobily/stacks \newline @react-native-community/hooks \newline @react-navigation/bottom-tabs \newline @react-navigation/material-top-tabs \newline @react-navigation/native \newline @react-navigation/stack \newline axios \newline color \newline dayjs \newline eslint-config-prettier \newline eslint-plugin-import \newline eslint-plugin-prettier \newline eslint-plugin-react \newline eslint-plugin-unused-imports \newline lodash \newline lottie-react-native \newline moti \newline react \newline react-hook-form \newline react-native \newline react-native-action-button \newline react-native-calendars \newline react-native-error-boundary \newline react-native-gesture-handler \newline react-native-image-picker \newline react-native-linear-gradient \newline react-native-mmkv \newline react-native-pager-view \newline react-native-paper \newline react-native-safe-area-context \newline react-native-screens \newline react-native-shimmer-placeholder \newline react-native-tab-view \newline react-native-toast-message \newline react-native-webview \newline react-query \newline recoil \newline rooks \newline yup \\
+ \hline
+\end{tabular}
+\end{table}
+
+\begin{table} [htp]
+    \caption{Directory Organization - Frontend 3}
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{p{1.7cm}|p{2.8cm}|p{2.5cm}}
+    \hline
+    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Library}} \\
+    \hline
+    BloomMate-FE\newline/src/assets & img/img.asset.ts \newline lottie/ \newline about-BloomMate.json \newline
+    mutation-lottie.json \newline plant-add-lottie.json \newline plant-delete-lottie.json \newline plant-harvest-lottie.json & lottie-react-native \\
+     \hline
+BloomMate-FE\newline /src/atoms & button.atom.tsx \newline divider.atom.tsx  \newline icon.atom.tsx
+ \newline image.atom.tsx  \newline modal.atom.tsx \newline point-linear-gradient.atom.tsx \newline skeleton.atom.tsx \newline suspender.atom.tsx \newline text.atom.tsx \newline text.util.ts \newline text-input.atom.tsx \newline toast.atom.tsx & react \newline react-native \newline @mobily/stacks \newline color \newline lodash \newline react-native-paper \newline react-native-vector.icons \newline react-native-fast-image \newline react-native-modal \newline react-native-linear-gradient \newline react-native-shimmer-placeholder \newline react-native-toast-message \\
+\hline
+ BloomMate-FE\newline/src/providers & mutation-indicator\newline query-client \newline recoil \newline ui  & react  \newline  react-native \newline  @mobily/stacks \newline  react-native-flipper \newline  react-query-native-devtools \newline  react-native-reanimated \newline  react-native-mmkv-flipper-plugin \\
+ \hline
+ BloomMate-FE\newline/src/layouts & basic-layout \newline CTA-section \newline dialog \newline loading-pae
+ \newline modal-header \newline scroll-view & react \newline react-native \newline @mobily/stacks \newline react-native-keyboard-aware-scroll-view \newline @react-native-community/hooks \\
+ \hline
+  BloomMate-FE\newline/src/hooks & get-account-info-query.hook.ts  \newline  get-article-list-query.hook.ts
+ \newline get-plant-chatting-query.hook.ts \newline get-plant-detail-query.hook.ts \newline get-plant-diagnosis-record-detail-query.hook.ts \newline get-plant-diagnosis-record-list-query.hook.ts \newline get-plant-list-query.hook.ts \newline get-question-detail-query.hook.ts \newline upload-image-library.hook.ts \newline upload-photo.hook.ts & react \newline react-query \newline react-native-image-picker \newline axios \\ 
+ \hline
+    \end{tabular}
+\end{table}
+\newpage
+\begin{table} [htp]
+    \caption{Directory Organization - Backend 1}
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{p{1.7cm}|p{2.8cm}|p{2.5cm}}
+    \hline
+    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Library}} \\
+     \hline
+ BloomMate & .git \newline .vscode \newline .env \newline .gitignore \newline db.sqlite3 \newline manage.py \newline requirements.txt \newline test2.jpg & \\
+ \hline
+ BloomMate\newline/BloomMate\_\newline backend & \_\_init\_\_.py \newline asgi.py \newline settings.py \newline urls.py \newline wsgi.py & os \newline django.core.asgi \newline pathlib \newline datetime \newline dotenv \newline django.contrib \newline django.urls \\
+ \hline
+ BloomMate\newline/accounts & \_\_init\_\_.py \newline admin.py \newline apps.py \newline models.py \newline serializer.py \newline tests.py \newline urls.py \newline views.py & django.contrib \newline django.apps \newline django.db \newline django.utils \newline rest\_framework \newline django.urls \newline rest\_framework\_simplejwt \\
+ \hline
+ BloomMate\newline/articles & \_\_init\_\_.py \newline admin.py \newline apps.py \newline models.py \newline serializer.py \newline tests.py \newline urls.py \newline views.py & django.contrib  \newline 
+django.apps \newline django.db \newline rest\_framework \newline django.urls \newline rest\_framework\_simplejwt \\
+ \hline
+ BloomMate\newline /chatting & \_\_init\_\_.py \newline admin.py \newline apps.py \newline models.py \newline serializer.py \newline tests.py \newline urls.py \newline utils.py \newline views.py &  django.contrib \newline django.apps \newline django.db \newline django.utils \newline rest\_framework \newline django.urls \newline rest\_framework\_simplejwt \newline openai \newline requests
+\newline random \newline django.utils \newline geopy.geocoders \newline django.conf \newline django.shortcuts \newline django.utils \\
+\hline
+    \end{tabular}
+\end{table}
+
+\newpage 
+
+\begin{table} [htp]
+    \caption{Directory Organization - Backend 2}
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{p{1.7cm}|p{2.8cm}|p{2.5cm}}
+    \hline
+    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Library}} \\
+     \hline
+BloomMate\newline/community &  \_\_init\_\_.py \newline admin.py \newline apps.py \newline models.py \newline serializer.py \newline tests.py \newline urls.py \newline utils.py \newline views.py \newline pagination.py \newline permissions.py & django.contrib \newline django.apps \newline django.db \newline django.urls \newline rest\_framework \newline django.https \newline rest\_framework\_simplejwt \\
+\hline
+BloomMate\newline/plants & \_\_init\_\_.py \newline admin.py \newline apps.py \newline models.py \newline serializer.py \newline tests.py \newline urls.py \newline views.py \newline model.tflite & django.contrib
+\newline django.utils \newline django.apps \newline django.db \newline rest\_framework\newline django.urls \newline tensorflow\newline numpy\newline os\newline keras \\
+\hline
+    \end{tabular}
+\end{table}
+
+\begin{table} [htp]
+    \caption{Directory Organization - Machine Learning}
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{p{1.7cm}|p{2.8cm}|p{2.5cm}}
+    \hline
+    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Library}} \\
+     \hline
+BloomMate\newline /BloomMate-ML & .vscode \newline dataset \newline tensorflow-lite-models \newline test-case \newline .gitignore \newline model.h5 \newline model.tflte \newline README.md \newline resnet-tflite-test.ipynb \newline resnet-all-datasets.ipynb \newline training-result.png & tensorflow \newline
+numpy \newline keras \newline pathlib \newline matplotlib \\
+\hline
+BloomMate-ML\newline/dataset & Corn Common rust \newline Corn Gray leaf spot \newline Corn Healthy \newline Corn Northern leaf blight \newline Potato Early blight \newline Potato healthy \newline Potato Late blight \newline Strawberry healthy \newline Strawberry leaf scorch \newline Tomato Early blight
+ \newline Tomato healthy \newline Tomato Late blight \newline Tomato Target Spot \newline Tomato Yellow Leaf Curl Virus & \\
+ \hline
+    \end{tabular}
+\end{table}
+\newpage
+\subsection{Module1 -  Frontend}
+\begin{enumerate}
+    \item Purpose
+    \item[] We chose to use TypeScript-based React Native for the development of BloomMate. Let's first discuss the reasons behind this decision. React Native is a cross-platform framework developed by Facebook that allows for simultaneous development of iOS and Android applications. One of our team members had prior experience with React Native at a previous company, and the rest of the team had JavaScript development experience, making it a logical choice for us. The decision to adopt TypeScript was motivated by the need for more stable development. JavaScript, being dynamically typed, has a higher probability of unexpected bugs at runtime. This becomes particularly problematic when working with react-navigation, an essential component for React Native, as it becomes unclear what parameters and navigation the screen inherits when TypeScript is not used. To mitigate these drawbacks, we developed BloomMate using React Native with TypeScript. In the frontend, we perform the following key functions: (1) Receiving input from users (2) Passing the input to the server (3) Fetching data from the server.\\
+    \item Functionality
+    \item[] All features available on BloomMate can be accessed on the frontend. To get started, simply sign up and log in by providing the necessary information (all user inputs are handled with error handling implemented). Once logged in, you can create your own nickname and attach a photo to add a plant. From there, you can freely interact with your plant and even diagnose its condition by examining its leaves if it appears to be in poor health. Additionally, you have the opportunity to ask questions to experts and read high-quality articles for further knowledge and guidance.\\
+    \item Location of source code:
+    \item[] https://github.com/BloomMate/BloomMate-FE\\
+    \item Class Component
+    \item[] Each folder under the src directory has a specific role assigned to it. You can determine the role based on the words between the dots in the module name. Let me first explain about the atom module. The term "atom" is short for "atomic" and is inspired by the atomic design system. Although it cannot create functionality on its own, it plays a crucial role in terms of UI as it represents the most fundamental UI components. Although not all of the atom components, I have tried to follow Google's Material Design system for most of them (although there have been compromises in practical issues).
+    \begin{itemize}
+        \item button.atom.tsx : Buttons are components that allow you to trigger specific actions when they are pressed. The specific action is received through onPress. Buttons follow the material design guidelines faithfully and can be implemented in three modes (outlined, contained, text). The text inside the button can be obtained through children, and icons can also be displayed. When the button is pressed, a layer of color covers the entire button, indicating that the button is in a pressed state.
+        \item divider.atom.tsx : A divider serves as a UI element that separates other elements. It is a thin line in a light gray color. If you want a thicker divider, you can set the "heavy" parameter to true.
+        \item icon.atom.tsx : Icons are a valuable tool for conveying information through visual symbols. In react-native, you can use icons by utilizing the react-native-vector-icons library. This library supports various icon sets, and we have decided to use the material icon set. To use material icons, simply import the package from react-native-vector-icons without any additional steps. When using an icon on a typical screen, you only need to provide three values: name, size, and color. It is worth noting that modern icons are treated as fonts, allowing you to use the Icon component within Text. This simplifies styling for many publishing tasks.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Module2 - Backend}
+\begin{enumerate}
+    \item Purpose
+    \item[] The role of the backend is to build and manage back parts such as applications and databases. It builds server logic to return appropriate outputs according to user requests, and manages databases to store, retrieve, update, and manage input and output data. Backend designs the architecture of the data flow in the back of the application, helping to organize the structure of it. Backend also develops and manages APIs to allow the application to communicate with users. It Maintains security to prevent unauthorized access to user information and to prevent direct hacking or errors that may occur. We chose Django for our backend database management for the following reasons Django is written in Python, so a lot of functionality is built in. This allows developers to focus more on the core functionality of the application and not waste time on the basics. Django also simplifies working with databases through its object-relational mapping (ORM), which allows developers to easily manipulate databases without having to write SQL themselves. In fact, its support for sqlite as a database allows code written in Django to store data in the correct format for sqlite. Django has an administrator interface that makes it easy for developers to see what's actually being stored and manage the site when they deploy the backend part.\\
+    \item Functionality
+    \item[] The BloomMate application allows users to perform various activities related to plants. BloomMate processes the information which user enters into the application and stores it in a database. When the user needs information, it returns useful data to the user on demand. Users can register, manage, diagnose and chat with their plants. All information generated when using these features is automatically stored in SQLITE. In the case of plant diagnostics, the user can use an function of AI running on the backend to determine the presence of a disease. User can also use Chat GPT-4 to feel the dialog with the plant based on the plant information registered by the user, weather information based on the address location information, etc. All these user inputs help to make chatting with the plant feel natural.\\
+    \item Location of source code:
+    \item[] https://github.com/BloomMate/BloomMate-BE\\
+    \item Class component
+    \begin{itemize}
+        \item accounts
+        \item[-] views.py : The View role in Accounts folder represents server-side management of the functionality available to users when they first connect to the BloomMate application.
+        \item [-] Sign up : Users can register if they have never used the BloomMate application before. The BloomMate application uses a REST API and also uses JWT tokens. Before using any feature of the application, the user must verify that he is an authorized user using a JWT token, but in the case of registration, this is not necessary because the user has not yet registered. Therefore, all users are free to use the function and once all the required information has been entered, the backend will return the information entered by the user, the message "Registration Success" and a status of 200.\\
+        \item plants
+        \item[-] views.py : The role of View in Plants folder describes how users can register and see plant information, diagnose their plants, edit palnt information(like the picture of the plant), and delete plants.
+        \item[-] Plant Disease Record : The diagnosis of plant diseases is done using the leaf parts of the plant. The diagnosis of the plant is done by the AI, which will be explained in detail in the AI section below. On the backend, application can determine whether a plant has a disease or not through a function that calls the AI. The backend first uses JWT tokens to determine if the user has properly registered with the application. Then it checks if the plant user wants to diagnose is the one he registered. Only plants registered by the user can be diagnosed. In the backend, the storage capacity is reduced by storing the URL processed by the frontend in the database instead of directly storing the photos taken by the user for disease identification. Users can verify the diagnosis using AI by making a POST request with the plant ID and the URL of the photo. Users can also retrieve the diagnosis results for each plant they grow by making a GET request. The user can know the growth level and disease name of the plant through the request. When storing plant disease records in the database, the user can also check the name of the plant set by the user in connection with the plant database through the plant ID stored together.\\
+        \item chatting
+        \item[-] utils.py : For chatting with plants, we have implemented several functions that are separate from the view. The information needed to chat with a plant is the plant information, the weather at the address you entered, the soil information provided by Tune, and the date of the last visit.
+        \item[-] generate chatgpt response : This function connects to Chat GPT-4 and receives chat responses. We chose to use Chat GPT version 4 because it has been trained with more recent information than its predecessor and has the ability to better understand and generate more advanced languages spoken by humans. In keeping with the concept of chatting with plants, the default system prompt in Chat GPT is set to the plant itself, based on the plant information provided by the user. The function brings the history of the user's conversations with the plant by date and enters it into the assistant prompt, allowing the conversation to continue naturally. It also pulls in weather information, soil conditions, and the name of the user who registered the plant. The user only needs to type a phrase like "How is the plant today?" but in the backend, the server enters other information, such as above, to get the desired answer. The backend returns the answer along with the soil condition, whether the user is chatting, and the plant ID.
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+\section{use cases}
+% \subsection{Use Case Diagram}
+%     \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/UseCase.png}
+%     \label{fig}
+%     \caption{Use Case Diagram}
+%     \end{figure}
+
+% \subsection{Use Cases}
+\textbf{\# Primary Tab - Plant List}
+\newline
+After logging in, users can easily check and manage their plant list through the Primary Plant List tab. This tab provides a comprehensive view of the plants at a glance.
+\begin{enumerate}
+    \item Plant Add
+        \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant List - Growing Empty.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant List - Growing.png}
+    }
+    \label{fig}
+    \caption{Plant List}
+    \end{figure}
+    \begin{itemize}
+        \item Plant addition mainly occurs in two scenarios. The first scenario is when a user signs up and logs in for the first time. In this case, the user can view the initial state of the plant list screen, and add a plant using the 'First Plant Registration' button.The second scenario is when the user has already completed the membership registration and registered one or more plants. In this case, the user can add a new plant through the 'Add Plant' floating button located at the bottom right of the plant list screen.
+        \item When adding a plant, the user must enter information such as photo, species, nickname, and planting date. This information helps users to manage their plants more effectively.
+    \end{itemize}
+    \item Harvesting \& Harvested Tab
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant List - Harvested.png}
+        \caption{Plant List - Harvested}
+        \label{fig:Harvested}
+    \end{figure}
+    
+    \begin{itemize}
+        \item At the top of the plant list screen, there are two tabs, 'Harvesting' and 'Harvested'. These tabs help users easily understand the current status of their plants. The 'Harvesting' tab displays plants that are in the 'Germination', 'Growth', or 'Harvest' periods, while the 'Harvested' tab displays the plants that the user has already harvested.
+    \end{itemize}
+    
+    \newpage
+    
+    \item Plant Details
+        \begin{figure}[h]
+        \centering
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - Harvesting.png}
+        \caption{Plant Details}
+        \label{fig:Plant Details}
+        \end{figure}
+    \begin{itemize}
+        \item Users can check the detailed information of each plant by clicking the 'Plant Detailed Information' button at the bottom of each plant component. In this screen, users can update the plant's photo and nickname, check basic information about the plant's species and its current growth status.In the growth information section, users can visually check which growth period the plant is currently in and how far that period has progressed through a Progress bar. Also, users can more easily manage the plant's status through the Primary color phrase that changes depending on the growth degree, and the 'AI Diagnosis' or 'Harvest' button at the bottom.
+    \end{itemize}
+    \newpage
+    \item  Plant Update        
+        \begin{figure}[h]
+        \centering
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - Update complete.png}
+        \caption{Plant Update}
+        \label{fig:Plant Update}
+        \end{figure}
+    \begin{itemize}
+        \item Users can update the plant's photo and nickname on the plant's detailed information screen. Users click the 'Update' text button located at the top right of the photo. They are then taken to a page where they can update the nickname and photo. If the user does not want to make a change, they can return to the plant's detailed information screen by clicking the back arrow icon at the top left.
+        \item To update the nickname or photo, the user modifies the desired item and then clicks the 'Update' button at the bottom. The user then returns to the plant's detailed information screen, where they can see that the changes have been reflected.
+    \end{itemize}
+    \item AI Diagnosis
+        \begin{figure}[h]
+        \centering
+        \includegraphics[width=.7\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - Diagnosis Button.png}
+        \caption{AI Diagnosis Button}
+        \label{fig:AI Diagnosis Button}
+        \end{figure}
+    \begin{itemize}
+        \item The button at the bottom of the plant's detailed information screen is displayed as the 'AI Diagnosis' button when the plant is not in the harvest period. 
+        \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - Intro notice.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - history.png}
+    }
+    \label{fig}
+    \caption{Diagnose Intro \& History}
+    \end{figure}
+    \item When the user clicks the diagnosis button, they can check the diagnosis record of the plant and move to the screen where they can diagnose it. Users can get information about the current status of the plant through chatting and growth information. Based on this information, users can visit the LG Smart Cottage and diagnose the status of the plant planted in the Tiiun garden through AI diagnosis. The diagnosis-related function screen includes the plant's nickname so the user knows they are only dealing with that plant.
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - Positive result.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - negative result.png}
+    }
+    \label{fig}
+    \caption{Diagnose Result Example}
+    \end{figure}
+    \item When the user clicks the diagnosis button, they can take a photo directly or select a photo from the gallery for diagnosis. The photo selected by the user is analyzed based on AI machine learning, and this is used to diagnose the status of the plant. Depending on the diagnosis results, the user can get information on whether the plant is healthy or diseased.
+
+    \item If a disease is found in the plant as a result of the AI diagnosis, the user receives detailed information about the disease diagnosis. This information includes the type of disease, cause, and treatment methods. In addition, the user is recommended to replace the seedlings. For this case, a one-click purchase button is provided on the screen to order new seeds for the same species. 
+    \item If the user clicks this button, a dialog appears notifying the user that the existing plant will be deleted. If the user clicks the 'Confirm' button in the dialog, new seeds of the same species are automatically ordered. After the order is completed, the user returns to the plant list screen and can confirm that the original plant has been deleted.
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - Negative result Oneclick.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - Negative result Oneclick Complete.png}
+    }
+    \label{fig}
+    \caption{Diagnose Result - Oneclick Purchase}
+    \end{figure}
+    \end{itemize}
+\item Harvest
+        \begin{figure}[h]
+        \centering
+        \includegraphics[width=.7\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - Harvesting Button.png}
+        \caption{Harvesting Button}
+        \label{fig:Harvesting Button}
+        \end{figure}
+    \begin{itemize}
+        \item The button at the bottom of the plant's detailed information screen is displayed as the 'Harvest' button when the plant is in the harvest period. When the user clicks this button, the plant is harvested, and afterwards, the user can confirm that the plant has been deleted from the plant list screen. The harvested plant moves to the 'Harvested' tab in the top tab of the plant list screen.
+    \end{itemize}
+\item Chatting with GPT
+    \begin{itemize}
+        
+        \item Today's Chat in the plant list tab: 
+        \item[] Users can move to the chat screen by clicking the 'Chat' button on the plant component. When the user clicks the 'Check Today's Report' button in this screen, BloomMate (Chat GPT-based chatbot) analyzes the current weather, temperature, humidity, etc. based on the detailed information of the plant as a plant and the user's location information, and tells the state of the plant. In addition, BloomMate provides information about the soil condition through Tiiun. If the soil condition is poor, the user can purchase Tiiun-specific fertilizer through the 'One-click' button.
+        \begin{figure}[h]
+        \centerline{
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Today's report Start.png}
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Today's report Oneclick Manager.png}
+        }
+        \label{fig}
+        \caption{Chat - Today's report}
+        \end{figure}
+   
+        \item Previous Chat : 
+        \item[] Users can check previous chat records. When the user clicks the ‘calendar-month’ icon labeled 'Previous Report' in the floating button on the right bottom of the screen, a calendar modal is displayed. Through this calendar, users can check the chat of the previous date. If there is no chat record on the date selected by the user, they can see the message, "There is no conversation on the date you selected!"
+        \begin{figure}[h]
+        \centerline{
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Previous chat Select Calendar.png}
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Previous chat.png}
+        }
+        \label{fig}
+        \caption{Chat - Previous Chat}
+        \end{figure}
+ 
+        \item Return to Today's Chat : 
+        \item[] Users can return to today's chat window by clicking the ‘calendar-today’ icon labeled 'Today's Report' in the floating button. 
+        \item[] In this screen, users can check today's report and today's conversations. Users can freely chat with the plant. For example, users can send messages like "How do you feel today", "I miss you", etc., and the plant responds appropriately to these.\\
+
+        \begin{figure}[h]
+        \centerline{
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Back to Today's chat.png}
+        }
+        \label{fig}
+        \caption{Chat - Return to Today's Chat}
+        \end{figure}
+    \end{itemize}
+\newline
+\textbf{\# Primary Tab - Community}
+\\After login, users can obtain various information about plants through the Primary Community tab. This tab includes two main sections: 'Q \& A' and 'Expert Article'.\\
+\item Q \& A
+        \begin{figure}[h]
+        \centerline{
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Q & A.png}
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Q & A - Create Question.png}
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Q & A - Answered Question.png}
+        }
+        \label{fig}
+        \caption{Q \& A}
+        \end{figure}
+        \begin{itemize}
+            \item In the Q \& A tab, users can ask various questions. Users can write a new question through the floating button, which includes a pencil-shaped icon located at the bottom right.
+            \item Based on the information obtained from chat or diagnosis process, users can ask general questions about the plant or methods of caring for Tiiun.When the user clicks the floating button, they are directed to a text input form screen to write their question. BloomMate provides an answer for each question as soon as possible, and the answer status is displayed at the top left of each question component. Through this, users can easily check the status of their question.
+        \end{itemize}
+    \item Expert’s Article
+        \begin{figure}[h]
+        \centerline{
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Screenshot_20231201_015925_BloomMate.jpg}
+        }
+        \label{fig}
+        \caption{Expert's Article}
+        \end{figure}
+        \begin{itemize}
+            \item In the Expert Article tab, users can read expert articles in a sequential episode format. Users can read articles containing a variety of information, including detailed information about the breeds that can be grown in Tiiun, cultivation and management methods, and ways to utilize the crops. \\
+        \end{itemize}
+\newline
+\textbf{\# Primary Tab - Mypage}
+        \begin{figure}[h]
+        \centerline{
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Screenshot_20231201_020152_BloomMate.jpg}
+        }
+        \label{fig}
+        \caption{My page}
+        \end{figure}
+\item[]After login, users can log out and check personal information and information about BloomMate through the Mypage tab. This tab includes three main sections: 'Logout', 'User Info', and 'About BloomMate'. \\
+    \item Logout
+        \begin{figure}[h]
+        \centerline{
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Landing.png}
+        }
+        \label{fig}
+        \caption{After Logout - Landing Page}
+        \end{figure}
+    \item[]Users who want to logout can click the 'Logout' button. When this button is clicked, the user's authentication information is removed from the system, and the user is automatically redirected to the landing page where they can login and register. \\
+\newpage
+    \item User Info
+        \begin{figure}[h]
+        \centerline{
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Screenshot_20231201_015810_BloomMate.jpg}
+        }
+        \label{fig}
+        \caption{Info}
+        \end{figure}
+    \item[]Users can check the member information entered through the registration process. When the user clicks 'User Info', they are directed to a page where they can check the user's name, ID, Tiiun product key, Tiiun size, and address information. If the user wishes, they can return to the Mypage tab at any time by clicking the back arrow icon at the top left.\\
+
+    \item About BloomMate
+        \begin{figure}[h]
+        \centerline{
+            \includegraphics[width=.8\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/About BloomMate.png}
+        }
+        \label{fig}
+        \caption{About BloomMate}
+        \end{figure}
+    \item[]Users can click 'About BloomMate' to check information about the team that developed BloomMate. On this page, users can refer to the background of BloomMate app development, demo videos, and related links about the development process. Also, users can check the technology stack used, core features, and information about the team members.
 \end{enumerate}
 \bibliographystyle{IEEEtran}
 \bibliography{references}
@@ -783,4 +1196,3 @@ The Diagnostic History page displays a scrolling screen where users can view the
 
 
 \end{document}
-
