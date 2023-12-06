@@ -1,8 +1,11 @@
+
+
+
 \documentclass[conference, a4paper]{IEEEtran}
 \usepackage{graphicx}
 \usepackage{indentfirst}
 \usepackage{supertabular}
-
+\usepackage{hyperref}
 \ifCLASSINFOpdf
 \hyphenation{op-tical net-works semi-conduc-tor}
 
@@ -797,18 +800,20 @@ The Frontend module refers to the part of the mobile application that is used by
 \newline
 \indent Please note that the third module, which will be discussed in more detail, covers the process of storing and loading static data in the backend's SQLite database.
 
-    \begin{figure}[h]
-    \centering
-    \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/BloomMateDB.png}
-    \label{fig}
-    \caption{Database Entity Relationship Diagram}
-    \end{figure}
+% 맨뒤로 빼기
+    % \begin{figure}[h]
+    % \centering
+    % \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/BloomMateDB.png}
+    % \label{fig}
+    % \caption{Database Entity Relationship Diagram}
+    % \end{figure}
 
 The third module is the Backend module, which serves as the server handling user requests. What sets BloomMate apart is that the database is built within the Backend module itself. This is made possible by using Django, a technology that includes its own DB called SQLite. Looking at the SQLite part, depicted in the ERD above, it consists of 9 databases. Among these, the article table is an independent table not connected to any other table. Within Django, there is code that also interacts with chatGPT. We provide chatGPT with information about the plant and the user, assigning the plant's role. It then sends the phrases you write to chatGPT, retrieves the answers, and sends them back to you. The TensorFlow Lite model created in the fourth module is also stored in the backend, along with the necessary code to execute it. After the user takes a photo, the photo URL is stored in the second module, cloudinary, and this URL is used for diagnosis.
 \newline
 
 The fourth module is the Machine Learning module. Its purpose is to create a model capable of image classification using TensorFlow's ResNet50. When designing BloomMate, our team focused on whether or not the plant's owner is present in the SmartCottage. For each scenario, the core functionality is as follows: if the owner is not in the SmartCottage, generative AI is used to interact with the plant; if the owner is in the SmartCottage, a picture of the plant is taken and AI is used to diagnose it. This Machine Learning Repository is intended for the AI used in the second scenario. It involves training the AI using a Custom Dataset and converting it to TensorFlow Lite so that it can be utilized in real projects.
 
+\newpage
 \subsection{Directory Organization}
 \begin{table} [htp]
     \caption{Directory Organization - Frontend 1}
@@ -816,17 +821,19 @@ The fourth module is the Machine Learning module. Its purpose is to create a mod
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{p{1.7cm}|p{2.8cm}|p{2.5cm}}
     \hline
-    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Library}} \\
+    \textit{\textbf{Directory}} & \textit{\textbf{File / Folder Name}} & \textit{\textbf{Library}} \\
      \hline
-   BloomMate/\newline BloomMate-FE & .bundle \newline .github \newline.vscode\newline android\newline ios\newline node\_modules\newline patches\newline src\newline .env\newline .eslintrc.js\newline .gitignore\newline .prettierrc.js\newline .watchmanconfig\newline app.json\newline babel.config.js\newline bsconfig.json\newline Gemfile\newline Gemfile.lock\newline index.js\newline jest.config.js\newline metro.config.js\newline package.json\newline README.md\newline react-native.config.js\newline tsconfig.json\newline yarn.lock & react
+   BloomMate/\newline BloomMate-FE &  android\newline ios\newline node\_modules\newline patches\newline src\newline  .eslintrc.js\newline .gitignore\newline .prettierrc.js\newline app.json\newline babel.config.js\newline index.js\newline package.json\newline react-native.config.js\newline tsconfig.json & react\newline
     react-native \newline patch-package \newline postinstall-postinstall \\ 
-    \hline
-    BloomMate-FE\newline/ios & BloomMate.xcodeproj \newline BloomMate.xcworkspace \newline BloomMateTests \newline .xcode.env \newline link-assets-manifest.json \newline Podfile \newline Podfile.lock & $<$React/RCTBridge.h$>$ \newline $<$ReactRCTBundle-URLProvider.h$>$ \newline $<$React/RCTRootView.h$>$
-    \newline $<$React/RCTLinking-Manager.h$>$\newline $<$React/RCTConvert.h$>$ \\
     \hline
         BloomMate-FE\newline/patches & react-native-action-button+2.8.5.patch \newline
     react-native-paper+5.10.4.patch & patch-packages \\
     \hline
+BloomMate-FE\newline /src/atoms & button.atom.tsx \newline divider.atom.tsx  \newline icon.atom.tsx
+ \newline image.atom.tsx  \newline modal.atom.tsx \newline point-linear-gradient.atom.tsx \newline skeleton.atom.tsx \newline suspender.atom.tsx \newline text.atom.tsx \newline text.util.ts \newline text-input.atom.tsx \newline toast.atom.tsx & react \newline react-native \newline @mobily/stacks \newline color \newline lodash \newline react-native-paper \newline react-native-vector.icons \newline react-native-fast-image \newline react-native-modal \newline react-native-linear-gradient \newline react-native-shimmer-placeholder \newline react-native-toast-message \\
+\hline
+    BloomMate-FE\newline/src/assets & img.asset.ts \newline lottie.asset.ts & lottie-react-native \\
+    \hline 
     \end{tabular}
 \end{table}
 
@@ -836,10 +843,8 @@ The fourth module is the Machine Learning module. Its purpose is to create a mod
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{p{1.7cm}|p{2.8cm}|p{2.5cm}}
     \hline
-    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Library}} \\
-    \hline 
-    BloomMate-FE\newline/android & app\newline build \newline gradle \newline build.gradle \newline gradle.properties \newline gradlew \newline gradlew.bet \newline link-assets-manifest.json \newline local.properties \newline settings.gradle & gradle \newline kotlin \\
-    \hline
+    \textit{\textbf{Directory}} & \textit{\textbf{File / Folder Name}} & \textit{\textbf{Library}} \\
+     \hline
  BloomMate-FE\newline/src/screen & root.navigator.tsx \newline  \newline about-bloom-mate.screen.tsx
  \newline article-webview.screen.tsx \newline community-qna-detail.screen.tsx \newline community-qna-post.screen.tsx \newline landing.screen.tsx \newline login.screen.tsx \newline plant-add.screen.tsx \newline plant-cht.screen.tsx \newline plant-detail.screen.tsx \newline plant-detail-edit.screen.tsx \newline plant-diagonsis-intro.screen.tsx \newline plant-diangosis-list.screen.tsx \newline plant-diagnosis-log.screen.tsx \newline plant-diagnosis-result.screen.tsx
  \newline primary/ \newline primary-community.screen.tsx \newline primary-my-page.screen.tsx
@@ -855,13 +860,8 @@ The fourth module is the Machine Learning module. Its purpose is to create a mod
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{p{1.7cm}|p{2.8cm}|p{2.5cm}}
     \hline
-    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Library}} \\
-    \hline
-    BloomMate-FE\newline/src/assets & img/img.asset.ts \newline lottie/ \newline about-BloomMate.json \newline
-    mutation-lottie.json \newline plant-add-lottie.json \newline plant-delete-lottie.json \newline plant-harvest-lottie.json & lottie-react-native \\
-     \hline
-BloomMate-FE\newline /src/atoms & button.atom.tsx \newline divider.atom.tsx  \newline icon.atom.tsx
- \newline image.atom.tsx  \newline modal.atom.tsx \newline point-linear-gradient.atom.tsx \newline skeleton.atom.tsx \newline suspender.atom.tsx \newline text.atom.tsx \newline text.util.ts \newline text-input.atom.tsx \newline toast.atom.tsx & react \newline react-native \newline @mobily/stacks \newline color \newline lodash \newline react-native-paper \newline react-native-vector.icons \newline react-native-fast-image \newline react-native-modal \newline react-native-linear-gradient \newline react-native-shimmer-placeholder \newline react-native-toast-message \\
+    \textit{\textbf{Directory}} & \textit{\textbf{File / Folder Name}} & \textit{\textbf{Library}} \\
+    
 \hline
  BloomMate-FE\newline/src/providers & mutation-indicator\newline query-client \newline recoil \newline ui  & react  \newline  react-native \newline  @mobily/stacks \newline  react-native-flipper \newline  react-query-native-devtools \newline  react-native-reanimated \newline  react-native-mmkv-flipper-plugin \\
  \hline
@@ -880,20 +880,12 @@ BloomMate-FE\newline /src/atoms & button.atom.tsx \newline divider.atom.tsx  \ne
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{p{1.7cm}|p{2.8cm}|p{2.5cm}}
     \hline
-    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Library}} \\
+    \textit{\textbf{Directory}} & \textit{\textbf{File / Folder Name}} & \textit{\textbf{Library}} \\
      \hline
- BloomMate & .git \newline .vscode \newline .env \newline .gitignore \newline db.sqlite3 \newline manage.py \newline requirements.txt \newline test2.jpg & \\
+ BloomMate &  db.sqlite3 \newline manage.py \newline requirements.txt \newline test2.jpg & \\
  \hline
  BloomMate\newline/BloomMate\_\newline backend & \_\_init\_\_.py \newline asgi.py \newline settings.py \newline urls.py \newline wsgi.py & os \newline django.core.asgi \newline pathlib \newline datetime \newline dotenv \newline django.contrib \newline django.urls \\
  \hline
- BloomMate\newline/accounts & \_\_init\_\_.py \newline admin.py \newline apps.py \newline models.py \newline serializer.py \newline tests.py \newline urls.py \newline views.py & django.contrib \newline django.apps \newline django.db \newline django.utils \newline rest\_framework \newline django.urls \newline rest\_framework\_simplejwt \\
- \hline
- BloomMate\newline/articles & \_\_init\_\_.py \newline admin.py \newline apps.py \newline models.py \newline serializer.py \newline tests.py \newline urls.py \newline views.py & django.contrib  \newline 
-django.apps \newline django.db \newline rest\_framework \newline django.urls \newline rest\_framework\_simplejwt \\
- \hline
- BloomMate\newline /chatting & \_\_init\_\_.py \newline admin.py \newline apps.py \newline models.py \newline serializer.py \newline tests.py \newline urls.py \newline utils.py \newline views.py &  django.contrib \newline django.apps \newline django.db \newline django.utils \newline rest\_framework \newline django.urls \newline rest\_framework\_simplejwt \newline openai \newline requests
-\newline random \newline django.utils \newline geopy.geocoders \newline django.conf \newline django.shortcuts \newline django.utils \\
-\hline
     \end{tabular}
 \end{table}
 
@@ -905,7 +897,15 @@ django.apps \newline django.db \newline rest\_framework \newline django.urls \ne
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{p{1.7cm}|p{2.8cm}|p{2.5cm}}
     \hline
-    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Library}} \\
+    \textit{\textbf{Directory}} & \textit{\textbf{File / Folder Name}} & \textit{\textbf{Library}} \\
+     \hline
+      BloomMate\newline/accounts & \_\_init\_\_.py \newline admin.py \newline apps.py \newline models.py \newline serializer.py \newline tests.py \newline urls.py \newline views.py & django.contrib \newline django.apps \newline django.db \newline django.utils \newline rest\_framework \newline django.urls \newline rest\_framework\_simplejwt \\
+\hline
+ BloomMate\newline/articles & \_\_init\_\_.py \newline admin.py \newline apps.py \newline models.py \newline serializer.py \newline tests.py \newline urls.py \newline views.py & django.contrib  \newline 
+django.apps \newline django.db \newline rest\_framework \newline django.urls \newline rest\_framework\_simplejwt \\
+ \hline
+ BloomMate\newline /chatting & \_\_init\_\_.py \newline admin.py \newline apps.py \newline models.py \newline serializer.py \newline tests.py \newline urls.py \newline utils.py \newline views.py &  django.contrib \newline django.apps \newline django.db \newline django.utils \newline rest\_framework \newline django.urls \newline rest\_framework\_simplejwt \newline openai \newline requests
+\newline random \newline django.utils \newline geopy.geocoders \newline django.conf \newline django.shortcuts \newline django.utils \\
      \hline
 BloomMate\newline/community &  \_\_init\_\_.py \newline admin.py \newline apps.py \newline models.py \newline serializer.py \newline tests.py \newline urls.py \newline utils.py \newline views.py \newline pagination.py \newline permissions.py & django.contrib \newline django.apps \newline django.db \newline django.urls \newline rest\_framework \newline django.https \newline rest\_framework\_simplejwt \\
 \hline
@@ -921,7 +921,7 @@ BloomMate\newline/plants & \_\_init\_\_.py \newline admin.py \newline apps.py \n
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{p{1.7cm}|p{2.8cm}|p{2.5cm}}
     \hline
-    \textit{\textbf{Directory}} & \textit{\textbf{File Name}} & \textit{\textbf{Library}} \\
+    \textit{\textbf{Directory}} & \textit{\textbf{File / Folder Name}} & \textit{\textbf{Library}} \\
      \hline
 BloomMate\newline /BloomMate-ML & .vscode \newline dataset \newline tensorflow-lite-models \newline test-case \newline .gitignore \newline model.h5 \newline model.tflte \newline README.md \newline resnet-tflite-test.ipynb \newline resnet-all-datasets.ipynb \newline training-result.png & tensorflow \newline
 numpy \newline keras \newline pathlib \newline matplotlib \\
@@ -941,12 +941,241 @@ BloomMate-ML\newline/dataset & Corn Common rust \newline Corn Gray leaf spot \ne
     \item Location of source code:
     \item[] https://github.com/BloomMate/BloomMate-FE\\
     \item Class Component
-    \item[] Each folder under the src directory has a specific role assigned to it. You can determine the role based on the words between the dots in the module name. Let me first explain about the atom module. The term "atom" is short for "atomic" and is inspired by the atomic design system. Although it cannot create functionality on its own, it plays a crucial role in terms of UI as it represents the most fundamental UI components. Although not all of the atom components, I have tried to follow Google's Material Design system for most of them (although there have been compromises in practical issues).
+    \begin{enumerate}
+        \item BloomMate/BloomMate-FE
+        \item[] When you first enter the Frontend Repository, you will come across many files that were not created by the developers themselves. These files are mostly automatically generated during the installation of react-native. They primarily consist of configuration files and files optimized for the Android and iOS environments. However, this does not mean that the BloomMate developers have not made any modifications. Let's proceed to explain each file or folder, providing a detailed explanation of the various class components within the folders.
+        \begin{itemize}
+            \item android [folder] :
+            \item[] The android folder is crucial for ensuring the smooth functioning of a react-native project on Android. Developers typically modify the files inside this folder for the following reasons:
+            \begin{enumerate}
+                \item Making changes related to the application's build, such as modifying the build version, name, or permissions.
+                \item In earlier versions of the react-native library, modifications to the native part of Android were required. However, this is becoming less common now, as such modifications are either handled in JavaScript or not required at all.
+                \item Inserting static elements such as fonts and icons.
+            \end{enumerate}
+            \item[] Therefore, it is common to modify files like android/build.gradle, android/app/build.gradle, and AndroidManifest.xml for these purposes.\\
+
+            \item ios [folder]:
+            \item[]  ios folders, like android folders, ensure that react-native projects run smoothly on iOS. The purpose of modifying the ios folder is similar to that of the android folder, but there is a difference. This difference is related to the Podfile. In an iOS project that uses CocoaPods, the Podfile is a configuration file used to define external libraries and dependencies to be added to the project. It allows CocoaPods to install and manage the required libraries for the project. Most react-native libraries require modifications to the Podfile. At BloomMate, we wanted to simplify the process for developers by avoiding the need to enter commands manually each time. Instead, we have included the command "npx pod install" in the post-install section of the package.json file. This command automatically updates the Podfile after downloading new libraries. \\
+
+            \item package.json \& node\_modules [folder] :
+            \item[] The package.json file manages information about the current project and its dependencies, which are modules installed through the package manager (npm, yarn). It is formatted in JSON and contains the following information:
+            \begin{enumerate}
+                \item Basic information section: This includes the project name and version.
+                \item Script section: This defines various commands that can be used in the project, such as building, running, testing, or automating tasks. In BloomMate, additional commands are included, such as type-checking for TypeScript errors, postinstall-related automatic command settings, and automatic cache value deletion when starting react-native.
+                \item Dependencies and devDependencies section: These manage the versions and dependencies of the libraries installed in BloomMate. The library versions are managed using semantic versioning. Dependencies are packages needed in the production environment, while devDependencies are packages needed only during development.
+            \end{enumerate}
+            \item[] All installed libraries are stored in the node\_modules folder. To use a library anywhere in the project, you will refer to the installed library in the node\_modules folder. \\
+
+            \item patches [folder]:
+            \item[] This folder is where the patch-package library operates. By using patch-package, you can make custom changes to the libraries within the node\_modules, and these modifications will persist even when the changes are deployed. In other words, the modifications made to the node\_modules are managed by Git and applied in any execution environment. This allows for safely sharing modifications when quick fixes are needed for library bugs or when additional functionality is desired that is not supported by the library. The libraries that have been patched and the reasons for patching them will be discussed later. \\
+
+            \item src [folder] :
+            \item[] The src folder stands for "source" and is where all the code written by the frontend developer of BloomMate is stored. If files are managed at the top level instead of within the src folder, it has the disadvantage of disrupting the hierarchical order of the folder structure. Therefore, it is common practice to create a single folder and manage everything inside it, and BloomMate has chosen src as that folder. The various folders within the src folder will be examined in detail later in this document. \\
+
+            \item .eslintrc.js \& .prettierrc.js : 
+            \item[]  ESLint and Prettier are primarily used in JavaScript codebases to enhance code quality and ensure consistent style. ESLint detects syntax and common errors, providing developers with guidelines through static analysis. On the other hand, Prettier focuses on code formatting, ensuring consistent style and improving code readability. When used together, these tools facilitate efficient collaboration and maintain consistent code quality. The two files in question configure ESLint and Prettier, respectively. In particular, BloomMate installs additional plugins for ESLint to manage unused import statements and the order of import statements. \\
+
+            \item app.json \& react-native.config.js : 
+            \item[]  These two files configure React Native itself. They manage the displayName of the app and the font location. This allows you to install the font in the appropriate locations for both Android and iOS using commands.\\
+
+            \item babel.config.js :
+            \item[] The babel.config.js file is used to specify Babel settings in a React Native project. Babel is a tool that transforms JavaScript code, primarily converting it to be compatible with browsers or environments that do not support the latest ECMAScript standards. It also converts JSX code into React.createElement function calls, enabling it to be understood at runtime. In BloomMate, we utilize the default Babel preset and include the module-resolver plugin to define module aliases. This allows us to import modules using aliases instead of using relative paths.\\
+
+            \item index.js :
+            \item[] The index.js file is one of the entry point files in a React Native project. A React Native app is composed of JavaScript code, and the index.js file is the first file executed when the app starts. Its main responsibility is the initial setup and rendering of components. Typically, in this file, the main component of the app is registered and rendered using AppRegistry. As the starting point of a React Native app, you can add necessary initial configurations or logic here and, if needed, modularize them into different files for better management. \\
+
+            \item tsconfig.json : 
+            \item[] The tsconfig.json file is used to configure the behavior of the TypeScript compiler in a TypeScript project. This file provides information to the compiler about the project's configuration, compilation options, path settings, and other specific configurations. In BloomMate, TypeScript plays a crucial role, and tsconfig.json is an important file for configuring it. It is not enough to define aliases for relative paths only in babel.config.js; they must also be defined in tsconfig.json as TypeScript cannot recognize them otherwise. Additionally, to use files like lottie and png as modules, their file extensions should be added as types in tsconfig.json. \\
+        \end{itemize}
+
+    \item BloomMate-FE/patches
+    \item[] I will introduce a special folder called the "patches" folder in the root directory. This folder will be encountered before we reach the "src" folder. Let's examine which libraries require patches.
     \begin{itemize}
-        \item button.atom.tsx : Buttons are components that allow you to trigger specific actions when they are pressed. The specific action is received through onPress. Buttons follow the material design guidelines faithfully and can be implemented in three modes (outlined, contained, text). The text inside the button can be obtained through children, and icons can also be displayed. When the button is pressed, a layer of color covers the entire button, indicating that the button is in a pressed state.
-        \item divider.atom.tsx : A divider serves as a UI element that separates other elements. It is a thin line in a light gray color. If you want a thicker divider, you can set the "heavy" parameter to true.
-        \item icon.atom.tsx : Icons are a valuable tool for conveying information through visual symbols. In react-native, you can use icons by utilizing the react-native-vector-icons library. This library supports various icon sets, and we have decided to use the material icon set. To use material icons, simply import the package from react-native-vector-icons without any additional steps. When using an icon on a typical screen, you only need to provide three values: name, size, and color. It is worth noting that modern icons are treated as fonts, allowing you to use the Icon component within Text. This simplifies styling for many publishing tasks.
+        \item react-native-action-button+2.8.5.patch : 
+        \item[] First, the react-native-action-button is a library that implements a floating button. However, we encountered a warning message "Animated: useNativeDriver was not specified" when using this library. To address this issue, we referred to the GitHub issue and found a suggestion to modify the library directly. Unfortunately, it has not been actively maintained for the past three years. As a result, we made the necessary modifications ourselves and proceeded with the patch.//
+        
+        \item react-native-paper+5.10.4.patch :
+        \item[] This library, which I will explain in more detail in the Atom folder, is the best implementation of Google's Material Design System. It excels at implementing the Material Design System, but it has a limitation regarding the padding value of the label, specifically in TextInput. Unfortunately, this issue cannot be resolved through props. As a result, I had to fix this problem by directly modifying the library.
     \end{itemize}
+
+    \item BloomMate-FE/src/atoms
+    \item[] Each folder within the src directory has a specific assigned role. The role can be determined based on the words between the dots in the module name. Let me first explain the atom module. The term "atom" is an abbreviation for "atomic" and is inspired by the atomic design system. While it cannot independently create functionality, it plays a crucial role in the UI by representing the most fundamental UI components. Although not all of the atom components follow Google's Material Design system, I have made an effort to align with it for most of them, although there have been practical compromises.
+    \begin{itemize}
+        \item button.atom.tsx : 
+        \item[]  Buttons are components that allow you to trigger specific actions when they are pressed. The specific action is received through onPress. Buttons follow the material design guidelines faithfully and can be implemented in three modes (outlined, contained, text). The text inside the button can be obtained through children, and icons can also be displayed. When the button is pressed, a layer of color covers the entire button, indicating that the button is in a pressed state.\\
+
+        \item divider.atom.tsx :
+        \item[] A divider serves as a UI element that separates other elements. It is a thin line in a light gray color. If you want a thicker divider, you can set the "heavy" parameter to true. \\
+
+        \item icon.atom.tsx :
+        \item[] Icons are a valuable tool for conveying information through visual symbols. In react-native, you can use icons by utilizing the react-native-vector-icons library. This library supports various icon sets, and we have decided to use the material icon set. To use material icons, simply import the package from react-native-vector-icons without any additional steps. When using an icon on a typical screen, you only need to provide three values: name, size, and color. It is worth noting that modern icons are treated as fonts, allowing you to use the Icon component within Text. This simplifies styling for many publishing tasks. \\
+
+        \item image.atom.tsx : 
+        \item[] Images play a crucial role in the Frontend, as they effectively convey meaning to users. In BloomMate, users can add plants by taking pictures within the application, and images are also essential when viewing plant information and diagnosing plant photos. Additionally, images are necessary for various illustrations, logos, and examining plant lists and diagnostic logs. In BloomMate's overall architecture, all images are downloaded from cloudinary URLs. When using the native Image component of react-native, two problems arise. Firstly, a blank image is displayed while the photo is being loaded from the URL. Secondly, even if the image has been loaded once, it will reload when leaving and re-entering the screen. To address these issues, BloomMate utilizes react-native-fast-image. This library allows a loading component (Skeleton) to be displayed while the URL is being loaded. Once the image has been loaded, it is cached and does not need to be reloaded again. Certain images in the application, such as logos and seed-related illustrations, are accessed through fixed URLs. To improve the user experience (UX) and enhance the overall quality of the application, the preLoad function of FastImage is used to create cache values in advance when the application starts. \\
+
+        \item modal.atom.tsx :
+        \item[] A modal is a floating screen that appears above the existing screen. It allows users to display important information without navigating to a new page. Modals can provide a clearer workflow by showing the relationship between the floating screen and the underlying screen. In BloomMate, we use the react-native-modal library instead of the native modal provided by react-native for additional effects. The use of nativeDriver in Android and iOS for modal animations is particularly attractive as it helps optimize performance in large applications. BloomMate offers two types of modals: 1) a modal with elements positioned in the center of the screen and 2) a BottomSheet modal positioned at the bottom. Each modal is distinguished by the isBottomSheet prop. There is also the onBackDrop prop, which determines what happens when the user taps on the empty part of the modal. In BloomMate, it is mostly used to close the modal. \\
+
+        \item point-linear-gradient.atom.tsx : 
+        \item[] LinearGradient is used in React Native to create gradient effects using the react-native-linear-gradient library. In BloomMate, gradient effects are utilized to enhance the design of specific UI elements. It is worth noting that all gradients share the same colors. To prevent redundant code, we have implemented this as a separate component, adhering to the DRY (Do Not Repeat Yourself) principle. \\
+
+        \item skeleton.atom.tsx : 
+        \item[] This is a loading animation that displays an approximate layout of the screen before the actual data is rendered. It helps to reduce user boredom during loading and decreases the chance of users leaving the page. BloomMate has chosen to use the react-native-shimmer-placeholder library among various Skeleton libraries because we believe that the shimmer effect provided by this library is suitable for the loading component. When using this component, it is important not to pass the width and height values as props. Instead, they should be declared within the style and passed as props.\\
+
+        \item text.atom.tsx :
+        \item[] Implementing the Text component in react-native can be challenging, especially for beginners. This is because:
+        \begin{enumerate}
+            \item Unlike React, text must always be placed inside the Text component, which can lead to frequent mistakes.
+            \item There are numerous props and styles related to fonts, which require a significant amount of time and effort to write in code.
+        \end{enumerate}
+        \item[] To address these challenges, BloomMate has adopted the Typography approach from the Material System. Typography combines the word "Type," meaning "print," with the suffix "-graphy," meaning "art or technique." In modern typography, it not only conveys information but also communicates emotions and brand presence. Therefore, it is important to utilize typography as a design element that goes beyond just the concept of fonts. The Material 3 Design System's Typography introduces three elements that control the variants:
+        \begin{enumerate}
+            \item fontSize
+            \item lineHeight
+            \item letterSpacing
+        \end{enumerate}
+        \item[] (Material 2 also controlled fontWeight, but it has been removed.) There are a total of 15 variants that combine prefixes like 'display,' 'headline,' 'title,' 'label,' and 'body' with suffixes like 'Small,' 'Medium,' and 'Large.' fontWeight and color are limited to a few predefined options to ensure consistency. This approach results in consistent text and provides a sense of unity in terms of UI and UX. \\
+
+
+        \item text-input.atom.tsx :
+        \item[] TextInput is a component that allows users to input text. It follows the Material Design System and only has one outlined mode, unlike Button. Showing TextInput in various modes would disrupt consistency and cause user confusion. For this component, we used react-native-paper, which implements the material design system effectively.When using this component, the label and error are the most important aspects. In the case of TextInput provided by react-native itself, there is no label. Therefore, the only way to provide information about the text input was through the placeholder. However, in BloomMate, we provide both label and placeholder, allowing us to provide more diverse information through TextInput. For example, the label could say "ID" and the placeholder could say "Please enter within 10 characters." The second important aspect is the error. This is especially useful when inputting information according to specifications, such as the Tiiun product key, which must be within 8 characters. The error works well with the validation of react-hook-form. By passing the error message through fieldState.error.message, TextInput displays the error message at the bottom when an error occurs. \\
+
+        \item toast.atom.tsx : 
+        \item[]  A toast message is a popup that displays a short message to the user and disappears after a certain period of time. An example of a toast message is the popup that appears when pressing the back button, displaying the message "Press back button again to exit the app". However, the toast messages provided by Android or iOS have limitations such as message length and position. In BloomMate, we have built a custom toast component using react-native-toast-message to overcome these limitations. To use this custom toast component, we declare it below the top-level App (in the case of BloomMate, it is declared below <RootNavigator/> in App.tsx). Then, within the screen, we can call Toast anytime using Toast.show to display a desired message at the desired position. As an example, in BloomMate, we used a toast message to inform users that they cannot add more plants when all the plant slots are already filled. \\
+    \end{itemize}
+
+    \item BloomMate-FE/src/assets
+    \item[] The second folder in the src directory is named assets. Assets is where static data is stored. By pre-building the static data, you can ensure a smoother user experience without any loading during runtime when users are using the application.
+    \begin{itemize}
+        \item img.asset.ts : 
+        \item[] This file contains the URLs of images. As explained in image.atom.ts, these URLs are predetermined and will be used directly in the application. They are not URLs that will be fetched from the server through GET requests. Managing these URLs in a single file helps maintain code structure consistency.\\
+
+        \item lottie.asset.ts :
+        \item[] Lottie is an open-source library created by Airbnb for displaying vector animations in web and mobile applications. It allows for the rendering of animations designed in After Effects, which are saved as JSON files, within applications. By using Lottie, designers can seamlessly integrate their After Effects designs into code, fostering collaboration between designers and developers and reducing the effort needed to implement animations. At BloomMate, we utilize lottie-react-native to display multiple Lottie animations. This file imports and converts the JSON data from different Lottie files into variables.
+    \end{itemize}
+
+    \item BloomMate-FE/src/screen
+    \item[] The third folder in the src directory is called "screen". The files within the screen folder can be divided into two types: 1) Navigator files - These files contain the navigator of react navigation, which groups multiple screens together. 2) Screen files - Each individual screen displayed in the application corresponds to one of these files. They can communicate with other screens using the navigation and route received from the navigator. The screens themselves follow a hierarchy of screen-module-components. This is done to implement the MVC structure in the frontend. The "V" represents components, while the "C" represents modules. In other words, the module level manages data logic based on hooks, while the component level handles all UI rendering. Finally, certain screens need to retrieve data from the server by making a GET request. In these cases, BloomMate uses react-query with the suspense option set to true. As a result, Suspense is added at the screen level for some screens, with fallback functions directly provided. Meanwhile, for other screens, Suspense is managed at the module level using Higher-Order Components (HOC). In the descriptions of the screens below, the following structure is generally followed: (1) Explanation of the overall logic of the screen using representative hooks. (2) Description of the types of modules. (3) Explanation of other peculiarities (UI-related peculiarities, logic-related peculiarities, etc.).
+
+    \begin{itemize}
+        \item root.navigator.tsx :
+        \item[] This is the main file that serves as the starting point for all screens in BloomMate. The main file uses the Stack Navigator, which is the simplest navigator and provides easy methods for navigator reset and more. There are three things to consider regarding the main file. First, it manages the route parameters for each screen. By using types in the main file, each screen can receive the appropriate parameters. Second, the header of the navigator itself is not displayed. After several trials and errors, it was concluded that it is better to set the headerShown property to false instead of customizing the header of the navigator itself, and create headers in each screen. Lastly, the Bottom-Tab navigator is positioned within the Stack navigator. This means that the Stack navigator is the parent and the Bottom-Tab navigator is the child structure. This is because the bottom tab bar should only be exposed within the screens inside the Bottom-Tab. The Bottom-Tab navigator is declared in the primary navigator, which will be mentioned later. \\
+
+        \item about-bloom-mate.screen.tsx : 
+        \item[] This screen consists of a WebView that connects to the BloomMate team's Notion. In the team's Notion, you can access information about what BloomMate is, why it was created, and who the creators are.\\
+
+        \item article-webview.screen.tsx : 
+        \item[] This screen contains a WebView component where you can access articles written by experts about plants.\\
+
+        \item community-qna-detail.screen.tsx :
+        \item[] This screen displays the question and answer transcripts for the Q&A. It can have two states: 1) State with only a question - If there is only a question, the module responsible for managing the answer will not be shown. On the question side, a status message "Answer Required" will be displayed. 2) State with an answer - If the module managing the answer is also shown, on the question side, a status message "Answer Completed" will be displayed. In BloomMate, the administrator manages the answering process. Therefore, the profile for the answer will consist of BloomMate icons. Data is obtained through the useGetQuestionDetailQuery, and the necessary ID value for the GET request params is passed via the screen router. To ensure that the answer module is not shown if there is only a question, the screen handles the query loading using an early return structure. (This is a rare structure in BloomMate.) \\
+
+        \item community-qna-post.screen.tsx : 
+        \item[] This screen provides a space for users to ask questions in the Q\&A section. There are two main parts on this screen. 1) The useQnAForm component, which uses react-hook-form, handles the user input when asking a question. It ensures that the specified requirements (e.g., entering a question title and content) are met. The form consists of four sections: a header, a title field, a content field, and a footer. 2) The usePostCommunityQnaMutation component, powered by react-query, handles the submission of the form data to the server. The types required in the body of the post request perfectly match the types provided by useQnAForm. As the post request is being processed, a MutationIndicator is displayed on the screen. Once all the requests are completed, the screen reverts back to its original state using the navigation.replace function. One notable feature in terms of user interface is the TextInput component, which allows users to input the question content. By supporting multiline input, users can write the question content across multiple lines. \\
+
+        \item landing.screen.tsx : 
+        \item[] This screen is the first thing users see when they arrive on BloomMate. It shows the BloomMate logo and an image that symbolizes what BloomMate represents. At the bottom, there are two buttons for logging in and registering. The login button has a solid style, while the registration button has an outlined style. This distinction is made because the login function is usually more important for regular users, as they are less likely to register every time. The module is divided into sections for easy content management and footer display. \\
+
+        \item login.screen.tsx :
+        \item[] This screen is designed for users to log in. It has two main components that serve specific purposes: 1) The useLoginForm hook, which utilizes react-hook-form, is responsible for managing user input data during the login process. It enforces various constraints, such as requiring a minimum of 5 characters for the ID and allowing only English letters and numbers. All of these conditions can be handled within useLoginForm. 2) The usePostLoginMutation hook, which utilizes react-query, is responsible for sending the form data received from the user to the server. The required types for the body of the post request are perfectly matched with the types provided by useLoginForm. While the post request is loading, the screen displays a MutationIndicator. Once all the requests are completed, the screen navigates to the primary screen using the navigation.reset function. This ensures that the landing screen is not shown when navigating back, as the navigator stack is managed accordingly. Additionally, before performing the reset action, usePostLoginMutation sets the access token in the header of defaultAxios. This step is crucial for authenticated communication with the server when using most BloomMate features after logging in, as the token needs to be included in the header for authentication purposes. In terms of UI, this screen follows a standard design with a header, an ID input field, a password input field, and a footer. \\
+
+        \item plant-add.screen.tsx : 
+        \item[] This screen allows users to add plants. The primary hooks used in this screen are: 1) usePlantAddForm with react-hook-form. 2) usePostPlantAddMutation with react-query. Since these hooks have been already described in detail above, we will skip the explanation as they have the same logic. The important thing to note is: The management of steps in the plant addition screen using recoil. As specified, the plant addition process consists of multiple steps. Although React is a Single Page Application (SPA), it will appear to users as multiple screens composed of steps. To handle this, we have introduced recoil as a global state. In BloomMate, the prefix "\$" is used for atom values in recoil. The atom used in the plant addition screen is \$plantAddState. In summary, the logic of the plant addition screen is as follows: 1) Receive user input and manage it using react-hook-form. 2) If valid user input is received, enable the buttons in the footer. 3) By pressing the button, move to the next step using recoil. 4) Render the corresponding module for the next step. 5) Repeat this process until the last screen, where usePostPlantAddMutation is called. 6) If the plant is successfully added to the server, reset the recoil state and switch screens (this process is resolved using useWillUnmount). The modules consist of three parts: header, contents, and footer. In the header, if the back icon is pressed and it is the first screen, it goes back; otherwise, it goes to the previous step. The logic described in the plant addition screen is also applied identically to the sign-up screen. Finally, there is a special logic specific to the plant addition screen, which is photo registration. This is implemented in the following order: 1) First, press the photo add button to open a modal. 2) In the modal, choose whether to take a photo directly or choose a photo from the gallery. This is implemented using useUploadPhotoMutation and useUploadImageLibraryMutation, respectively. 3) Upload the selected photo to Cloudinary. 4) Insert the uploaded URL using usePlantAddForm. In other words, the data passed to the BloomMate server is a Cloudinary URL string. This logic is also used in plant diagnosis. \\
+
+        \item plant-chat.screen.tsx : 
+        \item[] This screen enables users to have conversations with plants. The main features on this screen are: 1) useGetChattingContentsByDate - a function that retrieves all chat history on a specific date. 2) usePostPlantChat - a function that sends the user's message to the server. 3) \$plantChatState using recoil - a state management library. These functions are interconnected, and their logic is not separated using useEffect. Therefore, I will write the logic in the order of events that occur when entering the screen. 1) When entering the screen, the useGetChattingContentsByDate function is executed. Let's assume a scenario where there are no chats for today (empty data received from the server). 2) In the center of the screen, there is a button with the text "Check Today's Report". When this button is pressed, the user's message "How is today?" is added to the \$plantChatState. 3) By using useEffect, if the last message in the \$plantChatState is the user's message, it is sent to the server using the usePostPlantChat function. 1) At the same time as sending it to the server, the server-loading value is added to the \$plantChatState. This allows showing a message to the user indicating that the server is loading. 2) If a value is received from the server, the server-loading message, which was the last message in the \$plantChatState, is changed to the server message and shown to the user. 3) In the scenario where there are chats for today, as in case 1, the received value from the server is separated into user-server values and added to the \$plantChatState. The subsequent process involves receiving messages from the user through TextInput. Additionally, there is a feature to view past messages through a floating button. In this case, the useGetChattingContentsByDate function can be used to retrieve past messages. Once you go back to a past point in time, chatting is no longer possible. This screen is unique because Suspense is created as an HOC (Higher Order Component) within the module. It had to be created within the module to preserve PointLinearGradient. The recoil state is automatically reset with useWillUnmount. \\
+
+        \item plant-detail.screen.tsx : 
+        \item[] This screen allows users to access detailed information about planted plants. Users can review the plant's details and view photos taken during the plant's addition. A bar graph has been included to show growth information, and it utilizes MotiView for animated effects. MotiView is a library that enables the use of animations in react-native, similar to CSS animations. Upon entering the screen, there is an animation where the screen slides in from left to right using translateX. From this screen, users have the option to navigate to the plant-detail-edit screen and plant-diagnosis-intro screen. However, during the harvesting season for a plant, the bottom button changes to "Harvest." Pressing this button will initiate the harvesting process. (Harvested plants can be viewed in the primary-plant-harvested-list.) \\
+
+        \item plant-detail-edit.screen.tsx : 
+        \item[] This screen allows users to edit the information of the plants they have planted. The plant information itself, such as the planting date and crop type, cannot be modified. However, the name and photo of the plant can be changed. Two important functions are used on this screen: 1) usePlantDetailEditForm using react-hook-form, and 2) useUpdatePlantMutation using react-query. These functions have been explained in detail in the previous section. I will only explain the different parts of this screen, excluding the parts that have the same logic. The main distinction lies in the defaultValue. While other screens start with empty input values, this screen is for modifying existing data. Therefore, there are input values that the user has already entered, and these values need to be set as defaultValue. These input values can only be obtained from the server. In such cases, react-hook-form provides a method called reset. By using useEffect, the retrieved data is set as the default value using reset when the GET request is successful. After that, normal modification can be done. Once the modification is made, the navigation is reset using navigation reset. This is necessary to avoid various bugs that may occur when using goBack, navigate, replace, etc. (such as the existing screen not being updated and having two plant detail screens). \\
+
+        \item plant-diagonsis-intro.screen.tsx : 
+        \item[] This screen provides information and allows users to diagnose plants. The contents module includes helpful images and phrases regarding plant diagnosis. The footer module is significant and contains a CTA-Section with buttons that direct users to the "Diagnosis List" screen and the "Diagnose" screen. When users tap the "Diagnose" button, they will be prompted to either capture a photo or select one from the gallery, similar to the screen for adding a plant. The chosen or captured photo will be uploaded to Cloudinary, and the corresponding URL will be sent to the server. Once the server sends the ID value for the diagnosis result, users can proceed to the "Plant Diagnosis Result" screen. \\
+
+        \item plant-diangosis-list.screen.tsx : 
+        \item[] This screen acts as a list screen for plant diagnosis results. It allows you to view the list of diagnoses that have been performed so far. The main feature of this screen is the use of FlatList, a component in React Native that improves the performance of rendering lists. FlatList is specifically designed to handle long lists with many items efficiently and optimize scrolling performance. It also takes care of item spacing and top/bottom components when there are no items. In BloomMate, FlatList is not only used on this screen but also on various other screens, which will be discussed later. Another important aspect of this screen is the utilization of FastImage. During the development of BloomMate, Images were replaced with FastImage to manage caching. It was found that when using the react-native Image component on this screen, images were not rendered correctly when there were more than five lists. This was because there was no caching, which caused the images to be rendered from scratch each time and put too much load on the UI thread. By replacing it with FastImage, we were able to successfully render the images without any issues. \\
+
+        \item plant-diagnosis-log.screen.tsx : 
+        \item[] This screen functions as a log for plant diagnosis. It is similar to the screen displaying the results of a plant diagnosis, but it does not include any components or logic related to GPT. In simpler terms, once a plant has been diagnosed with a disease, it cannot be removed from the log screen. It will require another diagnosis.\\
+
+        \item plant-diagnosis-result.screen.tsx: 
+        \item[] This screen appears immediately after diagnosing a plant and provides detailed explanations of the diagnosis results. If the plant is diseased, additional detailed explanations related to the disease are also included. A button is provided to purchase new seeds recommended by GPT automatically, and clicking this button will delete the corresponding plant. \\
+
+        \item primary.navigator.tsx: 
+        \item[] This navigator is a bottom-tab navigator that manages the screens to be included, similar to the root navigator. It is named "primary" because screens with bottom tabs are perceived as the most important from the user's perspective. The settings of the navigator are similar to the root navigator overall, with the addition of managing the style of the bottom tabs. \\
+
+        \item primary-plant-list.screen.tsx: 
+        \item[] This screen is displayed when the first tab of the bottom tabs is pressed. It includes two additional screens configured with a material-top navigator: the current plant list screen and the harvested plant list screen. One important point to note is that the tabs of the top navigator are custom implemented to match the design prototype, requiring the code to be written from scratch to implement the tabs. \\
+
+        \item primary-plant-harvested-list.screen.tsx: 
+        \item[] This screen appears when the first tab at the bottom is pressed, and the first tab at the top is pressed. It displays a list of currently grown plants. Similar to other lists, it is implemented using FlatList. Additionally, it includes a floating button and toast message implementation. \\
+
+        \item primary-plant-current-list.screen.tsx: 
+        \item[] This screen appears when the first tab at the bottom is pressed, and the first tab at the top is pressed. It displays a list of plants that have already been harvested. Similar to other lists, it is implemented using FlatList. \\
+
+        \item primary-community.screen.tsx: 
+        \item[] This screen appears when the second tab at the bottom is pressed. Within this screen, two additional screens are constructed using material-top-navigator (Q\&A and article screens). It also implements a custom tab for the top navigator.\\
+
+        \item primary-community-qna.screen.tsx: 
+        \item[] This screen appears when the first tab at the top is pressed within the second tab at the bottom. It displays a list of Q\&A. Similar to other lists, it is implemented using FlatList.
+
+        \item primary-community-article.screen.tsx: 
+        \item[] This screen appears when the second tab at the top is pressed within the second tab at the bottom. It displays a list of expert articles. Similar to other lists, it is implemented using FlatList.\\
+
+        \item primary-my-page.screen.tsx: 
+        \item[] This screen appears when the third tab at the bottom is pressed. It consists of buttons for logging out, checking user information, and accessing information about BloomMate.\\
+
+        \item signup.screen.tsx: 
+        \item[] This screen is used for signing up. The logic is the same as the plant-add screen. Two different aspects are: 1) receiving input with toggle buttons and 2) using the daum-postcode library to input addresses. After completing the sign-up, the user is directed to the login screen to log in. \\
+
+        \item user-info.screen.tsx: 
+        \item[] This screen can be accessed from the primary-my-page screen. It allows users to check the information provided during sign-up. \\
+    \end{itemize}
+
+    \item BloomMate-FE/src/provider
+    \item[] The provider is located in the 4th folder of src. In React, the provider refers to components that need to be positioned higher in the DOM tree. Developers can create their own providers using the Context API or use libraries that manage global states. These libraries often provide a specific component with "provider" as a suffix. While it may seem possible to directly include such libraries in the App without a provider folder, in most cases, these libraries require detailed configurations. That's why the provider folder was created to handle these configurations.
+    \begin{itemize}
+        \item mutation-indicator: 
+        \item[] The name "mutation-indicator" was inspired by the useMutation function in react-query. Its usage is simple. The useMutationIndicator hook takes an array as its first parameter. You can include the loading variables of requests (POST, DELETE, PATCH, etc.) that send data from the client to the server in this array. If any element in the array is true, a modal will appear, covering the entire screen. This modal is used to indicate that data is being sent, and it shows an animation using Lottie.\\
+
+        \item query-client: 
+        \item[] This provider is used for working with react-query. Some settings have been implemented to make it more convenient when using useQuery, and additional code has been written to capture react-query in Flipper. \\
+
+        \item recoil: 
+        \item[] This provider is used for working with recoil. Note that it must be positioned at the top of the DOM tree. Additional code has been written to capture recoil in Flipper. \\
+
+        \item ui: 
+        \item[] This provider contains various libraries and components related to UI. Firstly, there are providers for react-native-paper and mobily/stacks. Secondly, there are providers and components related to SafeAreaView. SafeAreaView ensures that the screen is not covered by the notch at the top and the physical buttons at the bottom on iOS.
+    \end{itemize}
+
+    \item BloomMate-FE/src/layout
+    \item[] The 5th folder in src is called "layout". It contains larger components compared to Atom and is designed to receive children or equivalent objects as props. The purpose of the layout is to create the structure of the screen rather than provide functionality.
+
+    \begin{itemize}
+        \item basic-layout: 
+        \item[] This layout is the most fundamental one. It manages padding values on the left, right, top, and bottom sides, and sets the background color to white. Unless a screen uses gradients, the basic-layout is included as the top-level component in all screens by default. \\
+
+        \item CTA-section: 
+        \item[] CTA stands for Call-To-Action, which aims to encourage customers to perform desired actions. CTA-section is created for buttons located at the bottom of the screen, and can accommodate up to 2 buttons. These buttons can be arranged horizontally or vertically, and typically consist of one outlined button and one contained button to create contrast. \\
+
+        \item dialog: 
+        \item[] Dialog is used to place text and buttons in a pre-agreed specific location within modals. It consists of four elements: 1) title - the title of the entire dialog content, 2) content - additional explanation about the dialog content, usually describing what happens when the button is clicked, 3) okayButton - a button that usually contains the text "OK" and triggers the intended action, and 4) cancelButton - a button that usually contains the text "Cancel" and simply closes the dialog without any further actions. By placing these four elements in a pre-agreed location, overall UI consistency can be achieved. \\
+
+        \item loading-page: 
+        \item[] This layout is typically used with Suspense. Ideally, a Skeleton should be created with Suspense for each component that receives data. However, due to development schedule and UI irregularities (too many skeletons can be visually overwhelming), a loading-page can be applied to the entire screen. By placing an ActivityIndicator in the center of the screen, it clearly indicates the loading state. \\
+
+        \item modal-header: 
+        \item[] This layout is commonly used at the top of most screens. It manages commonly used icons, types of title text, and more. The important point of modal-header is the use of useBackHandler. This hook determines how the physical back button should work on Android. Typically, the back button in the modal-header should have the same logic as when the back icon is pressed. Therefore, useBackHandler is used within the modal-header to manage this. \\
+
+        \item scroll-view: 
+        \item[] At first glance, this layout may seem similar to the scrollView provided by react-native itself. However, BloomMate has many screens that receive input through TextInput. To detect when the keyboard is raised on such screens, the modified version of KeyboardAwareScrollView provided by react-native-keyboard-aware-scroll-view is used in this layout.
+    \end{itemize}
+
+    \item BloomMate-FE/src/hook
+    \item[] The 6th folder of src is called "hook". Hooks in this folder do not provide a detailed explanation for each file because their logic is almost the same. They were placed directly under src because they can be considered as top-level hooks, meaning they can be used in multiple screens. Firstly, due to the nature of REST API, GET requests should be used in multiple screens. This aligns with the design of REST API, where a large amount of information is fetched at once and then repeatedly used in various locations through caching. Secondly, if a library is related to images, it is currently being used repeatedly in various parts of the screen. Therefore, it was positioned as a top-level hook. Hooks are responsible for the "C" (Controller) in the MVC (Model-View-Controller) structure. They receive specific inputs or declare them in a declarative programming style and fetch data from the model. Then, they play a role in passing the data to the view (screens) through the return statement.
+    \end{enumerate}
 \end{enumerate}
 
 \subsection{Module2 - Backend}
@@ -960,38 +1189,245 @@ BloomMate-ML\newline/dataset & Corn Common rust \newline Corn Gray leaf spot \ne
     \item Class component
     \begin{itemize}
         \item accounts
-        \item[-] views.py : The View role in Accounts folder represents server-side management of the functionality available to users when they first connect to the BloomMate application.
-        \item [-] Sign up : Users can register if they have never used the BloomMate application before. The BloomMate application uses a REST API and also uses JWT tokens. Before using any feature of the application, the user must verify that he is an authorized user using a JWT token, but in the case of registration, this is not necessary because the user has not yet registered. Therefore, all users are free to use the function and once all the required information has been entered, the backend will return the information entered by the user, the message "Registration Success" and a status of 200.\\
-        \item plants
-        \item[-] views.py : The role of View in Plants folder describes how users can register and see plant information, diagnose their plants, edit palnt information(like the picture of the plant), and delete plants.
-        \item[-] Plant Disease Record : The diagnosis of plant diseases is done using the leaf parts of the plant. The diagnosis of the plant is done by the AI, which will be explained in detail in the AI section below. On the backend, application can determine whether a plant has a disease or not through a function that calls the AI. The backend first uses JWT tokens to determine if the user has properly registered with the application. Then it checks if the plant user wants to diagnose is the one he registered. Only plants registered by the user can be diagnosed. In the backend, the storage capacity is reduced by storing the URL processed by the frontend in the database instead of directly storing the photos taken by the user for disease identification. Users can verify the diagnosis using AI by making a POST request with the plant ID and the URL of the photo. Users can also retrieve the diagnosis results for each plant they grow by making a GET request. The user can know the growth level and disease name of the plant through the request. When storing plant disease records in the database, the user can also check the name of the plant set by the user in connection with the plant database through the plant ID stored together.\\
-        \item chatting
-        \item[-] utils.py : For chatting with plants, we have implemented several functions that are separate from the view. The information needed to chat with a plant is the plant information, the weather at the address you entered, the soil information provided by Tune, and the date of the last visit.
-        \item[-] generate chatgpt response : This function connects to Chat GPT-4 and receives chat responses. We chose to use Chat GPT version 4 because it has been trained with more recent information than its predecessor and has the ability to better understand and generate more advanced languages spoken by humans. In keeping with the concept of chatting with plants, the default system prompt in Chat GPT is set to the plant itself, based on the plant information provided by the user. The function brings the history of the user's conversations with the plant by date and enters it into the assistant prompt, allowing the conversation to continue naturally. It also pulls in weather information, soil conditions, and the name of the user who registered the plant. The user only needs to type a phrase like "How is the plant today?" but in the backend, the server enters other information, such as above, to get the desired answer. The backend returns the answer along with the soil condition, whether the user is chatting, and the plant ID.
+        \begin{itemize}
+            \item admin.py : Administrators can check the information of users who have registered through the application by accessing the administration page. When he accesses the page, he can see the user's ID, name, TIIUN number, garden size and address. In addition, he can use filters to categorize users based on the characteristics added according to the type of user set in the user model. He can search for users by ID and username, and view users in order of the date they joined. The Admin page also allows administrators to edit user information and add users. At this point, we specify which parts can be changed and which parts must be filled in when a user is added. This is the same information that regular users enter when they sign up or edit their information. \\
+            \item models.py : This is the default setting for processing the user's information that is set when the user registers and logs in. \\
+            \begin{itemize}
+                \item Create User : This helper class is used when a regular user logs in through the application. If the user does not enter the required information (ID, password, name, TIIUN number, garden size, and address), we set it up to display an error saying "This field is required. We also made sure to store this information in the database. 
+                \item Create Super user : This helper class is used to create administrators. You can create an administrator using django's create superuser, not your application. The information that you have to enter is the same as what a regular user has to enter when they sign up. The difference between a regular user and an administrator is that they have additional privileges. Administrators are the only ones who can access the Admin site and have full access to view, modify, and delete information stored on the Admin site. Administrators are also stored in the database in the same way as regular users.
+                \item User : When a user or administrator signs up, the parent helper class can generate information, and this is the model for handling that information. We specified the type and length for each piece of information. We also included the joined date and the date the information was modified. We've also included partial settings for permissions to differentiate between administrators and regular users. In the case of ID, we set it to unique to avoid duplication. We also specified the fields that must be filled in during the sign up process. \\
+            \end{itemize}
+            \item serializer.py : When passing the information set in the user model to the API, set the information to pass. When a user registers or logs in, we set it to use all the information the user has entered. \\
+            \item views.py : The View role in Accounts folder represents server-side management of the functionality available to users when they first connect to the BloomMate application. 
+            \begin{itemize}
+                \item Sign up : Users can register if they have never used the BloomMate application before. The BloomMate application uses a REST API and also uses JWT tokens. Before using any feature of the application, the user must verify that he is an authorized user using a JWT token, but in the case of registration, this is not necessary because the user has not yet registered. Therefore, all users are free to use the function and once all the required information has been entered, the backend will return the information entered by the user, the message "Registration Success" and a status of 200. \\
+                \item Log in : Users can log in by sending a POST request with the ID and password they created when they registered. BloomMate issues a new access token to the user for each login. The validity of the access token is set to one day. The token allows the user to authenticate to use other features in the application. Upon login, the issued token is stored in the user's device cookie. The return value of the POST request is the information the user entered when logging in. If the username or password is incorrect or does not exist, status 400 is returned with the message "The entered username and password do not exist. \\
+                \item User Info : Users can verify their information through GET requests. To check the user's information, the user must authenticate with the JWT access token issued during the login. Once the token is verified, the user can check their ID, name, TIIUN number, garden size, and address information. The user can also change their information by making a PATCH request. The user can change the rest of the information except the ID. However, you cannot set the information to be modified to empty. If you try to force the ID to be changed, the message "This information cannot be changed" is returned. If the modification condition is met, all of the user's information is returned, including the modified information. We have implemented logout using the DELETE request. The logout works by deleting the access token stored in a cookie on the user's device. We made sure to return the message "Successfully logged out" so that the user can verify that the logout was successful. \\
+                \item Token Verify : Here the user can check the validity of the issued token with a GET request. The user can determine if the JWT token stored in the cookie is available. This function is not available after logout or before the first login because the token is not stored in the cookie. In this case, it returns the message "The token does not exist in the cookie". If the token is present in the cookie, decode the token to determine if it is valid. If it is valid, return the message "Token is valid" along with the token information; otherwise, return the message "Token is invalid".
+            \end{itemize}
+        \end{itemize}
+
+    \item articles
+    \begin{itemize}
+        \item admin.py : For articles, we adopted a format that allowed administrators to add them directly from the backend and make them visible to regular users. To accomplish this, we wrote code to allow admins to add, edit, and delete articles directly from the admin page.\\
+        \item models.py : We set the model to the article. We set the ID value of the article as the primary key. For the article, we need the title, content and thumbnail image. For the image, instead of storing the file directly in the database, we processed the image in the frontend and stored the received URL to reduce the database storage capacity. For the content, we chose to connect to an external notion site and display it in the web view. We also minimized the amount of data actually stored in the database by connecting to the URL instead of adding the content directly. \\
+        \item serializer.py : When passing the information set in the article model to the API, set the information to pass. We decided to use all the data we set as input from the article model. \\
+        \item views.py : 
+        \begin{itemize}
+            \item Article List : The user can view the article via a GET request. As with other functions, the user must authenticate with a JWT token. All of the article's data set in the model can be retrieved from the database.
+            \item Create Article : The administrator adds articles directly in the backend. You can add an article using a POST request, or you can go to the admin page and add it using a POST request. You must enter and submit the data specified in the article model. The permission is set to isAdminUser to specify that only administrators can do this. The JWT token is used to determine if the user is an administrator. General users cannot register items because they are different from administrators.
+        \end{itemize}
+    \end{itemize}
+
+    \item chatting
+    \begin{itemize}
+        \item admin.py : The Admin page allows administrators to review and manage the history of users' chats when they use the chat service. In this case, they can see a list of chats on the screen, and the parts of the list that they can see are the date of the chat, the content of the chat, whether the content was sent by the user, and the plant ID of the chat. By checking the content of the chat, administartors can make sure that there are no errors in the service. \\
+        \item models.py : When setting up the chat model, the biggest question was how to store the conversations between the user and Chat GPT, and in what format. Originally, we planned to store the input as user chat and the output as Chat GPT's response, but we decided to treat all chat content as 'chatting content' and use the 'is user chat' variable to distinguish whether it is a user chat or not. Since the idea of chatting is to have a conversation with a plant, we made sure to get the plant's ID value as a foreign key. Since a chat can be with more than one plant, we set up a one-to-many relationship. \\
+        \item serializer.py : When we send the values set in the chatting model to the API, we specified the values to use. In the model, we imported the plant ID as a foreign key, and we made sure that the serialized values included not only the plant ID, but also the plant information associated with the ID, and the plant details. In the case of the plant details, we set 'read only' to 'true' so that it cannot be changed because it is a fixed value. When fetching the plant information, we used a separate serializer created by plant to return the plant information. \\
+        \item utils.py : For chatting with plants, we have implemented several functions that are separate from the view. The information needed to chat with a plant is the plant information, the weather at the address you entered, the soil information provided by Tune, and the date of the last visit. \\
+        \begin{itemize}
+            \item Get City Address : We need the user's address as chat information to get weather information for that address. We set to get the address information that the user entered when signing up for membership. However, to get the exact location of the address, we used 'split' and 'join' to get only the street address without the street number or apartment number. To get weather information, we need to use the latitude and longitude values of the address, so we used 'geopy'. We set it to return the latitude and longitude of the address, and if there is an error in the address, it will return 0 and 0 respectively. \\
+            \item Get Weather Data : We have used the OpenWeather API to get weather information. The API key is stored separately in the '.env' file along with the Chat GPT API key for chat for security purposes.If you enter the latitude and longitude values from the address along with the API key into the URL where you can get the weather information, you can get it for that location. We set the required information to "temperature", "humidity", "weather information (sunny, cloudy, rain, fog, etc.)", and "region" among other information that can be obtained from the API. If any other error occurs, we want to return the 'weather information not found' message. \\
+            \item Get Soil Condition : As for the soil condition, the original idea was to use the 'LG TIIUN' to get the soil condition using TIIUN's API. We decided that one of the most important information for growing plants, besides the weather, is the condition of the soil in which the plants are planted. So we categorized the soil into 'good' and 'bad' and set the soil condition to be attached to the information in the chat. \\
+            \item Get Last Vsit Date : An important part of growing a plant is being able to see it in person to make sure it's okay. To do this, we realized that users would need to know when they last visited while chatting, so we set the most recent date of "Diagnose a Plant" to be the date of the last visit, knowing that when users diagnose a plant, they take a picture of the plant's leaves. To do this, we set up the Plant Diagnosis Record database to get the most recent diagnosis date. The date format is 'year-month-day'. If the plant has never been visited, we want it to return a message saying "The plant hasn't been visited since planting. \\
+            \item Generate Chatgpt Response : This function connects to Chat GPT-4 and receives chat responses. We chose to use Chat GPT version 4 because it has been trained with more recent information than its predecessor and has the ability to better understand and generate more advanced languages spoken by humans. In keeping with the concept of chatting with plants, the default system prompt in Chat GPT is set to the plant itself, based on the plant information provided by the user. The function brings the history of the user's conversations with the plant by date and enters it into the assistant prompt, allowing the conversation to continue naturally. It also pulls in weather information, soil conditions, and the name of the user who registered the plant. The user only needs to type a phrase like "How is the plant today?" but in the backend, the server enters other information, such as above, to get the desired answer. The backend returns the answer along with the soil condition, whether the user is chatting, and the plant ID.
+        \end{itemize}
+
+        \item views.py : Users can get a list of plants they've chatted with by making a GET request. When making a GET request, it is important to note that each user will have different plants that they have chatted with, so you will need to include the plant ID in the query string. You will also need to include the date in the query string in the form of 'year-month-day', as the number of chats will increase the number of chats displayed on the screen, which may cause delays in loading the chat history. Use a JWT token to verify that the asset was added by the user. If all three conditions are met, the chat history will be retrieved from the chat database based on the plant ID, the date, and the ID of the user who chatted with the plant. The API values returned to the user are 'chat ID', 'chat content', 'check user chat', and 'plant name'. The user can initiate a chat using a POST request. As with the GET request, the chat will receive the plant ID and date as a query string. In this case, the date is used so that if the current date and the date entered in the query string are different, the message 'not today's date' is returned. We also set the 'is user chat' variable to 'true' because the user enters the content they want to send at the same time as the POST request. Then we call the 'generate chatgpt response' function to get the chat GPT response. In this case, the 'is user chat' variable is set to 'false'. After the above process, we save it to the database.
+    \end{itemize}
+
+    \item community
+    \begin{itemize}
+        \item admin.py : On the admin page, admins should be able to see the questions users have asked and the corresponding answers, so we've created separate pages for questions and answers.
+        \begin{itemize}
+            \item Question : For questions, we have made it possible to see the "question ID", "user asked", "question title", and "question creation date". When searching for questions on the admin page, admin can search by username or question title, and the most recent questions will be displayed at the top based on the question creation date. \\
+            \item Comment : For answers, the administrator can see the answer ID, the question to which the answer was attached, the content of the answer, and the date the answer was created. When searching for answers, the administrator can search by the content of the question to which the answer is attached or by the content of the answer. As with questions, the most recent answers are displayed at the top based on their date of creation. \\
+        \end{itemize}
+
+        \item models.py : We set up a model to store in the database. There are questions and answers in the community, and by implementing the model separately, we set the relationship between questions and answers.
+        \begin{itemize}
+            \item Question : For questions, we linked the user to the foreign key. Since a user can ask multiple questions, we set up a one-to-many relationship. The question model contains the following information: question ID, question title, question content, question creation date, and question poser. \\
+            \item Comment : Answers have a one-to-one relationship with questions. A question can only have one answer, because the answer only deals with the part that the administrator directly answers in the backend. So it is a one-to-one relationship. The comment model includes the comment ID, the question content of the commented question, the comment date, and the comment content.
+        \end{itemize}
+
+        \item pagination.py : If the community posts a lot of questions and it becomes difficult to view them on one page, we split the page into many pages. We set the page size so that only 10 questions can be displayed on one screen. When users enter the page they want to check in the query string with the word 'page\_size', the community page is divided into several parts so that you can check the 10 questions that belong to that page. \\
+        
+        \item permissions.py : For a community, we want everyone to be able to see the question, but we don't want anyone to be able to edit or delete the question unless they are the author. We use permissions to differentiate between users, so if the user is not the author of the question, we allow the read permission request, but return false to deny editing and deleting since they are different from the author of the question. \\
+
+        \item serializer.py : This is the part that decides how to serialize the dataset from the model. Since we separated the model into questions and answers, we should do the same for the serializer. \\
+        \begin{itemize}
+            \item Question : For questions, we decided to serialize all data created by the model. To get information about the person who created the question, we use the user's ID in the serializer. We don't want the user information to be modifiable, so we set it to ReadOnlyField. \\
+            \item Comment : For the comments, we use all the information received from the model, but set the question as a part that is not required to be entered when using the POST request from the view. Since we will be using a query string to categorize the questions in the answer, we set the requirement to 'False' so that only the answer content can be written. \\
+        \end{itemize}
+
+        \item utils.py : Since the relationship between a question and an answer is a one-to-one relationship, we need to check if the question has an answer before adding the answer to the question. In this case, we return 'True' if the answer to the question exists and 'False' if the answer does not exist. \\
+
+        \item views.py : It is responsible for the creation of an API that can be used by users on pages that form a community around questions and answers.
+        \begin{itemize}
+            \item Question List : A user can use a GET request to get a list of all the questions in the community. The user must use a JWT token to prove that they are a logged-in user. This is because the list of questions should only be visible to the logged-in user. When viewing the information in the list of questions, an additional piece of information that the user can see is "check if a response has been made". This variable is not handled by the model or the serializer, so we need to handle it separately. We have added this information to the serialized information for the question so that it can be checked. Also, we don't need the answer content or username in the serialized information, so we removed it from the API that can validate the list of questions. We return the organized information with a status of 200. \\
+            \item Create Question : Users can register new questions using POST information. As with other features, this requires user authentication via a JWT token. The user sends a POST request with a question title and question content in the body. The question ID and question registration date are generated at the same time as the POST request, and the user information is set to automatically add the information of the user who submitted the question when the POST request is sent.\\
+            \item Question Detail : This API provides a detailed view of a single registered question. Users can retrieve the information using a GET request. However, they can decide which question they want to get details about by specifying the question ID in the query string. They should also be able to verify that they are an authenticated user with a JWT token. In the details, users should also be able to see if the question has been answered. In the details, they should be able to see not only the question, but also the comments to the question, so you should use a question serializer and an answer serializer to retrieve information about both the question and the answer. You can also use the JWT token to verify that the question was created by a user, which allows you to edit and delete registered questions. To edit a question, you can put the part you want to edit (title or content) in the body and use the PATCH request. To delete a question, you can also use the DELETE request to delete the question associated with the question ID. If the question was not created by you, both editing and deleting will return the message "This question was not created by you. You can't edit or delete this question”. \\
+            \item Create Comment : For registering comments, we used a method where the administrator adds them directly from the backend using POST requests. Therefore, we used 'IsAdminUser' from Permissions in this case. To determine if the person trying to add a comment is an admin, we use a JWT token. Before adding a comment, we get the question by entering the question ID via the query string. If the question doesn't exist, we get the message "Question does not exist". Also, since a question can only have a single answer, we must first determine if a comment exists. If a comment exists, it will return the message "You can't add a new comment because it already exists". If these conditions do not conflict, the administrator can add a comment which will set the 'is\_answered' variable to 'true' and return with the new comment information stored in the database.
+        \end{itemize}
+    \end{itemize}
+
+    \item plants
+    \begin{itemize}
+        \item admin.py : The information that can be found on the Admin page related to plants is categorized and displayed on each page. The information is categorized into plant information registered by the user, specific details about the plant, information about the plant's disease, and records of the user's disease confirmation. \\
+        \begin{itemize}
+            \item Plant : The information related to the plants is the same as the data set in the model. In addition, the Admin page allows you to determine germination, growth, and harvest periods based on the date and time each plant was planted. On the Admin page, the administrator can review the plant information added by each user and add, edit, and delete plants directly. \\
+            \item Plant Type : The type of plant, i.e. the details of the plant, can be added directly by the administrator via a POST request from the admin page. Users can only grow the added plants directly in TIIUN. Users can see this information when viewing their personal plant information, but cannot edit the details. \\
+            \item Plant Disease Type : For the Plant Disease type, the Disease ID and the name of the plant disease are displayed directly on the Admin page. Administrators can add each disease information via a POST request from the admin page. Disease types also include "healthy". For each disease, the symptoms and causes of the disease can be found on the page that appears when you click on the disease information. \\
+            \item Plant Disease Record : The Admin page allows each user to manage their personal plant diagnosis records. On the Admin page, the Admin can see the ID of the diagnosed plant, the ID of the disease, and the date the diagnosis was made. When he clicks on each disease record, he can see only the Plant ID and Disease ID. The other information is available on the previous page, so he can review only the necessary information on the following page.
+        \end{itemize}
+
+        \item models.py : This is the part of the model configuration related to plants. We have divided the model into 4 categories to avoid duplication of information in the database.
+        \begin{itemize}
+            \item Plant : To add a plant, we need the following information: 'plant nickname', 'plant photo', 'plant type ID', 'plant date', 'harvest date', and 'added by'. For the plant photo, we chose the same format as the other images, processed it on the front end to get the URL, and stored the URL in the database. Also, the plant type and plant need to be related, so we linked them with a foreign key. The harvest date was set to a null value as initialization since it was for plants that were still growing. A single user can manage multiple plants, so we also linked this with a foreign key. \\
+            \item Plant Type : Regarding the details of the plant, we included a number of pieces of information, including the variety of plant the user planted. The data included "ideal temperature," "ideal humidity," "ideal light," "bloom season," "watering frequency," "ease of care," and "precautions”. The names of the variables set in the model may be different from those given, and the reason for not using the names of the variables in the model is that we have chosen different terms for quicker understanding in the docs. We also included the start and end dates of each cycle to calculate germination, growth, and harvest times. \\
+            \item Plant Disease Type : For plant disease types, the administrator stores the name of the plant disease, the symptoms of the disease, and the cause of the disease in a database. Note that the relationship between the plant database and the plant disease type database is a many-to-many relationship. \\
+            \item Plant Disease Record : The relationship between the Plant and Plant Disease Type databases is many-to-many. For a many-to-many relationship, instead of connecting the two databases at once, we need to create another database in between to form a one-to-many relationship with the Plant database and a one-to-many relationship with the Plant Disease Type database. This is where the Plant Disease Record database comes in. When a user takes a picture of a plant's leaf to check if it has a disease, the 'Date diagnosed', 'Disease picture', 'Plant ID' and 'Disease ID' are stored. In the case of the disease picture, we minimize the load on the database by storing the URL and, as mentioned earlier, foreign keying the relationship to the Plant database using the Plant ID and to the Plant Disease Type database using the Disease ID.
+        \end{itemize}
+
+        \item serializer.py : It is a file that serializes the dataset in the model. Since the model is divided into 4 types, the serializer is also divided into 4 types. For Plant Type, Plant Disease Type, and Plant Disease Record, all three serializers are set to serialize all data received from each model. However, in the case of Plant, we also need to retrieve the user information. Therefore, in this case, the user's information is obtained from the ID that the user entered when logging into the serializer. The user information should not be modified, so we made sure to get it as a ReadOnlyField. \\
+        \item utils.py : This is a file that defines additional functions needed to provide the dataset as a model as an API for users to use functions related to plants.
+        \begin{itemize}
+            \item Determine is Harvested : When viewing the list of plants, we worked on the frontend to change the plants displayed in the list based on whether the plant is harvested or not. To do this, the backend needs to check if the plant has been harvested. Plant data has a harvest date stored in the database called 'harvested at'. If the plant has not been harvested, the default value is null, and if it has been harvested, the harvest date is stored in the database. This function is set up to check the value stored in the database and return true if the date value is stored or false if there is no value. \\
+            \item Calculate Growth Level : Each of your plants has a germination period, a growing period, and a harvest period, all with different durations. So this function will calculate which period is how many days after the planting date. We have stored the start and end dates of the germination, growing and harvest periods in the Plant Type database. We've set it up to calculate the difference between the current date you're connected to the application and the date you planted the plant, and if that value is between each time period, it returns that time period. If you checked right after adding a plant, it might show up as day 0, so we included it in the germination period and made sure that if it hadn't been harvested by the end of the harvest period, it would still show up as harvested. \\
+            \item Resnet AI to Check Disease : This function is for the diagnosis of plant diseases. It uses AI to determine whether a leaf in a photo is healthy or diseased. The backend sends the diagnostic photos to the function via a URL in the database. There are a total of 14 classes that the AI can recognize, including diseased and healthy conditions for corn, strawberries, potatoes, and tomatoes. By storing the URLs of the photos in the database separately locally, the stored photos are evaluated by the AI. The AI model uses Resnet AI and returns the results of the diagnosis to the user. The function returns 14 of the class, numbered 0 through 13. \\
+            \item Get Predicted Name : This function associates the numeric value returned by the Resnet AI to Check Disease function with the corresponding disease name. This function places the disease names in the same order as the class name set in the parent function and returns the name of the disease by determining its location from the received numeric value.
+        \end{itemize}
+
+        \item views.py : The role of View in Plants folder describes how users can register and see plant information, diagnose their plants, edit palnt information(like the picture of the plant), and delete plants.
+        \begin{itemize}
+            \item Plant List : A user can use a GET request to get a list of the plants they have planted. Since there are many different users of the application, the plants stored in the database on the deployed server will contain all of the users' plants. To retrieve only a specific user's plants, we use JWT tokens. We use a filter to retrieve only the plants whose user is the same as the user in the plants database from the list of all plants in the GET request. In the list of plants, the user should be able to see if each plant has been harvested and at what growth level. This is because we need to display the list separately for harvested plants and for plants that are still growing. To do this, the determine is harvested and calculate growth level functions are used to retrieve the harvest status and growth level along with the plant information stored in the database. In addition, the number of plants that can be planted is limited by the size of the garden, so the size of the TIIUN used by the user is set to be retrieved and returned. \\
+            \item Plant Type : This is the part about the plants that users can plant. This is added by the administrator directly on the backend via a POST request, using the IsAdminUser permission. It is distinguished by a JWT token to verify that the person sending the POST request is an administrator. You can add asset details by entering any data required by the model in the request body and submitting it. Currently, 4 plants have been added to the backend: strawberries, potatoes, tomatoes, and corn. \\
+            \item Create Plant : Users can add assets via a POST request. To use this feature, the user must be logged in, so we set up a JWT token for verification. To add a plant, the user must include all the data values set in the plant model in the request body. The user who plants the plant is automatically registered as the user who sends the POST request when the plant is registered. \\
+            \item Plant Detail : The user can check the details of the plants they have planted, i.e. the registered plants, by making a GET request. In this case, since we need to retrieve information about a specific plant, we can identify the plant by entering the plant ID in the query string. Also, to determine if the plant is registered by the user, the JWT token is used to determine if the registered user and the user currently sending the request are the same. If they are not the same user, we return the message 'You do not have access to this asset'. The plant details include details related to the plant's type, which are added by the administrator in the backend. The Plant Type ID can be used to retrieve information about the type of plant the user has planted. In addition, to determine the growth level of the plant, the Calculate Growth Level function is used to determine the germination period, growth period, and harvest period. For all serialized information, the user ID is not needed in the detail record because the user planted the plant. We also exclude the harvest date because we want to ensure that the plants whose details are available are only those that have not been harvested. If a plant is close to harvest time, the user can harvest it using a POST request. This request adds the harvest date to the 'harvested at' data for that plant. Users can also change their plant information with a PATCH request. However, we have limited the changes that can be made directly to the name of the plant and the photo of the plant. The rest of the information is fixed and cannot be changed. You can delete a plant with a DELETE request. If you have diagnosed a plant, you can delete it if it is sick. This can be done with the appropriate request. When you delete a plant, the related information that is linked to the plant by a foreign key is also deleted. \\
+            \item Plant Disease Type : Plant disease information is added by the administrator via a POST request. To do this, we use IsAdminUser in the permissions and use the JWT token to determine if the person who made the POST request is an administrator. Enter the record in the Plant Disease Type model in the body and send it to add the disease information. \\
+            \item Plant Disease Record : The diagnosis of plant diseases is done using the leaf parts of the plant. The diagnosis of the plant is done by the AI, which will be explained in detail in the AI section below. On the backend, application can determine whether a plant has a disease or not through a function that calls the AI. The backend first uses JWT tokens to determine if the user has properly registered with the application. Then it checks if the plant user wants to diagnose is the one he registered. Only plants registered by the user can be diagnosed. In the backend, the storage capacity is reduced by storing the URL processed by the frontend in the database instead of directly storing the photos taken by the user for disease identification. Users can verify the diagnosis using AI by making a POST request with the plant ID and the URL of the photo. Users can also retrieve the diagnosis results for each plant they grow by making a GET request. The user can know the growth level and disease name of the plant through the request. When storing plant disease records in the database, the user can also check the name of the plant set by the user in connection with the plant database through the plant ID stored together. \\
+            \item Plant Disease Record Detail : If the user wants to retrieve specific diagnostic information from a list of diagnosed plants, he can do so using a GET request. Since he's looking for one of several diagnostic results, he'll want to include the Disease ID in the query string to distinguish them. The JWT token is used to verify that he is an authorized user with access to the diagnostic results for this plant. While the disease information shows only the name, symptoms, and cause of the disease, the diagnostic details should also include a brief description of the diseased plant. Therefore, we load the Plant database information and the associated Plant Type database to extract the necessary information and return it to the user. The information the user should be able to see on the Plant Diagnosis Details page includes not only information about the disease, but also the plant variety and the user-assigned plant name. Other growth levels should also be included. For the AI diagnosed results, we set up the get predicted name function to return the exact name of the disease.
+        \end{itemize}
+    \end{itemize}
     \end{itemize}
 \end{enumerate}
 
-\newpage
 
-\section{use cases}
-% \subsection{Use Case Diagram}
-%     \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/UseCase.png}
-%     \label{fig}
-%     \caption{Use Case Diagram}
-%     \end{figure}
+\subsection{Module 3 - Machine Learning}
+\begin{enumerate}
+    \item Purpose
+    \item[] When designing BloomMate, our team centered around "whether or not the plant's owner is in the SmartCottage." For each situation, the core functionality is as follows
+    \begin{enumerate}
+        \item The owner is not in the SmartCottage
+        \item[ -] use generative AI to talk to the plant.
+        \item The owner is in the SmartCottage
+        \item[ -] take a picture of the plant and \textbf{use AI to diagnose it}.
+    \end{enumerate}
+    \item[] This Machine Learning Repository is for the AI used in the second situation. Train the AI using Custom Dataset and convert it to tensorflow lite so that it can be used in real projects.
 
-% \subsection{Use Cases}
+    \item Functionality
+    \item[] Initially, acquaint with custom data by training a ResNet-50 model. Subsequently, convert the trained model to TensorFlow Lite. The resulting converted model is then used in BloomMate-BE.
+
+    \item Location of source code :
+    \item[] https://github.com/BloomMate/BloomMate-ML
+
+    \item Class Components
+    \begin{itemize}
+        \item Dataset: As we'll see later, Resnet-50 is a model that has been pre-trained on multiple datasets. However, BloomMate needs to diagnose plant diseases for four different crops: corn, potatoes, tomatoes, and strawberries. Unfortunately, Resnet-50's image classification model was not pre-trained with the appropriate data for this specific situation. Therefore, we had to find a custom dataset. Fortunately, we found the best one for our needs. However, we encountered an issue with over-fitting during the initial training. To address this, we limited the data for all classes to 1000 samples. Please refer to the table below for the dataset lists.
+        \begin{table}[h]
+        \setlength{\tabcolsep}{12pt}
+        \centering
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{p{1cm} | p{5cm} }\hline
+        tomato & Tomato Early blight \newline Tomato Late blight \newline Tomato Target Spot \newline Tomato Yellow Leaf Curl Virus \newline Tomato healthy \\
+        \hline
+        potato & Potato Late blight\newline Potato Early blight \newline Potato healthy \\
+        \hline
+        corn & Corn Common rust \newline Corn Gray leaf spot \newline Corn Northern Leaf Blight \newline Corn healthy \\
+        \hline
+        strawberry &   Strawberry healthy \newline Strawberry Leaf scorch \\
+        \hline
+        \end{tabular}
+        \end{table}
+
+        \item resnet-all-datasets.ipynb :  At first, we followed tensorflow's image classification guide, which was great for distinguishing between completely different shapes of leaves (e.g., tomatoes and corn), but once we started to have more classes that needed to be distinguished, such as diseased or not diseased, it didn't work as well. So we started looking for other proven models, and chose Resnet-50. ResNet-50 is a convolutional neural network (CNN) architecture commonly used for building deep neural networks. It is part of the ResNet (Residual Network) series developed by Microsoft Research, known for its outstanding performance in image recognition and classification tasks.\\
+
+        \item[] Key features of ResNet-50:
+        \begin{enumerate}
+            \item Depth: ResNet-50 consists of 50 layers, representing a deep neural network. This depth addresses the vanishing gradient problem during training and allows for high-level abstraction. \\
+            \item Residual connections: ResNet introduces residual connections, enabling each block to learn the residual (difference) between input and output. This facilitates the flow of information without loss, easing training and improving performance. \\
+            \item Transfer learning: Pre-trained on the large-scale ImageNet dataset, ResNet-50 serves as a pre-trained model. This allows for transfer learning, applying the knowledge gained from ImageNet to various computer vision tasks. \\
+            \item Batch normalization: ResNet incorporates batch normalization at each layer to stabilize training and accelerate learning.
+        \end{enumerate}
+        \item[] Resnet-50 models deployed in tensorflow or pytorch are pre-trained. However, as mentioned above, the images we wanted were not pre-trained and we had to train the model on our own dataset and fine-tune it. After fine-tuning, I created a model and converted it into a tflite file. Finally, I verified that the converted model performs similarly to the original model. \\
+
+        \item resnet-tflite-test.ipynb : Actually, this code is a test implementation to make the TFLite model work on the backend. The main difference compared to "all-datasets" is that it performs image classification on photos obtained through a URL.
+        
+    \end{itemize}
+\end{enumerate}
+
+
+\section{SOFTWARE INSTALLATION GUIDE}
+\subsection{Android Installation}
+To install the Android application, follow these simple steps:
+\begin{enumerate}
+    \item Go to the Google Drive link provided below:
+    \item[]Link: \href{https://drive.google.com/drive/folders/1misbKdk9KiIgrsmARhBsaBBLhtyIzM-k?usp=drive_link}{Google Drive Link to install APK file}
+\end{enumerate}
+Please take note of the following:
+\begin{enumerate}
+    \item Starting from September 2024, the application may not function properly. This is due to the possibility of the server operation being discontinued when the free plan of AWS EC2 ends. \\
+    \item Since the application was not downloaded from the Play Store, you may encounter a message indicating a potential presence of malicious software. Rest assured that BloomMate does not contain any malicious code. You can safely ignore the message and proceed with the installation.
+\end{enumerate}
+
+\subsection{IOS Installation}
+For iOS, the only way to install the app is through the official App Store. Therefore, you need to install it directly via source code. Please note that the following steps can only be performed on macOS, as it is not possible to install iOS on Windows without xCode. 
+\newline 
+Follow these steps:
+\begin{enumerate}
+    \item Configure iOS by referring to the official react-native website's iOS setup page.
+    \item Download the source code from the BloomMate-FE GitHub repository.
+    \item Open the terminal and enter the command "yarn" to download the required libraries.
+    \item Create a .env file in the root directory. Contact our team for the contents to include in the .env file, and we will respond within 3 business days.
+    \item Enter "yarn start" in the terminal and use "yarn ios" to install BloomMate on your iOS device.
+\end{enumerate}
+Similar to Android, there is a possibility that the application may not function properly after September 2024. \\
+
+
+
+\section{USE CASES}
+
+
 \textbf{\# Primary Tab - Plant List}
 \newline
-After logging in, users can easily check and manage their plant list through the Primary Plant List tab. This tab provides a comprehensive view of the plants at a glance.
+After logging in, users can easily check and manage their plant list through the Primary Plant List tab. This tab includes two main sections: 'Growing' and 'Harvested'. 
+\begin{itemize}
+    \item At the top of the plant list screen, there are two tabs, 'Harvesting' and 'Harvested'. These tabs help users easily understand the current status of their plants. The 'Harvesting' tab displays plants that are in the 'Germination', 'Growth', or 'Harvest' periods, while the 'Harvested' tab displays the plants that the user has already harvested.
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - Plant List - Harvested.png}
+        \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - harvest tab.png}
+    }
+    \label{fig}
+    \caption{Plant List Tab}
+    \end{figure}
+\end{itemize}
+
 \begin{enumerate}
     \item Plant Add
-        \begin{figure}[h]
+    \begin{figure}[h]
     \centerline{
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant List - Growing Empty.png}
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant List - Growing.png}
+        \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - empty plant list.png}
+        \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - Plant List - Growing Empty.png}
+    }
+    \label{fig}
+    \caption{Empty Plant List}
+    \end{figure}
+
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - plant list.png}
+        \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - Plant List - Growing.png}
     }
     \label{fig}
     \caption{Plant List}
@@ -1000,19 +1436,7 @@ After logging in, users can easily check and manage their plant list through the
         \item Plant addition mainly occurs in two scenarios. The first scenario is when a user signs up and logs in for the first time. In this case, the user can view the initial state of the plant list screen, and add a plant using the 'First Plant Registration' button.The second scenario is when the user has already completed the membership registration and registered one or more plants. In this case, the user can add a new plant through the 'Add Plant' floating button located at the bottom right of the plant list screen.
         \item When adding a plant, the user must enter information such as photo, species, nickname, and planting date. This information helps users to manage their plants more effectively.
     \end{itemize}
-    \item Harvesting \& Harvested Tab
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant List - Harvested.png}
-        \caption{Plant List - Harvested}
-        \label{fig:Harvested}
-    \end{figure}
-    
-    \begin{itemize}
-        \item At the top of the plant list screen, there are two tabs, 'Harvesting' and 'Harvested'. These tabs help users easily understand the current status of their plants. The 'Harvesting' tab displays plants that are in the 'Germination', 'Growth', or 'Harvest' periods, while the 'Harvested' tab displays the plants that the user has already harvested.
-    \end{itemize}
-    
-    \newpage
+
     
     \item Plant Details
         \begin{figure}[h]
@@ -1024,8 +1448,15 @@ After logging in, users can easily check and manage their plant list through the
     \begin{itemize}
         \item Users can check the detailed information of each plant by clicking the 'Plant Detailed Information' button at the bottom of each plant component. In this screen, users can update the plant's photo and nickname, check basic information about the plant's species and its current growth status.In the growth information section, users can visually check which growth period the plant is currently in and how far that period has progressed through a Progress bar. Also, users can more easily manage the plant's status through the Primary color phrase that changes depending on the growth degree, and the 'AI Diagnosis' or 'Harvest' button at the bottom.
     \end{itemize}
-    \newpage
-    \item  Plant Update        
+    
+    \item  Plant Update
+         \begin{figure}[h]
+        \centering
+        \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - plant update.png}
+        \caption{Use case: Plant Update}
+        \label{fig:Plant Update}
+        \end{figure}
+        
         \begin{figure}[h]
         \centering
         \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - Update complete.png}
@@ -1036,7 +1467,15 @@ After logging in, users can easily check and manage their plant list through the
         \item Users can update the plant's photo and nickname on the plant's detailed information screen. Users click the 'Update' text button located at the top right of the photo. They are then taken to a page where they can update the nickname and photo. If the user does not want to make a change, they can return to the plant's detailed information screen by clicking the back arrow icon at the top left.
         \item To update the nickname or photo, the user modifies the desired item and then clicks the 'Update' button at the bottom. The user then returns to the plant's detailed information screen, where they can see that the changes have been reflected.
     \end{itemize}
+    
     \item AI Diagnosis
+        \begin{figure}[h]
+        \centering
+        \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - AI.png}
+        \caption{Use case: AI Diagnosis}
+        \label{fig}
+        \end{figure}
+        
         \begin{figure}[h]
         \centering
         \includegraphics[width=.7\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - Diagnosis Button.png}
@@ -1068,14 +1507,22 @@ After logging in, users can easily check and manage their plant list through the
     \item If the user clicks this button, a dialog appears notifying the user that the existing plant will be deleted. If the user clicks the 'Confirm' button in the dialog, new seeds of the same species are automatically ordered. After the order is completed, the user returns to the plant list screen and can confirm that the original plant has been deleted.
     \begin{figure}[h]
     \centerline{
-        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - Negative result Oneclick.png}
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - Oneclick Dialog.png}
         \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Diagnose - Negative result Oneclick Complete.png}
     }
     \label{fig}
     \caption{Diagnose Result - Oneclick Purchase}
     \end{figure}
     \end{itemize}
+    
 \item Harvest
+        \begin{figure}[h]
+        \centering
+        \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case -harvest period.png}
+        \caption{Use case: Harvest}
+        \label{fig}
+        \end{figure}
+        
         \begin{figure}[h]
         \centering
         \includegraphics[width=.7\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Plant Details - Harvesting Button.png}
@@ -1086,6 +1533,14 @@ After logging in, users can easily check and manage their plant list through the
         \item The button at the bottom of the plant's detailed information screen is displayed as the 'Harvest' button when the plant is in the harvest period. When the user clicks this button, the plant is harvested, and afterwards, the user can confirm that the plant has been deleted from the plant list screen. The harvested plant moves to the 'Harvested' tab in the top tab of the plant list screen.
     \end{itemize}
 \item Chatting with GPT
+
+        \begin{figure}[h]
+        \centering
+        \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - today chatting.png}
+        \caption{Use case: Chatting}
+        \label{fig}
+        \end{figure}
+        
     \begin{itemize}
         
         \item Today's Chat in the plant list tab: 
@@ -1098,13 +1553,13 @@ After logging in, users can easily check and manage their plant list through the
         \label{fig}
         \caption{Chat - Today's report}
         \end{figure}
-   
+
         \item Previous Chat : 
         \item[] Users can check previous chat records. When the user clicks the ‘calendar-month’ icon labeled 'Previous Report' in the floating button on the right bottom of the screen, a calendar modal is displayed. Through this calendar, users can check the chat of the previous date. If there is no chat record on the date selected by the user, they can see the message, "There is no conversation on the date you selected!"
         \begin{figure}[h]
         \centerline{
-            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Previous chat Select Calendar.png}
             \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Previous chat.png}
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Today's report Start2.png}
         }
         \label{fig}
         \caption{Chat - Previous Chat}
@@ -1116,42 +1571,88 @@ After logging in, users can easily check and manage their plant list through the
 
         \begin{figure}[h]
         \centerline{
-            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Back to Today's chat.png}
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Previous chat Select Calendar.png}
+            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Chat - Previous chat2.png}
         }
         \label{fig}
         \caption{Chat - Return to Today's Chat}
         \end{figure}
     \end{itemize}
+\newpage
 \newline
 \textbf{\# Primary Tab - Community}
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Primary Tab - Q & A.png}
+        \includegraphics[width=.5\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Use case - communitypng.png}
+    }
+    \label{fig}
+    \caption{Community Tab}
+    \end{figure}
 \\After login, users can obtain various information about plants through the Primary Community tab. This tab includes two main sections: 'Q \& A' and 'Expert Article'.\\
 \item Q \& A
+        \begin{itemize}
+            \item In the Q \& A tab, users can ask various questions. Users can write a new question through the floating button, which includes a pencil-shaped icon located at the bottom right.
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - Create Q.png}
+    }
+    \label{fig}
+    \caption{Use case: Create Q \& A}
+    \end{figure}
+    
         \begin{figure}[h]
         \centerline{
             \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Q & A.png}
             \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Q & A - Create Question.png}
-            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Q & A - Answered Question.png}
         }
         \label{fig}
-        \caption{Q \& A}
+        \caption{create Q \& A}
         \end{figure}
-        \begin{itemize}
-            \item In the Q \& A tab, users can ask various questions. Users can write a new question through the floating button, which includes a pencil-shaped icon located at the bottom right.
+        
+            \newpage
+            
             \item Based on the information obtained from chat or diagnosis process, users can ask general questions about the plant or methods of caring for Tiiun.When the user clicks the floating button, they are directed to a text input form screen to write their question. BloomMate provides an answer for each question as soon as possible, and the answer status is displayed at the top left of each question component. Through this, users can easily check the status of their question.
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - Check Q.png}
+    }
+    \label{fig}
+    \caption{Use case: Check Q \& A}
+    \end{figure}
+    
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Q & A - Answered Question.png}
+    }
+    \label{fig}
+    \caption{Question Details}
+    \end{figure}
+    
         \end{itemize}
     \item Expert’s Article
-        \begin{figure}[h]
-        \centerline{
-            \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Screenshot_20231201_015925_BloomMate.jpg}
-        }
-        \label{fig}
-        \caption{Expert's Article}
-        \end{figure}
         \begin{itemize}
             \item In the Expert Article tab, users can read expert articles in a sequential episode format. Users can read articles containing a variety of information, including detailed information about the breeds that can be grown in Tiiun, cultivation and management methods, and ways to utilize the crops. \\
         \end{itemize}
+ \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - article.png}
+    }
+    \label{fig}
+    \caption{Use case: article}
+\end{figure}
+    
+\begin{figure}[h]
+        \centerline{
+        \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Screenshot_20231201_015925_BloomMate.jpg}
+        }
+        \label{fig}
+        \caption{Expert's Article}
+\end{figure}
 \newline
+
 \textbf{\# Primary Tab - Mypage}
+
         \begin{figure}[h]
         \centerline{
             \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Screenshot_20231201_020152_BloomMate.jpg}
@@ -1159,8 +1660,16 @@ After logging in, users can easily check and manage their plant list through the
         \label{fig}
         \caption{My page}
         \end{figure}
-\item[]After login, users can log out and check personal information and information about BloomMate through the Mypage tab. This tab includes three main sections: 'Logout', 'User Info', and 'About BloomMate'. \\
+
     \item Logout
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - Logout.png}
+    }
+    \label{fig}
+    \caption{Use case: log-out}
+    \end{figure}
+    
         \begin{figure}[h]
         \centerline{
             \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Landing.png}
@@ -1169,8 +1678,15 @@ After logging in, users can easily check and manage their plant list through the
         \caption{After Logout - Landing Page}
         \end{figure}
     \item[]Users who want to logout can click the 'Logout' button. When this button is clicked, the user's authentication information is removed from the system, and the user is automatically redirected to the landing page where they can login and register. \\
-\newpage
+
     \item User Info
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - userinfo.png}
+    }
+    \label{fig}
+    \caption{Use case: user info}
+    \end{figure}
         \begin{figure}[h]
         \centerline{
             \includegraphics[width=.3\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/Screenshot_20231201_015810_BloomMate.jpg}
@@ -1181,18 +1697,41 @@ After logging in, users can easily check and manage their plant list through the
     \item[]Users can check the member information entered through the registration process. When the user clicks 'User Info', they are directed to a page where they can check the user's name, ID, Tiiun product key, Tiiun size, and address information. If the user wishes, they can return to the Mypage tab at any time by clicking the back arrow icon at the top left.\\
 
     \item About BloomMate
-        \begin{figure}[h]
-        \centerline{
-            \includegraphics[width=.8\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/About BloomMate.png}
-        }
-        \label{fig}
-        \caption{About BloomMate}
-        \end{figure}
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/use case - About BloomMate.png}
+    }
+    \label{fig}
+    \caption{Use case: about BloomMate}
+    \end{figure}
+    
     \item[]Users can click 'About BloomMate' to check information about the team that developed BloomMate. On this page, users can refer to the background of BloomMate app development, demo videos, and related links about the development process. Also, users can check the technology stack used, core features, and information about the team members.
+    
+    \begin{figure}[h]
+    \centerline{
+        \includegraphics[width=.8\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/About BloomMate.png}
+    }
+    \label{fig}
+    \caption{About BloomMate}
+    \end{figure}
 \end{enumerate}
+
+\section{DISCUSSION}
+\subsection{Things to Improvement}
+BloomMate had several shortcomings. The most significant one is that it violates various legal aspects, making it ineligible for official distribution. The issue of personal data protection is particularly problematic. To address this, terms and conditions should have been established, and the back-end team should have developed a system to promptly dispose of personal information. However, this was not accomplished. The second shortcoming is the lack of test code. We conducted QA solely through manual testing without properly writing test code. As a result, a bug that caused plant duplication was not fixed three days before the final application submission. Lastly, the AI aspect was lacking. In the initial design of BloomMate, we intended to perform real-time object detection using AI. This would have allowed users to observe plant information in real-time even when they are not present in the smart cottage. However, due to insufficient dataset and a lack of human resources to develop and deploy code for the new server, we compromised by using image classification. \\
+
+\subsection{Non-Technical Difficulties While Making Software}
+The most challenging aspect was ensuring a fair distribution of tasks during the software development process. While we made an effort to distribute the work fairly, we did not take into account variations in experience and skill level. Consequently, some individuals had to wait for others to complete their tasks, while others faced excessive workloads and extreme stress. Thankfully, we were able to address these issues through effective communication and weekly meetings. \\
+
+\subsection{Conclusion}
+Although there were some mentioned issues, BloomMate is a well-made software. All team members have fulfilled their roles, and we have successfully designed and implemented features that are now ready for commercialization. There are no bugs, and users will greatly benefit from using BloomMate for gardening with Tiiun. The creation of BloomMate has provided us with an opportunity to think more concretely about various dreams, such as those of developers and planners. \\
+
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
 
 
 \end{document}
+
+
+
