@@ -798,15 +798,9 @@ The Frontend module refers to the part of the mobile application that is used by
 \newline
 \indent The Static Data Storage module is accessible from both the frontend and backend. This module serves as an externalization of certain database functions, specifically for storing and loading static data, images, videos, etc. BloomMate utilizes cloudinary for this purpose. Despite being a free service, cloudinary offers a generous 25GB of storage and simplifies the process of uploading and downloading images. Here's how it works: the frontend uploads a photo to cloudinary and receives a downloadable URL as a response. The frontend then passes this URL to the backend, which stores it in its own SQLite database. When the frontend receives a request using the URL, it fetches the URL from the database and retrieves the corresponding image from cloudinary. In BloomMate, the frontend uploads images in two cases: when adding a plant and when diagnosing a plant.\\
 \newline
-\indent Please note that the third module, which will be discussed in more detail, covers the process of storing and loading static data in the backend's SQLite database.
+\indent Please note that the third module, which will be discussed in more detail, covers the process of storing and loading static data in the backend's SQLite database.\ref{app: Database Entity Relationship Diagram}
 
-% 맨뒤로 빼기
-    % \begin{figure}[h]
-    % \centering
-    % \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/BloomMateDB.png}
-    % \label{fig}
-    % \caption{Database Entity Relationship Diagram}
-    % \end{figure}
+
 
 The third module is the Backend module, which serves as the server handling user requests. What sets BloomMate apart is that the database is built within the Backend module itself. This is made possible by using Django, a technology that includes its own DB called SQLite. Looking at the SQLite part, depicted in the ERD above, it consists of 9 databases. Among these, the article table is an independent table not connected to any other table. Within Django, there is code that also interacts with chatGPT. We provide chatGPT with information about the plant and the user, assigning the plant's role. It then sends the phrases you write to chatGPT, retrieves the answers, and sends them back to you. The TensorFlow Lite model created in the fourth module is also stored in the backend, along with the necessary code to execute it. After the user takes a photo, the photo URL is stored in the second module, cloudinary, and this URL is used for diagnosis.
 \newline
@@ -1726,6 +1720,18 @@ The most challenging aspect was ensuring a fair distribution of tasks during the
 \subsection{Conclusion}
 Although there were some mentioned issues, BloomMate is a well-made software. All team members have fulfilled their roles, and we have successfully designed and implemented features that are now ready for commercialization. There are no bugs, and users will greatly benefit from using BloomMate for gardening with Tiiun. The creation of BloomMate has provided us with an opportunity to think more concretely about various dreams, such as those of developers and planners. \\
 
+
+\onecolumn
+\appendix
+    \section{Database Entity Relationship Diagram}\label{app: Database Entity Relationship Diagram}
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{HYU-SE-2023-BloomMate-DOCUMENT/img/BloomMateDB.png}
+    \label{fig}
+    \caption{Database Entity Relationship Diagram}
+    \end{figure}
+
+\twocolumn
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
